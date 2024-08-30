@@ -216,9 +216,7 @@
 
         if (vueComponents.length > 0) {
 
-
-            let removeFirst = vueComponents.shift()
-
+            let removeFirst = vueComponents.shift();
             code = "const " + removeFirst.name + " = Vue.createApp({mounted() {console.log('" + removeFirst.name + "'); componentLoadingText.value = 'Component " + removeFirst.name + " initialized!';  setTimeout( initComponents, 50); }});"
             if( "config" in removeFirst){
                     code += removeFirst.name + ".config.compilerOptions.isCustomElement = tag => tag.startsWith('font') || tag === 'ion-icon';"

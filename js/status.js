@@ -156,10 +156,9 @@ const status = {
         });
 
         sock.on('connect', function(){
-
             clearTimeout(socketConnected);
             $('#alarmPLC').removeClass('open');
-
+            //status.subscribeChannels();
         });
 
         //SIGNAL LIMITS CHANNEL SUBSCRIBE
