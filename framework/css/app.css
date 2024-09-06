@@ -6656,10 +6656,6 @@ html[data-scheme="scheme1"] .timelineBackground{background: rgb(10, 30, 42)!impo
 
 html[data-scheme="scheme2"] .timelineBackground{background: rgb(255, 255, 255)!important;}
 
-html[data-scheme="scheme1"] .inhibitSearchIcon{ top: 3.8em!important; }
-
-html[data-scheme="scheme2"] .inhibitSearchIcon{ top: 3.3em!important; }
-
 html[data-scheme="scheme1"] .reportLogHeaders{ background: #12354c!important; color: white!important; }
 
 html[data-scheme="scheme2"] .reportLogHeaders{ background: #ffffff!important; color: rgb(0, 0, 0)!important; }
