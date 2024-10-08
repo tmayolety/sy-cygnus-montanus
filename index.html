@@ -26,6 +26,7 @@
     <script src="js/components/pumpLayout.js"></script>
     <script src="js/components/basicHorizontalBar.js"></script>
     <script src="js/components/bar.js"></script>
+    <script src="js/components/barCustom.js"></script>
     <script src="js/components/gauge.js"></script>
     <script src="js/components/multiGauge.js"></script>
     <script src="js/components/load.js"></script>
@@ -123,7 +124,6 @@
             $("#WaterTightsNav").load("src/watertightList.html");
             $("#Various1Nav").load("src/variousSystems.html");
             $("#Various2Nav").load("src/variousSystems2.html");
-            $("#JacuzziNav").load("src/jacuzzi.html");
             $("#InsulationNav").load("src/insulation.html");
             $("#NavLightsNav").load("src/navLights.html");
             $("#NavEquipmentNav").load("src/navEquipment.html");
@@ -136,6 +136,13 @@
             $("#inhibitsGroup").load("src/groupInhibits.html");
             $("#FireSystemNav").load("src/fire.html");
             $("#ReportLogNav").load("src/reportLog.html")
+
+            $("#MachineryVentilationNav").load("src/machineryVentilation.html");
+            $("#WaterMakerNav").load("src/waterMaker.html");
+            $("#LightingNav").load("src/lighting.html");
+            $("#HydraulicsNav").load("src/hydraulics.html");
+            $("#ACSystemNav").load("src/acSystem.html");
+
             $("#HomeSystem").load("src/home.html");
 
             $.ajax({ url:"structure/sub-nav.html",
@@ -175,13 +182,16 @@
     <section class="dev-sectionContent dev-menuNavigation-oilTanks" style="display:none; overflow: hidden;" id="OilTanksNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-wasteTanks" style="display:none; overflow: hidden;" id="WasteTanksNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-waterTanks" style="display:none; overflow: hidden;" id="WaterTanksNav"></section>
-    <section class="dev-sectionContent dev-menuNavigation-battery" style="display:none;" id="BatteriesNav"></section>
-    <section class="dev-sectionContent dev-menuNavigation-loads" style="display:none; " id="LoadsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-battery" style="display:none; overflow: hidden;" id="BatteriesNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-machineryVentilation" style="display:none; overflow: hidden;" id="MachineryVentilationNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-waterMaker" style="display:none; overflow: hidden;" id="WaterMakerNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-lighting" style="display:none; overflow: hidden;" id="LightingNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-hydraulics" style="display:none; overflow: hidden;" id="HydraulicsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-acSystem" style="display:none; overflow: hidden;" id="ACSystemNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-fireDoorsLayout" id="FireDoorsNav" style="display:none;" ></section>
     <section class="dev-sectionContent dev-menuNavigation-fireDoorsTable"  style="display:none;" id="WaterTightsNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-variousSystems" style="display:none; overflow: auto;" id="Various1Nav"></section>
     <section class="dev-sectionContent dev-menuNavigation-variousSystems2" style="display:none; overflow: auto;" id="Various2Nav"></section>
-    <section class="dev-sectionContent dev-menuNavigation-jacuzzi" style="display:none; overflow: auto;" id="JacuzziNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-insulation" style="display:none;" id="InsulationNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-navLights" style="display:none;" id="NavLightsNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-navEquipment" style="display:none;" id="NavEquipmentNav"></section>
@@ -194,8 +204,8 @@
     <section class="dev-sectionContent dev-menuNavigation-ums" style="display:none;" id="UMSSettingsNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-inhibitsGroup" style="display:none;" id="inhibitsGroup"></section>
     <section class="dev-sectionContent dev-menuNavigation-fire" style="display:none; overflow: hidden;" id="FireSystemNav"></section>
-    <section class="dev-sectionContent dev-menuNavigation-splash" id="HomeSystem">
-       
+    <section class="dev-sectionContent dev-menuNavigation-splash" id="HomeSystem"> 
+
 <script language="JavaScript">
 
     let vueComponents;

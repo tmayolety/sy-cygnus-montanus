@@ -175,6 +175,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".waterTanksApp",
@@ -190,6 +194,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".wasteTanksApp",
@@ -205,6 +213,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".fuelTanksApp",
@@ -220,6 +232,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".oilTanksApp",
@@ -306,33 +322,6 @@
           }
       },
       {
-          "name": "jacuzziApp",
-          "component": [
-            {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
-            },
-            {
-              "label": "icon-text-value-analogue-line-render",
-              "file": "iconTextValueAnalogueLine"
-            },
-            {
-              "label": "two-options-switch-button-render",
-              "file": "twoOptionsSwitchButton"
-            },
-            {
-              "label": "icon-layout-render",
-              "file": "iconLayout"
-            }
-          ],
-          "mount": ".jacuzziApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
           "name": "watertightListApp",
           "component": [
             {
@@ -381,21 +370,6 @@
       }
     }
   },
-      {
-          "name": "pumpApp",
-          "component": [
-            {
-              "label": "load-render",
-              "file": "load"
-            }
-          ],
-          "mount": ".pumpApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
       {
           "name": "navLightApp",
           "component": [
