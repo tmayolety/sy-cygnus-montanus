@@ -1,8 +1,7 @@
 $.getScript("js/tanks.js");
 
-$("#WasteTanks_layout").load("src/ga/tanks/GO_wasteTanks.svg");
+$("#WasteTanks_layout").load("src/ga/tanks/wasteTanks.svg");
 
-//var totalWasteId, WasteTotal
 var screen = {
     renderData: function (msg) {
     }
