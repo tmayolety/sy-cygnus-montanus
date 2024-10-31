@@ -1,11 +1,11 @@
 <article>
-        <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg wasteTanksApp">
+        <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-med pad-lg wasteTanksApp">
 
             <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
                         grid type1 cols-mini-1">
 
                 <header class="ui col">
-                    <font>Waste Water Tanks</font>
+                    <font>Waste Tanks</font>
                     <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
@@ -15,24 +15,18 @@
                 </header>
 
                 <div class="ui col mini-1 gap-no pad-mini radius shadow
-                            grid type1 cols-mini-3 cols-xl-6" style="height: 390px;" id="wasteTank">
+                            grid type1 cols-mini-4" style="height: 390px;" id="wasteTank">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 5117, orientation: 'vertical', size: 'regular', unit: 'L', title:'Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 8600, scaleStep: 860, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 5117, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 8600, scaleStep: 860, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 519, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sewage Holding', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 2880, scaleStep: 280, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 519, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 2880, scaleStep: 280, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 319, orientation: 'vertical', size: 'regular', unit: 'L', title:'Grey Water Port', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 18800, scaleStep: 1880, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 319, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 18800, scaleStep: 1880, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Grey Water Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 18800, scaleStep: 1880, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 22005, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 11480,scaleStep: 1148, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 22004, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Grey Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 37600, scaleStep: 3760, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-custom-render v-bind="{ signalId: 90, signalId2: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 80000, scaleStep: 8000, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,8 @@
 <article>
 
-        <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg waterTanksApp">
+        <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-med hidden-phone pad-lg waterTanksApp">
 
-            <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header grid type1 cols-mini-1">
 
                 <header class="ui col">
                     <font>Fresh Water Tanks</font>
@@ -11,55 +10,35 @@
                         <span class="gradient-left"></span>
                         <span class="gradient-right"></span>
                     </span>
-                    
-                    
                 </header>
 
-                <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5 cols-xl-10" style="height:390px;" id="waterTanks">
+                <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5" style="height:390px;" id="waterTanks">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 453, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 18500, scaleStep: 1850, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 454, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 18500,scaleStep: 1850, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 10800, scaleStep: 1080, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 317, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Port', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 10800, scaleStep: 1080, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 201, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 10800, scaleStep: 1080, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 318, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 10800, scaleStep: 1080, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 18500,scaleStep: 1850, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Port', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 11100, scaleStep: 1110, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 18500, scaleStep: 1850, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
+        
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 434, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 11100, scaleStep: 1110, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 435, orientation: 'vertical', size: 'regular', unit: 'L', title:'HiFog', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 7900, scaleStep: 790, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 313, orientation: 'vertical', size: 'regular', unit: 'L', title:'Pool', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 10100, scaleStep: 1010, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 22002, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Potable Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 43800, scaleStep: 4380, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
-                    </div>
-                    <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 22003, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Technical Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 21400, scaleStep: 2140, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-custom-render v-bind="{ signalId: 90, signalId2: 91, signalId3: 201, signalId4: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 80000, scaleStep: 8000, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                     </div>
                 </div>
             </div>
 
-
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
                 <header class="ui col">
                     <font>Total Fresh Water</font>
                     <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
-                    
-                    
                 </header>
 
                 <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 timelineBackground">
@@ -75,23 +54,22 @@
 
             </div>
 
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone radius shadow
-                        grid type1 cols-mini-1" style="overflow: hidden!important;">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header grid type1 cols-mini-1">
                 <header class="ui col">
                     <font>Tank Distribution</font>
                     <span class="gradients">
                         <span class="gradient-left"></span>
                         <span class="gradient-right"></span>
                     </span>
-                    
-                    
                 </header>
+
                 <div class="ui col mini-1 middle-center h-mini-300 radius shadow">
-                    <link href="src/ga/tanks/GO_tankLayout.css" rel="stylesheet">
                     <span id="WaterTanks_layout"></span>
                 </div>
             </div>
+
         </div>
+
 </article>
 
 
