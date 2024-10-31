@@ -249,6 +249,10 @@ const status = {
 
                 const message = item.Message;
                 const split = message.match(/\d+/g);
+                let locationName = "Unknown Location"
+                if (item.ScreenId > 0) {
+                    locationName = locationsData[parseInt(item.ScreenId)].Name;
+                }
 
                 switch(item.Name) {
 
@@ -290,10 +294,7 @@ const status = {
                         }
                         if (item.Name == "UpdateAlarmStatus" && split[1] == 0) { statusName = "Desinhibited"; }
 
-                        let locationName = "Unknown Location"
-                        if (item.ScreenId > 0) {
-                            locationName = locationsData[parseInt(item.ScreenId)].Name;
-                        }
+
 
                         Quasar.Notify.create({
                             html: true,
@@ -329,7 +330,7 @@ const status = {
                             group: false,
                             color: notificationColor,
                             textColor: 'white',
-                            caption:  split[0] + ' alarms by ' + locationsData[parseInt(split[1])].Name ,
+                            caption:  split[0] + ' alarms by ' + locationName ,
                             message: notificationMessage
                         })
 
