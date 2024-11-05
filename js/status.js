@@ -2,7 +2,7 @@ let socketStatus = null;
 let APIStatus = null;
 let loadingStatus = null;
 let socketConnected = false;
-
+let lastNotificationTime = 0;
 let socketConnectionEstablished = Vue.ref(false);
 let APIConnectionEstablished = Vue.ref(false);
 let componentLoadingText = Vue.ref('');
@@ -246,6 +246,13 @@ const status = {
             var item = JSON.parse(msg);
             if (FLOATING_NOTIFICATIONS && typeof item.Target !== 'undefined' && item.Target == "FRONTEND")
             {
+                const currentTime = Date.now();
+        
+                //Only execute the code if at least 200 ms have elapsed since the last notification.
+                if (currentTime - lastNotificationTime < 200) {
+                    return; 
+                }
+                lastNotificationTime = currentTime; //Update lastNotificationTime
 
                 const message = item.Message;
                 const split = message.match(/\d+/g);
