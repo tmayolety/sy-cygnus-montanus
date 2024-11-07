@@ -131,7 +131,12 @@ const status = {
 
     },
     initSocketConnections: function () {
-        status.subscribeChannels();
+
+        setTimeout( function() {
+            status.subscribeChannels();
+        }, 12000);
+
+
         sock.on('disconnect', function(){
 
             socketConnected = setTimeout(function() {
