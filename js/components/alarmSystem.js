@@ -20,8 +20,7 @@ components.alarmSystem = {
             <div class="col-110 align-middle-center hidden-phone">
             <span >Muted</span>
             </div></li>
-            
-            <li v-for="(alarm, index) in alarms" :key="alarms.id">
+            <li v-for="(alarm, index) in alarms" :key="index">
             <div class="col-60 align-middle-center  glow pad-no hidden-phone">
             <button class="ui btn sm info radius-no resp" v-on:click="resetAlarm(index, alarm.Status)">Reset</button></div>
             <div class="col-50 glow align-middle-center" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{alarm.alarmId}}</span></div>
@@ -29,9 +28,9 @@ components.alarmSystem = {
             <div class="col-170 glow align-middle-center" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{getGroupName(alarm.Group)}}</span></div>
             <div class="col-300-min align-middle-center glow" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{getAlarmName(alarm.alarmId)}}</span></div>
             <div class="col-110 align-middle-center dev-statusChange glow pad-no hidden-phone">
-            <button :class=[colorAck(alarm.Status)]  v-on:click="statusModify(index, alarm.Status, 3)">Acknowledge</button></div>
+            <button :class="[colorAck(alarm.Status)]" v-on:click="statusModify(index, alarm.Status, 3)" :id="'ack_' + index">Acknowledge</button></div>
             <div class="col-110 align-middle-center dev-statusChange glow pad-no hidden-phone" >
-            <button :class=[colorMute(alarm.Status)] :style="[statusWarning(index)]" v-on:click="statusModify(index, alarm.Status, 2)">Mute</button></div>
+            <button :class="[colorMute(alarm.Status)]" :style="[statusWarning(index)]" v-on:click="statusModify(index, alarm.Status, 2)" :id="'mute_' + index">Mute</button></div>
             </li>
             </ul>
         </div>
@@ -57,20 +56,16 @@ components.alarmSystem = {
             warningMute:{
                 warningOn:"display:none",
                 warningOff:"display: unset"
-            },
-
+            }
         }
     },
     updated () {
-
         clearTimeout(refreshAlarmLogTimeout);
         refreshAlarmLogTimeout = setTimeout(function () {
             alarms.updateAlarmLog();
         }, 1500 + (Math.floor(Math.random() * 2000) + 100));
-
     },
-    mounted()
-    {
+    mounted(){
         alarms.activeAlarmShow();
     },
     methods:{
@@ -116,6 +111,20 @@ components.alarmSystem = {
                 }
 
                 if (sendRequest) {
+
+                    switch (targetStatus) {
+                        case 2:
+                            var element=  document.getElementById('mute_' + alarmId);
+                            element.classList.add('active-provisional');
+                            setTimeout(function () { element.classList.remove('active-provisional'); }, 2000)
+                            break;
+                        case 3:
+                            var element=  document.getElementById('ack_' + alarmId);
+                            element.classList.add('active-provisional');
+                            setTimeout(function () { element.classList.remove('active-provisional'); }, 2000)
+                            break;
+                    }
+
                     var data = JSON.stringify({
                         "Id": parseInt(alarmId),
                         "Status": parseInt(targetStatus),
@@ -187,8 +196,7 @@ components.alarmSystem = {
 
             var sendRequest = true;
 
-            if ( isNaN(alarmId) )
-            {
+            if(isNaN(alarmId)){
                 sendRequest = false;
             }
 
@@ -196,7 +204,6 @@ components.alarmSystem = {
             if (!helpers.profileCheck()) {
                 helpers.privilegesPopUp();
                 sendRequest = false;
-
             }
 
             //UNNATENDED ACK CHECK
@@ -237,8 +244,6 @@ components.alarmSystem = {
 
     }
 };
-
-
 
 
 
