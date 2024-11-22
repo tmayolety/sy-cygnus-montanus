@@ -131,12 +131,7 @@ const status = {
 
     },
     initSocketConnections: function () {
-
-        setTimeout( function() {
-            status.subscribeChannels();
-        }, 12000);
-
-
+        status.subscribeChannels();
         sock.on('disconnect', function(){
 
             socketConnected = setTimeout(function() {
@@ -251,13 +246,6 @@ const status = {
             var item = JSON.parse(msg);
             if (FLOATING_NOTIFICATIONS && typeof item.Target !== 'undefined' && item.Target == "FRONTEND")
             {
-                const currentTime = Date.now();
-        
-                //Only execute the code if at least 200 ms have elapsed since the last notification.
-                if (currentTime - lastNotificationTime < 200) {
-                    return; 
-                }
-                lastNotificationTime = currentTime; //Update lastNotificationTime
 
                 const message = item.Message;
                 const split = message.match(/\d+/g);
