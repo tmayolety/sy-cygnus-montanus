@@ -2,7 +2,7 @@ let socketStatus = null;
 let APIStatus = null;
 let loadingStatus = null;
 let socketConnected = false;
-
+let lastNotificationTime = 0;
 let socketConnectionEstablished = Vue.ref(false);
 let APIConnectionEstablished = Vue.ref(false);
 let componentLoadingText = Vue.ref('');
@@ -131,10 +131,7 @@ const status = {
 
     },
     initSocketConnections: function () {
-        setTimeout( function() {
-            status.subscribeChannels();
-        }, 12000);
-
+        status.subscribeChannels();
         sock.on('disconnect', function(){
 
             socketConnected = setTimeout(function() {
