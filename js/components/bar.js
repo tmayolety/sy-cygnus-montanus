@@ -234,6 +234,16 @@ components.bar = {
 
         }
     },
+
+    watch: {
+        reactiveUpdate(newValue) {
+          if (newValue) {
+            updateComponent[this.signalId].value = false;
+            this.drawLimits();
+          }
+        }
+    },
+
     mounted()
     {
 
@@ -283,6 +293,8 @@ components.bar = {
             this.decimals = this.valueDecimals
         }
         this.drawLimits();
+
+        this.initializeComponent();
         
     }, updated() {
 
@@ -307,13 +319,11 @@ components.bar = {
         }
         this.barStyles(this.value)
 
-        if (updateComponent[this.signalId]) {
-            updateComponent[this.signalId] = false;
-
-            this.drawLimits();
-        }
     },
     computed: {
+        reactiveUpdate() {
+            return updateComponent[this.signalId]?.value || false;
+          },
         scaleCode() {
 
             let codeResult = ''
@@ -353,7 +363,12 @@ components.bar = {
         }
 
     }, methods: {
-
+        initializeComponent() {
+            if (this.reactiveUpdate) {
+              updateComponent[this.signalId].value = false;
+              this.drawLimits();
+            }
+          },
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;
