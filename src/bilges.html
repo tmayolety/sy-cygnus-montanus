@@ -13,9 +13,9 @@
                     
                 </header>
 
-                <div class="ui col mini-1 gap-lg pad-lg grid type1 cols-mini-2 cols-xl-10">
+                <div class="ui col mini-1 gap-lg pad-lg grid type1 cols-mini-6">
 
-                    <div class="ui grid type1 cols-mini-1 gap-lg pad-lg align-start col mini-2 xl-6">
+                    <div class="ui grid type1 cols-mini-1 gap-lg pad-lg align-start col mini-4">
 
                         <div class="ui col mini-1 grid type1 gap-no pad-lg has-col-header-med radius shadow">
                             <header class="col-header size-lg">Forepeak</header>
@@ -123,73 +123,33 @@
                     </div>
 
 
-                    <div class="ui col mini-1 xl-2 grid type1 cols-mini-1 gap-med pad-lg align-baseline">
+                    <div class="ui col mini-2 grid type1 cols-mini-1 gap-med pad-lg align-baseline">
 
-                        <div class="ui col mini-1 grid type1 gap-no pad-lg has-col-header-med radius shadow">
-                            <header class="col-header size-lg">Forepeak</header>
-                            <div class="col-content">
-                                <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 155, title: 'Port Chain Locker', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 153, title: 'STBD Chain Locker', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 154, title: 'Forepeak', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                </ul>
-                            </div>
-                        </div>   
+                       
                                             
                         <div class="ui col mini-1 grid type1 gap-no pad-lg has-col-header-med radius shadow">
                             <header class="col-header size-lg">Lower Deck</header>
                             <div class="col-content ">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 418, title: 'PS Passarelle Hydraulics', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 419, title: 'EBL-BF21/23 Beach Club Port FWD', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 416, title: 'Workshop', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 417, title: 'Steering Hydraulic Room', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 413, title: 'AC # 01 Bilge', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 414, title: 'BF21/23 Beach club Stbd', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 415, title: 'BF21/24 Dive Store', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 284, title: 'BF21/28 Human Elevator', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 304, title: 'Garage AFT', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 305, title: 'Garage FWD', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 280, title: 'Crew Shell Door Entrance', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{ signalId: 282, title: 'BF21/17 Crew Corridor', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 3, title: 'Bilge Tank Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 4, title: 'Pump Room Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 5, title: 'Battery Port Space Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 6, title: 'Battery Stbd Space Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 7, title: 'Engine room Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 8, title: 'Guest Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 165, title: 'Hundested SPS Port Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 166, title: 'Hundested SPS Stbd Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 305, title: 'Crew Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 306, title: 'Forepeak Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 307, title: 'Chain Lockers Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 369, title: 'Lazarette Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{ signalId: 370, title: 'Owners Bilge Level High', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
                                 </ul>
                             </div>
                         </div>
 
                     </div>
 
-
-                    <div class="ui col mini-1 xl-2 col mini-1 grid type1 gap-no pad-lg has-col-header-med radius shadow">
-                        <header class="col-header size-lg">Tank Deck</header>
-                        <div class="col-content">
-                            <ul class="ui table size-mini resp">
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 326, title: 'EBL-BF21/1 Port Steering', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 325, title: 'BF21/1 Port steering', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 328, title: 'EBL-BF21/2 Stbd Steering', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 327, title: 'BF21/2 Stbd Steering', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 334, title: 'BF21/6 Under the Beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 333, title: 'BF21/5 Under the Beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 330, title: 'EBL-BF21/3 Under the Beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 329, title: 'BF21/3 Under the Beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 332, title: 'EBL-BF21/4 Under the beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 331, title: 'BF21/4 Under the Beach Club', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 335, title: 'BF21/7 Hi-Fog Room', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 336, title: 'EBL-BF21/7 Hi-Fog Room', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 441, title: 'BF21/8 E/R Lower AFT', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 440, title: 'BF21/9 E/R Lower FWD', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 442, title: 'EBL-BF21/9 E/R Lower', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 269, title: 'BF21/10 Pipe Tunnel AFT', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 275, title: 'EBL-BF21/10 Pipe Tunnel', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 271, title: 'BF21/11 Port Stabilizer', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 270, title: 'BF21/13 Stbd Stabilizer', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 273, title: 'BF21/12 Pipe Tunel PS', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 272, title: 'Bf21/14 Pipe Tunel SBS', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 274, title: 'BF21/15 Crew Chillout', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 281, title: 'BF21/16 Laundry', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{ signalId: 283, title: 'BF21/18 Pump Room', icon: 'circle', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

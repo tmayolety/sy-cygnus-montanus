@@ -33,7 +33,7 @@ components.singleLineHeader = {
                   <small class="font-regular color-text-type-white">{{ unitTwo }}</small>
                 </div>
               </div>
-    </div> 
+    </div>
                 <span style="display: none;">{{LL}}</span>
                 <span style="display: none;">{{L}}</span>
                 <span style="display: none;">{{HH}}</span>
@@ -72,7 +72,6 @@ components.singleLineHeader = {
 
         }
     },
-
     mounted(){
         const svgContent = iconRegistry[this.icon]
         $( "#"+this.svgId).html(svgContent)
@@ -199,7 +198,6 @@ components.singleLineHeader = {
             if(this.NC == 1){
                 if(value == 1) {
                     this.containerColorClass = this.colors.color1
-                   
                 }else{
                     this.containerColorClass = ''
                 }
@@ -211,8 +209,6 @@ components.singleLineHeader = {
                 }
             }
         },
-
-
     }
 };
 

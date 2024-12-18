@@ -25,7 +25,6 @@ components.signalListSystem = {
         </div>
     </div>
 
-
 <div class="col-content overflow" style="height: 628px;" ref="scrollContainer" @scroll="loadMore()">
 <div class="col-content">
 <div v-for="(signal, index) in filteredByDevice" :key="signal.Id">

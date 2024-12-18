@@ -1,5 +1,5 @@
 $.getScript( "js/tanks.js");
-$("#OilTanks_layout").load("src/ga/tanks/test2.svg");
+$("#OilTanks_layout").load("src/ga/tanks/tanks.svg");
 var screen = {
     renderData: function (msg) {
         var json = JSONH.parse(msg);

@@ -6675,7 +6675,6 @@ ion-icon {
 }
 
  /*FIX SKIN 2*/
-
 html[data-scheme="scheme1"] .timelineBackground{background: rgb(10, 30, 42)!important;}
 
 html[data-scheme="scheme2"] .timelineBackground{background: rgb(255, 255, 255)!important;}
@@ -6684,10 +6683,14 @@ html[data-scheme="scheme1"] .reportLogHeaders{ background: #12354c!important; co
 
 html[data-scheme="scheme2"] .reportLogHeaders{ background: #ffffff!important; color: rgb(0, 0, 0)!important; }
 
-
 html[data-scheme="scheme1"] .signalListRowEven{ background: rgba(18,53,76,255)!important; color: white;}
 html[data-scheme="scheme2"] .signalListRowEven{ background: rgb(255, 255, 255)!important; color: white;}
 html[data-scheme="scheme1"] .signalListRowOdd{ background: #0e2a3d!important; color: white;}
 html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; color: white;}
+
+.hiddeScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
 
 
