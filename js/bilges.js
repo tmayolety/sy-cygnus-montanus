@@ -3,6 +3,6 @@ var screen = {
     }
 };
 
-$("#layout_1").load("src/ga/decks/GO_forepeakLayout.svg");
-$("#layout_2").load("src/ga/decks/GO_lowerDeck.svg");
-$("#layout_3").load("src/ga/decks/GO_bilgeTankLayout.svg");
+$("#layout_1").load("src/ga/decks/mainDeck.svg");
+$("#layout_2").load("src/ga/decks/mainDeck.svg");
+$("#layout_3").load("src/ga/decks/mainDeck.svg");
