@@ -283,6 +283,26 @@
           }
         }
       },
+      
+      {
+        "name": "valveListApp",
+        "component": [
+          {
+            "label": "icon-text-value-digital-line-render",
+            "file": "iconTextValueDigitalLine"
+          },
+          {
+            "label": "icon-two-options-digital-line-render",
+            "file": "iconTwoOptionsDigitalLine"
+          }
+        ],
+        "mount": ".valveListApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+      },
       {
           "name": "insulationSystemApp",
           "component": [

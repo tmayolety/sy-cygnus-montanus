@@ -107,7 +107,7 @@ components.iconTextValueDigitalLine = {
             }else if(this.sizeWidthTitle == 'regular'){
                 this.sizeWidth = 'col-200-min';
             }else if(this.sizeWidthTitle == 'small'){
-                this.sizeWidth = 'col-150-min';
+                this.sizeWidth = 'col-220-min';
             }else if(this.sizeWidthTitle == 'med'){
                 this.sizeWidth = 'col-240-min';
             }else if(this.sizeWidthTitle == 'large'){
