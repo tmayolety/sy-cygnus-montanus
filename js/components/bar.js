@@ -649,7 +649,7 @@ components.bar = {
             API.Port +
             "/scaleTableIntervalsDelete/" +
             intervalId,
-          method: "POST",
+          method: "GET",
           headers: {
             "content-type": "application/json",
           },
@@ -661,6 +661,7 @@ components.bar = {
         });
         this.fetchData();
       },
+
       drawLimits() {
         if (typeof limits[this.signalId] !== "undefined") {
           if (typeof limits[this.signalId].L !== "undefined") {
