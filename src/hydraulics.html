@@ -7,9 +7,415 @@
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
-                
+
             </header>
 
+            <div class="ui grid cols-mini-5  bg-no pad-no gap-med">
+
+                <div class="ui col mini-4 grid cols-mini-5 bg-no pad-no gap-sm align-start radius shadow">
+
+                    <div class="ui col mini-1 ">
+                        <gauge-render v-bind="{
+                            title: 'Lazzarette Hyd. Press. Block',
+                            signalId: 123,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+
+                    <div class="ui col mini-1 ">
+                        <gauge-render v-bind="{
+                            title: 'SPS Port Hyd. Press. Block',
+                            signalId: 125,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'SPS Stbd Hyd. Press. Block',
+                            signalId: 124,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1 ">
+                        <gauge-render v-bind="{
+                            title: 'Port Winches and Sheet Hyd. Press. Block',
+                            signalId: 127,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Stbd Winches and Sheet Hyd. Press. Block',
+                            signalId: 126,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1 ">
+                        <gauge-render v-bind="{
+                            title: 'Pump Room Hyd. Press. Block',
+                            signalId: 128,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Port Blade sheet Hyd. Press. Block',
+                            signalId: 130,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Stbd Blade sheet Hyd. Press. Block',
+                            signalId: 129,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Forepeak Hyd. Press. Block',
+                            signalId: 131,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Backstay Hyd. Press.',
+                            signalId: 132,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Vang Hyd. Press.',
+                            signalId: 133,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Vang Position',
+                            signalId: 136,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Cunningham Hyd. Presure ',
+                            signalId: 134,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Staysail Hyd. Press.',
+                            signalId: 135,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+                    <div class="ui col mini-1">
+                        <gauge-render v-bind="{
+                            title: 'Codesail Hyd. Press.',
+                            signalId: 265,
+                            unit: 'bar',
+                            icon: 'pressure',
+                            iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                            text1: 'text-size-8 color-text-type-secondary-dark',
+                            text2: 'text-size-14 font-bold',
+                            height: 'h-mini-230',
+                            width: 0,
+                            scaleVisible: true,
+                            type: 1,
+                            scaleInterval: 40,
+                            valueMode: 'raw',
+                            textSize: 20,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-25',
+                            valueDecimals: 0,
+                            limitsEditable: 1,
+                            timeDelay: 3000,
+                        }"></gauge-render>
+                    </div>
+                </div>
+
+
+                <div class="ui col mini-1 grid cols-mini-1 bg-no pad-no gap-sm align-start radius shadow">
+                    <div class="ui col mini-1 has-col-header-small">
+                        <header class="col-header size-small" style="height: 26px!important;">Alarms</header>
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 158, title: 'Hyd. General Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 153, title: 'Hyd. LP filters Contaminated', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 154, title: 'Hyd. HP filters Contaminated', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 155, title: 'Hyd. Oil low Level alarm', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 156, title: 'Hyd. High Temp alarm', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 157, title: 'Hyd. oil low level shutdow', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 187, title: 'Header Tank Level Low', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 188, title: 'Main Tank Level Low', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 189, title: 'Fluid Temperature High', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 190, title: 'Press. Filters Contamined', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render
+                                    v-bind="{  signalId: 191, title: 'Return Filters Contamined', icon: 'tripping' , size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger' }"></icon-text-value-digital-line-render>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
 </article>
