@@ -1,26 +1,26 @@
 components.gauge = {
-    inheritAttrs: false,
-    props: [
-        'title',
-        'signalId',
-        'unit',
-        'icon',
-        'iconClass',
-        'height',
-        'width',
-        'textSize',
-        'scaleVisible',
-        'scaleInterval',
-        'type',
-        'valueMode',
-        'unitTextSize',
-        'marginTopValue',
-        'valueDecimals',
-        'limitsEditable',
-        'timeDelay',
-    ],
+  inheritAttrs: false,
+  props: [
+    "title",
+    "signalId",
+    "unit",
+    "icon",
+    "iconClass",
+    "height",
+    "width",
+    "textSize",
+    "scaleVisible",
+    "scaleInterval",
+    "type",
+    "valueMode",
+    "unitTextSize",
+    "marginTopValue",
+    "valueDecimals",
+    "limitsEditable",
+    "timeDelay",
+  ],
 
-    template: /*html*/`
+  template: /*html*/ `
 
         <div class="ui col-button-tools" style="z-index:11; margin-top:2.5em;" v-if="limitsEditable > 0">
             <button class="ui btn mini icon icon-only link" v-if="limitsEditable > 0 "  v-on:click="limitsEdit()">
@@ -33,11 +33,10 @@ components.gauge = {
             <div class="flip-col--container">                       
             <div class="ui col align-middle-center"
             style="font-size: 12px; display: flex; justify-content: center; text-align: left; height:270px;">  
-                <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%;">
-                    Id: {{signalId}} <br/>
-                    {{deviceName}} <br/>                                                
-                    RAW: {{rawToShow}} 
-                </button>                                                                                                                                      
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            Id: {{signalId}}<br>
+            {{deviceName}}<br>
+            RAW: {{rawToShow}}</div>                                                                                                                                    
             </div> 
             
             <div class="ui col has-col-header"  v-on:click="flipComponent()" ref="gaugeElement">
@@ -61,429 +60,814 @@ components.gauge = {
         </div>
         
         `,
-    data() {
-        return {
-            value: null,
-            valueDisplay: null,
-            unitClass: '',
-            valueClass: 'status-type-success',
-            LL: null,
-            L: null,
-            H: null,
-            HH: null,
-            Min: null,
-            Max: null,
-            hasLimits: true,
-            rndID:  (Math.floor(Math.random() * (1000 - 100))) + Date.now() + '_' + this.signalId,
-            svgId:  (Math.floor(Math.random() * (1000 - 100)))  + Date.now() + '_icon_' + this.signalId,
-            heightClass: '' + this.height,
-            widthClass: '' + this.width,
-            iconSizeClass: '' + this.iconSize,
-            textSizeClass: 'text-size-' + this.textSize,
-            marginTopIcon: '',
-            marginTopValueClass: '' + this.marginTopValue + '' + this.marginTopValue,
-            unitTextSizeClass: 'text-size-' + this.unitTextSize,
-            flipClass: 'event-click',
-            raw: valueRaw[this.signalId],
-            rawToShow: null,
-            signalData: signalsData[this.signalId],
-            deviceName: null,
-        }
+  data() {
+    return {
+      value: null,
+      valueDisplay: null,
+      unitClass: "",
+      valueClass: "status-type-success",
+      LL: null,
+      L: null,
+      H: null,
+      HH: null,
+      Min: null,
+      Max: null,
+      hasLimits: true,
+      rndID:
+        Math.floor(Math.random() * (1000 - 100)) +
+        Date.now() +
+        "_" +
+        this.signalId,
+      svgId:
+        Math.floor(Math.random() * (1000 - 100)) +
+        Date.now() +
+        "_icon_" +
+        this.signalId,
+      heightClass: "" + this.height,
+      widthClass: "" + this.width,
+      iconSizeClass: "" + this.iconSize,
+      textSizeClass: "text-size-" + this.textSize,
+      marginTopIcon: "",
+      marginTopValueClass: "" + this.marginTopValue + "" + this.marginTopValue,
+      unitTextSizeClass: "text-size-" + this.unitTextSize,
+      flipClass: "event-click",
+      raw: valueRaw[this.signalId],
+      rawToShow: null,
+      signalData: signalsData[this.signalId],
+      deviceName: null,
+    };
+  },
+  watch: {
+    reactiveUpdate(newValue) {
+      if (newValue) {
+        this.reDrawRanges();
+        setTimeout(() => {
+          updateComponent[this.signalId].value = false;
+        }, 1000);
+      }
     },
-    watch: {
-        reactiveUpdate(newValue) {
-          if (newValue) {
-            this.reDrawRanges();
-            setTimeout(() => {
-              updateComponent[this.signalId].value = false;
-            }, 1000);
-          }
-        },
-      },
-    computed: {
-        reactiveUpdate() {
-          return updateComponent[this.signalId]?.value || false;
-        },
+  },
+  computed: {
+    reactiveUpdate() {
+      return updateComponent[this.signalId]?.value || false;
     },
-    updated()
-    {
-        if (!isNaN(this.value)) {
-            this.valueDisplay = parseFloat(this.value).toFixed(this.decimals)
-            this.rawToShow = this.raw
-            this.gaugeData.option('value', this.value);
-        }
-
-        if (this.hasLimits) {
-
-            let result = {};
-            result.HH = false;
-            result.H = false;
-            result.L = false;
-            result.LL = false;
-
-            this.HH = limits[this.signalId].HH.value;
-            this.H = limits[this.signalId].H.value;
-            this.L = limits[this.signalId].L.value;
-            this.LL = limits[this.signalId].LL.value;
-
-            if ( parseFloat(this.value) >=  parseFloat(this.HH)) { result.HH = true; }
-            if ( parseFloat(this.value) >=  parseFloat(this.H) &&  ((parseFloat(this.value) <  parseFloat(this.HH) || this.HH == '-'))) { result.H = true; }
-            if ( parseFloat(this.value) <=  parseFloat(this.L) &&  ((parseFloat(this.value) >  parseFloat(this.LL)) || this.LL == '-')) { result.L = true; }
-            if ( parseFloat(this.value) <=  parseFloat(this.LL) ) { result.LL = true; }
-
-            if (result.HH || result.LL ) { this.valueClass = 'status-type-danger'; } else
-            if (result.H || result.L ) { this.valueClass = 'status-type-warning2'; } else
-            if (!result.H || !result.L || !result.HH || !result.LL) { this.valueClass = 'status-type-success'; }
-
-            if (updateComponent[this.signalId] === true) {
-
-                updateComponent[this.signalId] = false;
-                this.reDrawRanges();
-
-            }
-        }
-
-    },
-    mounted()
-    {
-        let rawData;
-        if (Vue.isProxy(this.signalData)){
-            rawData = Vue.toRaw(this.signalData)
-        }
-        if(typeof rawData !== "undefined"){
-            this.deviceName = deviceData[rawData.Device].Name
-        }
-
-        switch (this.valueMode) {
-            case "filtered":
-                this.value = valueFiltered[this.signalId];
-                break;
-            case "escalated":
-                this.value = valueEscalated[this.signalId];
-                break;
-            default:
-            case "raw":
-                this.value = valueRaw[this.signalId];
-                break;
-        }
-
-        if (this.value == null){
-            this.valueDisplay = 'N/A'
-            this.valueClass = 'status-type-light'
-        }
-        if (typeof this.valueDecimals === 'undefined') {
-            this.decimals = 0
-        } else {
-            this.decimals = this.valueDecimals
-        }
-        if ( typeof this.type !== 'undefined' ) {
-            var preset = this.type
-        } else {
-            var preset = 0
-        }
-        if ( typeof this.scaleInterval === 'undefined' ) {
-            this.scaleIntervalSet = 5
-        } else {
-            this.scaleIntervalSet = this.scaleInterval
-        }
-
-        if ( typeof this.unitTextSize == 'undefined' ){
-            this.unitTextSizeClass = 'text-size-5'
-        }
-
-        if ( typeof this.marginTopValue == 'undefined' ){
-            this.marginTopValueClass = 'mg-top-mini-50'
-        }
-
-        switch (preset) {
-            default:
-                startAngle = -180
-                endAngle = 0
-                barSize = 30
-                if (this.height < 131) {
-                    this.marginTopValueClass = ''
-                    this.marginTopIcon = ''
-                    barSize = 12
-                }
-                break;
-            case 1:
-                startAngle = -140
-                endAngle = -40
-                barSize = 20
-                if (this.width < 300) {
-                    barSize = 9
-                }
-                break;
-        }
-
-        if ( typeof limits === 'undefined' || typeof limits[this.signalId] === 'undefined' ) {
-            this.Min = 0
-            this.Max = 1000
-        } else {
-            this.Min = limits[this.signalId].Min
-            this.Max = limits[this.signalId].Max
-        }
-
-        if (typeof limits[this.signalId] !== 'undefined') {
-            if (typeof limits[this.signalId].L !== 'undefined') {  if (limits[this.signalId].L.value != '-'){  this.L = limits[this.signalId].L } else {  this.L = null;  } }
-            if (typeof limits[this.signalId].LL !== 'undefined') { if (limits[this.signalId].LL.value != '-'){  this.LL = limits[this.signalId].LL } else {  this.LL = null;  }  }
-            if (typeof limits[this.signalId].H !== 'undefined') { if (limits[this.signalId].H.value != '-'){  this.H = limits[this.signalId].H } else {  this.H = null;  }  }
-            if (typeof limits[this.signalId].HH !== 'undefined') { if (limits[this.signalId].HH.value != '-'){  this.HH = limits[this.signalId].HH } else {  this.HH = null;  }  }
-        } else {
-            this.hasLimits = false
-        }
-
-        const svgContent = iconRegistry[this.icon]
-        $( "#"+this.svgId).html(svgContent)
-
-        this.gaugeData =  $('#'+this.rndID).dxCircularGauge({
-
-            geometry: {
-                startAngle: startAngle,
-                endAngle: endAngle,
-            },
-            scale: {
-                startValue: this.Min,
-                endValue: this.Max,
-                tickInterval: this.scaleIntervalSet,
-                tick: {
-                    color:"RGBA(var(--clr-subvalue-ui) / 40%",
-                    length:8,
-                    visible: this.scaleVisible,
-                    width:1
-                },
-                minorTick: {
-                    color:"RGBA(var(--clr-subvalue-ui) / 25%",
-                    length:4,
-                    visible: this.scaleVisible,
-                    width:1
-                },
-                label: {
-                    indentFromTick: 2,
-                    visible:  this.scaleVisible,
-                    customizeText(arg) {
-                        return `${arg.valueText}`;
-                    },
-                },
-                orientation: "outside",
-            },
-            // MARGIN
-            margin: {
-                bottom: 0,
-                left: 0,
-                right: 0,
-                top: 0
-            },
-            // RANGE
-            rangeContainer: {
-                backgroundColor:"RGBA(var(--clr-subvalue-ui) / 15%",
-                offset:7,
-                width: 1,
-                orientation:"outside"
-            },
-            // GAUGE
-            value: 0,
-            valueIndicator: {
-                type: 'rangebar',
-                backgroundColor:"RGBA(var(--clr-subvalue-ui) / 15%)",
-                baseValue: 0,
-                offset: 10,
-                size: barSize,
-            },
-            redrawOnResize:false
-        }).dxCircularGauge('instance');
-        this.gaugeData.option('value', this.value);
-        this.reDrawRanges()
-
-        this.valueDisplay = this.value;
-
-
-        this.initializeComponent();
-
-    },
-    methods: {
-        initializeComponent() {
-            if (this.reactiveUpdate) {
-                this.reDrawRanges();
-
-                setTimeout(() => {
-                    updateComponent[this.signalId].value = false;
-                }, 1000);
-             
-             
-            }
-          },
-        callTimeline(signal, title, delay){
-            window.signalGlobalTimelineVariable = signal;
-            window.globalTimelineTitle = title;
-            window.globalTimelineDelay = delay;
-
-            eventBus.emit('timeline-variable-updated', signal);
-            eventBus.emit('timeline-variable-updated-title', title);
-            eventBus.emit('timeline-variable-update-delay', delay);
-        },
-        limitsEdit() {
-
-            const signalID = this.signalId;
-            signalList.editLimits(signalID);
-
-        },
-        reDrawRanges () {
-
-            if (typeof limits[this.signalId] !== 'undefined') {
-                if (typeof limits[this.signalId].L !== 'undefined') {  if (limits[this.signalId].L.value != '-'){  this.L = limits[this.signalId].L } else {  this.L = null;  } }
-                if (typeof limits[this.signalId].LL !== 'undefined') { if (limits[this.signalId].LL.value != '-'){  this.LL = limits[this.signalId].LL } else {  this.LL = null;  }  }
-                if (typeof limits[this.signalId].H !== 'undefined') { if (limits[this.signalId].H.value != '-'){  this.H = limits[this.signalId].H } else {  this.H = null;  }  }
-                if (typeof limits[this.signalId].HH !== 'undefined') { if (limits[this.signalId].HH.value != '-'){  this.HH = limits[this.signalId].HH } else {  this.HH = null;  }  }
-            } else {
-                this.hasLimits = false
-            }
-
-            if (this.LL == null && this.L == null && this.HH == null && this.H == null) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.Max, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'}
-                    ] });
-            }
-
-            if ( (this.LL != null && this.L != null) && this.HH != null && this.H != null ) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.L, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'  },
-                        { startValue: this.H, endValue: this.HH, color: 'RGBA(var(--clr-type-warning2) / 50%)'  },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)'  },
-                    ] });
-            }
-
-            if ( (this.HH == null && this.H == null) && (this.LL != null && this.L != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        {  startValue: this.L, endValue: this.Max, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' }
-                    ] });
-            }
-
-            if ( (this.HH != null && this.H != null) && (this.LL == null && this.L == null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.H, endValue: this.HH, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        {  startValue: this.Min, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' }
-                    ] });
-            }
-
-            if ( (this.HH != null && this.H == null) && (this.LL != null && this.L != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        {  startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)'  },
-                        { startValue: this.L, endValue: this.HH, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)'  },
-                    ] });
-            }
-
-            if ( (this.HH != null && this.H == null) && (this.LL != null && this.L == null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        {  startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.HH, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)'  },
-                    ] });
-            }
-
-            if ( (this.HH != null && this.H == null) && (this.LL == null && this.L != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        {  startValue: this.Min, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.L, endValue: this.HH, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)'  },
-                    ] });
-            }
-
-            if ( (this.HH == null && this.H != null) && (this.LL != null && this.L != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        {  startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.L, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.H, endValue: this.Max, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                    ] });
-            }
-
-
-            if ( (this.HH == null && this.H != null) && (this.LL != null && this.L == null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.H, endValue: this.Max, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                    ] });
-            }
-
-            if ( (this.HH == null && this.H != null) && (this.LL == null && this.L != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.L, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.L, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   },
-                        { startValue: this.H, endValue: this.Max, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                    ] });
-            }
-
-            if ( (this.L != null) && ( this.LL == null && this.H == null && this.HH == null )) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.L, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.L, endValue: this.Max, color: 'RGBA(var(--clr-type-warning2) / 50%)'  }
-                    ] });
-            }
-
-            if ( (this.LL != null) && ( this.HH == null && this.L == null && this.H == null )) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.LL, color: 'RGBA(var(--clr-type-danger) / 50%)'  },
-                        { startValue: this.LL, endValue: this.Max, color: 'RGBA(var(--clr-subvalue-ui) / 15%)'   }
-                    ] });
-            }
-
-            if ( (this.H != null) && ( this.LL == null && this.L == null && this.HH == null )) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.H, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)'   }
-                    ] });
-            }
-
-            if ( (this.HH != null) && ( this.LL == null && this.L == null && this.H == null )) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.HH, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)' }
-                    ] });
-            }
-
-            if ( (this.LL == null && this.L == null) && (this.HH != null && this.H != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.H, endValue: this.HH, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)' }
-                    ] });
-            }
-
-            if ( (this.LL == null && this.L != null) && (this.HH != null && this.H != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.L , color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.L, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.H, endValue: this.HH, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                    ] });
-            }
-
-            if ( (this.LL != null && this.L == null) && (this.HH != null && this.H != null)) {
-                this.gaugeData.option('rangeContainer', { ranges: [
-                        { startValue: this.Min, endValue: this.LL , color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                        { startValue: this.LL, endValue: this.H, color: 'RGBA(var(--clr-subvalue-ui) / 15%)' },
-                        { startValue: this.H, endValue: this.HH, color: 'RGBA(var(--clr-type-warning2) / 50%)' },
-                        { startValue: this.HH, endValue: this.Max, color: 'RGBA(var(--clr-type-danger) / 50%)' },
-                    ] });
-            }
-
-        },
-        flipComponent(){
-            this.flipClass = '';
-            setTimeout(this.unFlipComponent, 3000)
-        },
-        unFlipComponent() {
-            this.flipClass = 'event-click';
-        }
+  },
+  updated() {
+    if (!isNaN(this.value)) {
+      this.valueDisplay = parseFloat(this.value).toFixed(this.decimals);
+      this.rawToShow = this.raw;
+      this.gaugeData.option("value", this.value);
     }
-};
 
+    if (this.hasLimits) {
+      let result = {};
+      result.HH = false;
+      result.H = false;
+      result.L = false;
+      result.LL = false;
+
+      this.HH = limits[this.signalId].HH.value;
+      this.H = limits[this.signalId].H.value;
+      this.L = limits[this.signalId].L.value;
+      this.LL = limits[this.signalId].LL.value;
+
+      if (parseFloat(this.value) >= parseFloat(this.HH)) {
+        result.HH = true;
+      }
+      if (
+        parseFloat(this.value) >= parseFloat(this.H) &&
+        (parseFloat(this.value) < parseFloat(this.HH) || this.HH == "-")
+      ) {
+        result.H = true;
+      }
+      if (
+        parseFloat(this.value) <= parseFloat(this.L) &&
+        (parseFloat(this.value) > parseFloat(this.LL) || this.LL == "-")
+      ) {
+        result.L = true;
+      }
+      if (parseFloat(this.value) <= parseFloat(this.LL)) {
+        result.LL = true;
+      }
+
+      if (result.HH || result.LL) {
+        this.valueClass = "status-type-danger";
+      } else if (result.H || result.L) {
+        this.valueClass = "status-type-warning2";
+      } else if (!result.H || !result.L || !result.HH || !result.LL) {
+        this.valueClass = "status-type-success";
+      }
+
+      if (updateComponent[this.signalId] === true) {
+        updateComponent[this.signalId] = false;
+        this.reDrawRanges();
+      }
+    }
+  },
+  mounted() {
+    let rawData;
+    if (Vue.isProxy(this.signalData)) {
+      rawData = Vue.toRaw(this.signalData);
+    }
+    if (typeof rawData !== "undefined") {
+      this.deviceName = deviceData[rawData.Device].Name;
+    }
+
+    switch (this.valueMode) {
+      case "filtered":
+        this.value = valueFiltered[this.signalId];
+        break;
+      case "escalated":
+        this.value = valueEscalated[this.signalId];
+        break;
+      default:
+      case "raw":
+        this.value = valueRaw[this.signalId];
+        break;
+    }
+
+    if (this.value == null) {
+      this.valueDisplay = "N/A";
+      this.valueClass = "status-type-light";
+    }
+    if (typeof this.valueDecimals === "undefined") {
+      this.decimals = 0;
+    } else {
+      this.decimals = this.valueDecimals;
+    }
+    if (typeof this.type !== "undefined") {
+      var preset = this.type;
+    } else {
+      var preset = 0;
+    }
+    if (typeof this.scaleInterval === "undefined") {
+      this.scaleIntervalSet = 5;
+    } else {
+      this.scaleIntervalSet = this.scaleInterval;
+    }
+
+    if (typeof this.unitTextSize == "undefined") {
+      this.unitTextSizeClass = "text-size-5";
+    }
+
+    if (typeof this.marginTopValue == "undefined") {
+      this.marginTopValueClass = "mg-top-mini-50";
+    }
+
+    switch (preset) {
+      default:
+        startAngle = -180;
+        endAngle = 0;
+        barSize = 30;
+        if (this.height < 131) {
+          this.marginTopValueClass = "";
+          this.marginTopIcon = "";
+          barSize = 12;
+        }
+        break;
+      case 1:
+        startAngle = -140;
+        endAngle = -40;
+        barSize = 20;
+        if (this.width < 300) {
+          barSize = 9;
+        }
+        break;
+    }
+
+    if (
+      typeof limits === "undefined" ||
+      typeof limits[this.signalId] === "undefined"
+    ) {
+      this.Min = 0;
+      this.Max = 1000;
+    } else {
+      this.Min = limits[this.signalId].Min;
+      this.Max = limits[this.signalId].Max;
+    }
+
+    if (typeof limits[this.signalId] !== "undefined") {
+      if (typeof limits[this.signalId].L !== "undefined") {
+        if (limits[this.signalId].L.value != "-") {
+          this.L = limits[this.signalId].L;
+        } else {
+          this.L = null;
+        }
+      }
+      if (typeof limits[this.signalId].LL !== "undefined") {
+        if (limits[this.signalId].LL.value != "-") {
+          this.LL = limits[this.signalId].LL;
+        } else {
+          this.LL = null;
+        }
+      }
+      if (typeof limits[this.signalId].H !== "undefined") {
+        if (limits[this.signalId].H.value != "-") {
+          this.H = limits[this.signalId].H;
+        } else {
+          this.H = null;
+        }
+      }
+      if (typeof limits[this.signalId].HH !== "undefined") {
+        if (limits[this.signalId].HH.value != "-") {
+          this.HH = limits[this.signalId].HH;
+        } else {
+          this.HH = null;
+        }
+      }
+    } else {
+      this.hasLimits = false;
+    }
+
+    const svgContent = iconRegistry[this.icon];
+    $("#" + this.svgId).html(svgContent);
+
+    this.gaugeData = $("#" + this.rndID)
+      .dxCircularGauge({
+        geometry: {
+          startAngle: startAngle,
+          endAngle: endAngle,
+        },
+        scale: {
+          startValue: this.Min,
+          endValue: this.Max,
+          tickInterval: this.scaleIntervalSet,
+          tick: {
+            color: "RGBA(var(--clr-subvalue-ui) / 40%",
+            length: 8,
+            visible: this.scaleVisible,
+            width: 1,
+          },
+          minorTick: {
+            color: "RGBA(var(--clr-subvalue-ui) / 25%",
+            length: 4,
+            visible: this.scaleVisible,
+            width: 1,
+          },
+          label: {
+            indentFromTick: 2,
+            visible: this.scaleVisible,
+            customizeText(arg) {
+              return `${arg.valueText}`;
+            },
+          },
+          orientation: "outside",
+        },
+        // MARGIN
+        margin: {
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+        },
+        // RANGE
+        rangeContainer: {
+          backgroundColor: "RGBA(var(--clr-subvalue-ui) / 15%",
+          offset: 7,
+          width: 1,
+          orientation: "outside",
+        },
+        // GAUGE
+        value: 0,
+        valueIndicator: {
+          type: "rangebar",
+          backgroundColor: "RGBA(var(--clr-subvalue-ui) / 15%)",
+          baseValue: 0,
+          offset: 10,
+          size: barSize,
+        },
+        redrawOnResize: false,
+      })
+      .dxCircularGauge("instance");
+    this.gaugeData.option("value", this.value);
+    this.reDrawRanges();
+
+    this.valueDisplay = this.value;
+
+    this.initializeComponent();
+  },
+  methods: {
+    initializeComponent() {
+      if (this.reactiveUpdate) {
+        this.reDrawRanges();
+
+        setTimeout(() => {
+          updateComponent[this.signalId].value = false;
+        }, 1000);
+      }
+    },
+    callTimeline(signal, title, delay) {
+      window.signalGlobalTimelineVariable = signal;
+      window.globalTimelineTitle = title;
+      window.globalTimelineDelay = delay;
+
+      eventBus.emit("timeline-variable-updated", signal);
+      eventBus.emit("timeline-variable-updated-title", title);
+      eventBus.emit("timeline-variable-update-delay", delay);
+    },
+    limitsEdit() {
+      const signalID = this.signalId;
+      signalList.editLimits(signalID);
+    },
+    reDrawRanges() {
+      if (typeof limits[this.signalId] !== "undefined") {
+        if (typeof limits[this.signalId].L !== "undefined") {
+          if (limits[this.signalId].L.value != "-") {
+            this.L = limits[this.signalId].L;
+          } else {
+            this.L = null;
+          }
+        }
+        if (typeof limits[this.signalId].LL !== "undefined") {
+          if (limits[this.signalId].LL.value != "-") {
+            this.LL = limits[this.signalId].LL;
+          } else {
+            this.LL = null;
+          }
+        }
+        if (typeof limits[this.signalId].H !== "undefined") {
+          if (limits[this.signalId].H.value != "-") {
+            this.H = limits[this.signalId].H;
+          } else {
+            this.H = null;
+          }
+        }
+        if (typeof limits[this.signalId].HH !== "undefined") {
+          if (limits[this.signalId].HH.value != "-") {
+            this.HH = limits[this.signalId].HH;
+          } else {
+            this.HH = null;
+          }
+        }
+      } else {
+        this.hasLimits = false;
+      }
+
+      if (
+        this.LL == null &&
+        this.L == null &&
+        this.HH == null &&
+        this.H == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.LL != null &&
+        this.L != null &&
+        this.HH != null &&
+        this.H != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH == null &&
+        this.H == null &&
+        this.LL != null &&
+        this.L != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH != null &&
+        this.H != null &&
+        this.LL == null &&
+        this.L == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.Min,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH != null &&
+        this.H == null &&
+        this.LL != null &&
+        this.L != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH != null &&
+        this.H == null &&
+        this.LL != null &&
+        this.L == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH != null &&
+        this.H == null &&
+        this.LL == null &&
+        this.L != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH == null &&
+        this.H != null &&
+        this.LL != null &&
+        this.L != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH == null &&
+        this.H != null &&
+        this.LL != null &&
+        this.L == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH == null &&
+        this.H != null &&
+        this.LL == null &&
+        this.L != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.L != null &&
+        this.LL == null &&
+        this.H == null &&
+        this.HH == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.L,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.LL != null &&
+        this.HH == null &&
+        this.L == null &&
+        this.H == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.H != null &&
+        this.LL == null &&
+        this.L == null &&
+        this.HH == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.HH != null &&
+        this.LL == null &&
+        this.L == null &&
+        this.H == null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.LL == null &&
+        this.L == null &&
+        this.HH != null &&
+        this.H != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.LL == null &&
+        this.L != null &&
+        this.HH != null &&
+        this.H != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.L,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.L,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+
+      if (
+        this.LL != null &&
+        this.L == null &&
+        this.HH != null &&
+        this.H != null
+      ) {
+        this.gaugeData.option("rangeContainer", {
+          ranges: [
+            {
+              startValue: this.Min,
+              endValue: this.LL,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+            {
+              startValue: this.LL,
+              endValue: this.H,
+              color: "RGBA(var(--clr-subvalue-ui) / 15%)",
+            },
+            {
+              startValue: this.H,
+              endValue: this.HH,
+              color: "RGBA(var(--clr-type-warning2) / 50%)",
+            },
+            {
+              startValue: this.HH,
+              endValue: this.Max,
+              color: "RGBA(var(--clr-type-danger) / 50%)",
+            },
+          ],
+        });
+      }
+    },
+    flipComponent() {
+      this.flipClass = "";
+      setTimeout(this.unFlipComponent, 3000);
+    },
+    unFlipComponent() {
+      this.flipClass = "event-click";
+    },
+  },
+};

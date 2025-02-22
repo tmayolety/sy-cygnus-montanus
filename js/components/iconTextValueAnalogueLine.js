@@ -21,9 +21,9 @@ components.iconTextValueAnalogueLine = {
                         <div class="flip-col--container">
 
                            <div class="ui col" style="font-size:11px; text-align:left;">  
-                            <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%; height:22px;">
+                           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                                 Id: {{signalId}} {{deviceName}} RAW: {{rawToShow}}     
-                            </button>
+                            </div>
                            </div>                     
 
                            <div class="ui col" style="min-width: 25em; text-align: left;" v-on:click="flipComponent()">
