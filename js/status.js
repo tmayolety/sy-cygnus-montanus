@@ -70,7 +70,7 @@ const status = {
             });
 
             sock.on('connect', function(){
-
+                console.log('Socket connected successfully.');
                 clearTimeout(socketConnected);
                 $('#alarmPLC').removeClass('open');
                 ACTIVE_SERVER = SERVER_1_IP;
@@ -79,11 +79,15 @@ const status = {
                 resolve(true);
 
             });
+            sock.on('error', function(err) {
+                console.error('Socket encountered an error:', err);
+            });
 
         });
         connectServer_1.then(function() {
             console.log('Connected to Server 1');
             status.initSocketConnections();
+
 
         }).catch(function() {
 
@@ -107,7 +111,6 @@ const status = {
                 });
 
                 sock.on('connect', function(){
-
                     clearTimeout(socketConnected);
                     $('#alarmPLC').removeClass('open');
                     ACTIVE_SERVER = SERVER_2_IP;
@@ -120,6 +123,8 @@ const status = {
             connectServer_2.then(function() {
                 console.log('Connected to Server 2');
                 status.initSocketConnections();
+
+
             }).catch(function() {
                 sock.disconnect();
                 console.log('BOTH SERVER FAILED TO CONNECT. Retrying again in 20 seconds...');
@@ -131,9 +136,16 @@ const status = {
 
     },
     initSocketConnections: function () {
-        status.subscribeChannels();
-        sock.on('disconnect', function(){
 
+        console.log('Initializing socket connections...');
+
+        setTimeout( function() {
+            console.log('Subscribing to channels...');
+            status.subscribeChannels();
+        }, 12000);
+
+        sock.on('disconnect', function(){
+            console.log('Socket disconnected. Reconnecting in 2 seconds...');
             socketConnected = setTimeout(function() {
 
                 $('#popUpAlarmTitle').html('SERVER CONNECTION LOST');
@@ -150,9 +162,14 @@ const status = {
         });
 
         sock.on('connect', function(){
+            console.log('Socket reconnected successfully.');
             clearTimeout(socketConnected);
             $('#alarmPLC').removeClass('open');
-            //status.subscribeChannels();
+
+        });
+
+        sock.on('reconnect_failed', function() {
+            console.error('Socket failed to reconnect.');
         });
 
         //SIGNAL LIMITS CHANNEL SUBSCRIBE
@@ -212,37 +229,67 @@ const status = {
         });
     },
     subscribeChannels: function () {
-
-
-        //SIGNAL DEVICES TO DISPLAY CHANNELS SUBSCRIBE
-        $.each( deviceData, function( key, value ) {
-            if (value.IP != '0') {
-                console.log('Channel connected: ' + key);
-                sock.on( key, function(msg) {
-
-                    screen.renderData(msg);
-                    bringValues(msg);
-
-                });
-            }
-        });
-
-        sock.on( "deviceStats", function(msg) {
-            var item = JSON.parse(msg);
-
-            if ($("#deviceLast_" + item.deviceId).length) {
-                if (item.deviceId == 1) {
-                    if ($('#popUpAlarmTitle').text() == 'ALARM PLC CONNECTION LOST') {
-                        $('#alarmPLC').removeClass('open');
-                    }
+        console.log('Entering subscribeChannels function...');
+    
+        try {
+            // SIGNIFICAR DISPOSITIVOS PARA SUSCRIBIRSE A LOS CANALES
+            console.log('Iterating through deviceData...');
+            $.each(deviceData, function(key, value) {
+                console.log(`Checking device: ${key}, IP: ${value.IP}`);
+    
+                if (value.IP != '0') {
+                    console.log('Channel connected: ' + key);
+                    sock.on(key, function(msg) {
+                       
+                        try {
+                            screen.renderData(msg);
+                            bringValues(msg);
+                        } catch (error) {
+                            console.error(`Error rendering data for channel ${key}:`, error);
+                        }
+                    });
+                } else {
+                    console.warn(`Device ${key} has IP set to 0, skipping channel connection.`);
                 }
-                document.getElementById('deviceLast_' + item.deviceId).innerHTML = item.last.toFixed(1);
-                document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
-            }
-        });
-
-        alarms.activeAlarmSubscribe();
-
+            });
+    
+            // EVENTO `deviceStats`
+            console.log('Setting up "deviceStats" event listener...');
+            sock.on("deviceStats", function(msg) {
+               
+    
+                try {
+                    var item = JSON.parse(msg);
+    
+                    if ($("#deviceLast_" + item.deviceId).length) {
+                        console.log(`Updating device ${item.deviceId} data...`);
+    
+                        if (item.deviceId == 1) {
+                            if ($('#popUpAlarmTitle').text() == 'ALARM PLC CONNECTION LOST') {
+                                $('#alarmPLC').removeClass('open');
+                                console.log('Removed PLC alarm popup.');
+                            }
+                        }
+    
+                        document.getElementById('deviceLast_' + item.deviceId).innerHTML = item.last.toFixed(1);
+                        document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
+                    } else {
+                        console.warn(`Device element "deviceLast_${item.deviceId}" not found.`);
+                    }
+                } catch (error) {
+                    console.error('Error processing "deviceStats" message:', error);
+                }
+            });
+    
+            // ACTIVACIÓN DE LAS ALARMAS
+            console.log('Subscribing to active alarms...');
+            alarms.activeAlarmSubscribe();
+    
+        } catch (error) {
+            console.error('Error in subscribeChannels function:', error);
+        }
+    
+        console.log('Exiting subscribeChannels function.');
     }
 }
 
