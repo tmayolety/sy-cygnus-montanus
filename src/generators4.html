@@ -96,11 +96,67 @@
              </div>
            </div>
 
+           <div class="ui col mini-1 ">
+            <gauge-render v-bind="{
+                title: 'Gen Battery Voltage',
+                signalId: 123,
+                unit: 'V',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-230',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+           <div class="ui col mini-1 ">
+            <gauge-render v-bind="{
+                title: 'Lazzarette Hyd. Press. Block',
+                signalId: 123,
+                unit: 'bar',
+                icon: 'pressure',
+                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-230',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-2">
+                <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: 'Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
 
         <!-- GENERATOR 2 -->
-        <div class="ui col mini-1 gap-sm pad-no has-header grid type1 cols-mini-2">
+        <div class="ui col mini-1 gap-no pad-no has-header grid type1 cols-mini-2">
 
             <header class="ui col">
                 <font>STBD GENERATOR</font>
