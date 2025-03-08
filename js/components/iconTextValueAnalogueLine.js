@@ -36,7 +36,7 @@ components.iconTextValueAnalogueLine = {
                     </div>
                 
                 </div>
-                <div class="col-150 align-middle-left" :class= '[valueTextColor, valueCellColor]'><span class="font-bold ">{{valueToShow}}</span><small class="font-regular color-text-type-secondary-dark"> {{ unit }}</small></div>
+                <div class="col-150 align-middle-left" :class= '[valueTextColor, valueCellColor]'><span class="font-bold ">{{valueToShow}}</span>&nbsp;<small class="font-regular color-text-type-secondary-dark"> {{ unit }}</small></div>
                 </li>
                 <span style="display: none;">{{LL}}</span>
                 <span style="display: none;">{{L}}</span>
