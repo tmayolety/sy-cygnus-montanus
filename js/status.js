@@ -262,7 +262,7 @@ const status = {
                     var item = JSON.parse(msg);
     
                     if ($("#deviceLast_" + item.deviceId).length) {
-                        console.log(`Updating device ${item.deviceId} data...`);
+                        //console.log(`Updating device ${item.deviceId} data...`);
     
                         if (item.deviceId == 1) {
                             if ($('#popUpAlarmTitle').text() == 'ALARM PLC CONNECTION LOST') {
