@@ -13,12 +13,13 @@
             </header>
 
             <div class="ui col mini-2 pad-mini">
-                <basic-text-with-digital-line-render v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
+                <basic-text-with-digital-line-render
+                    v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
             </div>
 
             <div class="ui col mini-2 h-mini-310 pad-no">
                 <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Intake_Gas_Temperature_A-->
-                   <multi-gauge-render v-bind="{
+                <multi-gauge-render v-bind="{
                        signalIdCenter: 10156,
                        signalIdLeft: 11151,
                        signalIdRight: 11153,
@@ -47,7 +48,7 @@
                        centerUnit: 'KW',
                        leftUnit: 'C',
                        rightUnit: 'bar',
-                       centerIcon: 'engines',
+                       centerIcon: 'shore',
                        leftIcon: 'temperature',
                        rightIcon: 'pressure',
                        centerTitle: '',
@@ -59,16 +60,16 @@
                        leftScaleInterval: 10,
                        timeDelay: 3000,
                    }"></multi-gauge-render>
-           </div>
+            </div>
 
-           <div class="ui col mini-2 pad-sm">
-            <div class="ui col-content w-resp">
-                <div>
+            <div class="ui col mini-2 pad-sm">
+                <div class="ui col-content w-resp">
                     <div>
-                        <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
-                    </div>
-                    <div class="col mini-1">
-                        <bar-render v-bind="{
+                        <div>
+                            <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
+                        </div>
+                        <div class="col mini-1">
+                            <bar-render v-bind="{
                             signalId: 42,
                             orientation: 'horizontal',
                             size: 'small',
@@ -91,15 +92,15 @@
                             iconSize: 30,
                             iconMarginLeft: 0,
                             valueMode: 'filtered' }"></bar-render>
+                        </div>
                     </div>
                 </div>
-             </div>
-           </div>
+            </div>
 
-           <div class="ui col mini-1 ">
-            <gauge-render v-bind="{
+            <div class="ui col mini-1 ">
+                <gauge-render v-bind="{
                 title: 'Gen Battery Voltage',
-                signalId: 123,
+                signalId: 31,
                 unit: 'V',
                 icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
@@ -120,12 +121,12 @@
             }"></gauge-render>
             </div>
 
-           <div class="ui col mini-1 ">
-            <gauge-render v-bind="{
-                title: 'Lazzarette Hyd. Press. Block',
-                signalId: 123,
-                unit: 'bar',
-                icon: 'pressure',
+            <div class="ui col mini-1 ">
+                <gauge-render v-bind="{
+                title: 'Gen Power to DC BUS',
+                signalId: 32,
+                unit: 'KW',
+                icon: 'shore',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -147,7 +148,8 @@
             <div class="ui col mini-2">
                 <div class="col-content overflow">
                     <ul class="ui table size-mini resp">
-                        <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: 'Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render
+                            v-bind="{ signalId: 113, size: '20', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
                     </ul>
                 </div>
             </div>
@@ -167,12 +169,13 @@
             </header>
 
             <div class="ui col mini-2 pad-mini">
-                <basic-text-with-digital-line-render v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
+                <basic-text-with-digital-line-render
+                    v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
             </div>
 
             <div class="ui col mini-2 h-mini-310 pad-no">
                 <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Intake_Gas_Temperature_A-->
-                   <multi-gauge-render v-bind="{
+                <multi-gauge-render v-bind="{
                        signalIdCenter: 10156,
                        signalIdLeft: 11151,
                        signalIdRight: 11153,
@@ -201,7 +204,7 @@
                        centerUnit: 'KW',
                        leftUnit: 'C',
                        rightUnit: 'bar',
-                       centerIcon: 'engines',
+                       centerIcon: 'shore',
                        leftIcon: 'temperature',
                        rightIcon: 'pressure',
                        centerTitle: '',
@@ -213,16 +216,16 @@
                        leftScaleInterval: 10,
                        timeDelay: 3000,
                    }"></multi-gauge-render>
-           </div>
+            </div>
 
-           <div class="ui col mini-2 pad-sm">
-            <div class="ui col-content w-resp">
-                <div>
+            <div class="ui col mini-2 pad-sm">
+                <div class="ui col-content w-resp">
                     <div>
-                        <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
-                    </div>
-                    <div class="col mini-1">
-                        <bar-render v-bind="{
+                        <div>
+                            <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
+                        </div>
+                        <div class="col mini-1">
+                            <bar-render v-bind="{
                             signalId: 42,
                             orientation: 'horizontal',
                             size: 'small',
@@ -245,14 +248,70 @@
                             iconSize: 30,
                             iconMarginLeft: 0,
                             valueMode: 'filtered' }"></bar-render>
+                        </div>
                     </div>
                 </div>
-             </div>
-           </div>
+            </div>
+
+            <div class="ui col mini-1 ">
+                <gauge-render v-bind="{
+                title: 'Gen Battery Voltage',
+                signalId: 31,
+                unit: 'V',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-230',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-1 ">
+                <gauge-render v-bind="{
+                title: 'Gen Power to DC BUS',
+                signalId: 32,
+                unit: 'KW',
+                icon: 'shore',
+                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-230',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-2">
+                <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-analogue-line-render
+                            v-bind="{ signalId: 113, size: '20', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                    </ul>
+                </div>
+            </div>
 
         </div>
-     
+
     </div>
 
 </article>
-
