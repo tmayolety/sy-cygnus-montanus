@@ -29,15 +29,6 @@ components.gauge = {
             </button>
         </div>
 
-        <div class="flip-col go-bt " :class="[flipClass]">
-            <div class="flip-col--container">                       
-            <div class="ui col align-middle-center"
-            style="font-size: 12px; display: flex; justify-content: center; text-align: left; height:270px;">  
-            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            Id: {{signalId}}<br>
-            {{deviceName}}<br>
-            RAW: {{rawToShow}}</div>                                                                                                                                    
-            </div> 
             
             <div class="ui col has-col-header"  v-on:click="flipComponent()" ref="gaugeElement">
                 <header class="col-header" style="height: 37px!important;">{{title}}</header>
@@ -56,8 +47,7 @@ components.gauge = {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+   
         
         `,
   data() {

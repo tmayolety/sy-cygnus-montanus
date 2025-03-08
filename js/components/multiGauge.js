@@ -52,33 +52,6 @@ components.multiGauge = {
   
     template: /*html*/ `
   
-      <div class="flip-col go-bt " :class="[flipClass]">
-      <div class="flip-col--container">                       
-          <div class="ui col align-middle-center" style="font-size: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-              <div style="text-align: left;">
-              <div>
-              <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-              Id:&nbsp; {{signalIdLeft}}<br/>
-              &nbsp; {{deviceNameLeft}}<br/>
-              RAW:&nbsp; {{rawToShowLeft}}<br/></div>
-            </div>
-            <br/><br/>
-            <div>
-            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-              Id:&nbsp; {{signalIdCenter}}<br/>
-              &nbsp; {{deviceNameCenter}}<br/>
-              RAW:&nbsp; {{rawToShowCenter}}<br/></div>
-            </div>
-            <br/><br/>
-            <div>
-            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-              Id:&nbsp; {{signalIdRight}}<br/>
-              &nbsp; {{deviceNameRight}}<br/>
-              RAW:&nbsp; {{rawToShowRight}}</div>
-              </div>
-              </div>
-          </div>
-    
           <div class="ui col align-middle-center"  v-on:click="flipComponent()" ref="multiGaugeElement">
           <!-- GAUGE CENTER-->
           <div :class= '["circularGauge-wrapper", centerValueClass, gaugeCenterSize]'>
@@ -117,8 +90,7 @@ components.multiGauge = {
           </div>
   
           </div>
-      </div>
-      </div>
+    
               <span style="display: none;">{{rightValue}}</span>
               <span style="display: none;">{{leftValue}}</span>
               <span style="display: none;">{{centerValue}}</span>

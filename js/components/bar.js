@@ -421,7 +421,7 @@ components.bar = {
         classOutput = "size-mini h-180 header-mini-x1 footer-mini-x1";
         this.titleClassSize = "h6";
         this.valueFontClassVertical = "h4";
-        this.valueFontClassHorizontal = "h4";
+        this.valueFontClassHorizontal = "h3";
       }
       if (this.size == "extraSmall") {
         classOutput = "size-mini h-120 header-mini-x1 footer-mini-x1";
