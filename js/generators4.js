@@ -11,6 +11,7 @@ if (typeof generators4Mounted == 'undefined') {
     generatorsApp4.component('basic-text-with-digital-line-render', components.basicTextWithTitleDigital)
     generatorsApp4.component('gauge-render', components.gauge)
     generatorsApp4.component('multi-gauge-render', components.multiGauge)
+    generatorsApp4.component('bar-render', components.bar)
     generatorsApp4.mount('.generators4App')
     generators4Mounted = true;
 

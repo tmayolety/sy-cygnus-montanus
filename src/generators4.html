@@ -61,6 +61,41 @@
                    }"></multi-gauge-render>
            </div>
 
+           <div class="ui col mini-2 pad-sm">
+            <div class="ui col-content w-resp">
+                <div>
+                    <div>
+                        <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
+                    </div>
+                    <div class="col mini-1">
+                        <bar-render v-bind="{
+                            signalId: 11029,
+                            orientation: 'horizontal',
+                            size: 'small',
+                            unit: 'rpm',
+                            title:'',
+                            displayScale: false,
+                            displayCapacity: false,
+                            color: 'color-fl-green',
+                            pbarGrid:  'cols-mini-12',
+                            pbarTitle:  'mini-1',
+                            pbarSize:  'mini-7',
+                            pbarValue:  'mini-4 align-top-left',
+                            scaleBottom: 0,
+                            scaleTop: 3000,
+                            scaleStep: 160,
+                            scaleSegments: 5,
+                            limitFlag: 'onBar',
+                            showLimits: false,
+                            icon: 'engines',
+                            iconSize: 30,
+                            iconMarginLeft: 0,
+                            valueMode: 'filtered' }"></bar-render>
+                    </div>
+                </div>
+             </div>
+        </div>
+
         </div>
 
 
