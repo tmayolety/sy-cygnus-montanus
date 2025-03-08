@@ -76,10 +76,10 @@
                             title:'',
                             displayScale: false,
                             displayCapacity: false,
-                            color: 'color-fl-green',
+                            color: 'color-fl-white',
                             pbarGrid:  'cols-mini-12',
-                            pbarTitle:  'mini-1',
-                            pbarSize:  'mini-8',
+                            pbarTitle:  '',
+                            pbarSize:  'mini-9',
                             pbarValue:  'mini-3 align-top-left',
                             scaleBottom: 0,
                             scaleTop: 3000,
@@ -99,12 +99,6 @@
         </div>
 
 
-
-
-
-
-
-
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 gap-sm pad-no has-header grid type1 cols-mini-2">
 
@@ -120,9 +114,89 @@
                 <basic-text-with-digital-line-render v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
             </div>
 
+            <div class="ui col mini-2 h-mini-310 pad-no">
+                <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Intake_Gas_Temperature_A-->
+                   <multi-gauge-render v-bind="{
+                       signalIdCenter: 10156,
+                       signalIdLeft: 11151,
+                       signalIdRight: 11153,
+
+                       gaugeCenterSize: 'w-mini-340 h-mini-340 mg-top-mini-25-neg',
+                       gaugeCenterinfo: 'mg-top-mini-50 visible',
+                       gaugeCenterPos: 'pos-top-mini-30 pad-left-mini-170',
+                       gaugeCenterIcon: 'icon-size-70 glow mg-bottom-10 visible',
+                       gaugeCenterValue1:'font-regular mg-bottom-5 text-size-8 clr-subvalue-ui',
+                       gaugeCenterValue2:'font-bold text-size-20',
+                       gaugeCenterValue3:'',
+                       gaugeCenterValue4:'',
+
+                       gaugeLeftSize: 'h-mini-240 w-mini-240 pad-right-mini-210',
+                       gaugeLeftInfo: 'w-mini-260 h-mini-280 visible',
+                       gaugeLeftIcon: 'icon-size-30 glow mg-bottom-mini-210 visible',
+                       gaugeLeftValue1: 'text-size-10 font-bold',
+                       gaugeLeftValue2: 'text-size-6 font-semibold',  
+
+                       gaugeRightSize: 'h-mini-240 w-mini-240 pad-left-mini-210',
+                       gaugeRightInfo: 'w-mini-260 h-mini-280 visible',
+                       gaugeRightIcon: 'icon-size-30 glow mg-bottom-mini-210 visible',
+                       gaugeRightValue1: 'text-size-10 font-bold',
+                       gaugeRightValue2: 'text-size-6 font-semibold',                            
+
+                       centerUnit: 'KW',
+                       leftUnit: 'C',
+                       rightUnit: 'bar',
+                       centerIcon: 'engines',
+                       leftIcon: 'temperature',
+                       rightIcon: 'pressure',
+                       centerTitle: '',
+                       leftTitle: 'Coolant Temp.',
+                       rightTitle: 'Oil Press.',
+                       valueMode: 'filtered',
+                       centerScaleInterval: 100,
+                       rightScaleInterval: 10,
+                       leftScaleInterval: 10,
+                       timeDelay: 3000,
+                   }"></multi-gauge-render>
+           </div>
+
+           <div class="ui col mini-2 pad-sm">
+            <div class="ui col-content w-resp">
+                <div>
+                    <div>
+                        <h4 class="ui h5 mg-sm align-center color-text-type-light">Generator speed</h4>
+                    </div>
+                    <div class="col mini-1">
+                        <bar-render v-bind="{
+                            signalId: 42,
+                            orientation: 'horizontal',
+                            size: 'small',
+                            unit: 'rpm',
+                            title:'',
+                            displayScale: false,
+                            displayCapacity: false,
+                            color: 'color-fl-white',
+                            pbarGrid:  'cols-mini-12',
+                            pbarTitle:  '',
+                            pbarSize:  'mini-9',
+                            pbarValue:  'mini-3 align-top-left',
+                            scaleBottom: 0,
+                            scaleTop: 3000,
+                            scaleStep: 160,
+                            scaleSegments: 5,
+                            limitFlag: 'onBar',
+                            showLimits: false,
+                            icon: '',
+                            iconSize: 30,
+                            iconMarginLeft: 0,
+                            valueMode: 'filtered' }"></bar-render>
+                    </div>
+                </div>
+             </div>
+           </div>
 
         </div>
      
     </div>
 
 </article>
+
