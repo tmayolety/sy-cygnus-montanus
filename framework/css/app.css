@@ -3147,6 +3147,34 @@ ul.ui.table > li > div[class*="align-"][class*="right"], ul.ui.table > li[class*
 .ui.pbar.centred.horizontal .color-fl-green { background: linear-gradient(90deg, RGBA(var(--clr-fl-green-light)/100%) 0%, RGBA(var(--clr-fl-green)/100) 20%, RGBA(var(--clr-fl-green)/100) 80%, RGBA(var(--clr-fl-green-light)/100%) 100%); }
 .ui.pbar.centred.vertical .color-fl-green { background: linear-gradient(0deg, RGBA(var(--clr-fl-green-light)/100%) 0%, RGBA(var(--clr-fl-green)/100) 50%, RGBA(var(--clr-fl-green-light)/100%) 100%); }
 
+.ui.pbar .color-fl-white { 
+  background: RGBA(255, 255, 255, 1); 
+  box-shadow: 0px 0px 10px 0px RGBA(255, 255, 255, 1); 
+}
+
+.ui.pbar .color-fl-white::before, 
+.ui.pbar .color-fl-white::after { 
+  background: RGBA(255, 255, 255, 0.3); 
+  box-shadow: 0px 0px 6px 2px RGBA(255, 255, 255, 1); 
+}
+
+.ui.pbar.horizontal .color-fl-white { 
+  background: linear-gradient(90deg, RGBA(255, 255, 255, 1) 50%, RGBA(255, 255, 255, 1) 100%); 
+}
+
+.ui.pbar.vertical .color-fl-white { 
+  background: linear-gradient(0deg, RGBA(255, 255, 255, 1) 50%, RGBA(255, 255, 255, 1) 100%); 
+}
+
+.ui.pbar.centred.horizontal .color-fl-white { 
+  background: linear-gradient(90deg, RGBA(255, 255, 255, 1) 0%, RGBA(255, 255, 255, 1) 20%, RGBA(255, 255, 255, 1) 80%, RGBA(255, 255, 255, 1) 100%); 
+}
+
+.ui.pbar.centred.vertical .color-fl-white { 
+  background: linear-gradient(0deg, RGBA(255, 255, 255, 1) 0%, RGBA(255, 255, 255, 1) 50%, RGBA(255, 255, 255, 1) 100%); 
+}
+
+
 ul.ui.list > li { position: relative; list-style: none; display: flex; flex-direction: row; }
 ul.ui.list > li > div:last-child { padding-top: 5px; padding-bottom: 5px; align-self: center; }
 ul.ui.list > li + li { padding-top: 5px; }
