@@ -11,8 +11,7 @@ components.basicTextWithTitleDigital = {
     'zeroText',
     'oneText',
     'zeroColor',
-    'oneColor',
-    'valueMode'],
+    'oneColor',],
     template: /*html*/`
         <div class="ui col reset-w-align" :class="[colStyle, valueCellColor]" ref="basicTextTitleDigitalElement">
             <div class="ui col-content w-resp">

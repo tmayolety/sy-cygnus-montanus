@@ -1,28 +1,27 @@
 <article>
 
-    <div class="ui grid type1 cols-mini-5 gap-sm pad-sm generators34App">
+    <div class="ui grid type1 cols-mini-2 gap-sm pad-sm emotionBatteriesApp">
 
-        <div class="ui col mini-3 gap-no pad-no has-header grid type1 cols-mini-3">
+        <div class="ui col mini-1 gap-no pad-no has-header grid type1 cols-mini-6">
 
             <header class="ui col">
-                <font>Power</font>
+                <font>e-Motion Battery 1</font>
                 <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
             </header>
 
-
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-3 h-mini-410">
                 <gauge-render v-bind="{
-                title: 'DC BUS Voltage',
+                title: 'Voltage',
                 signalId: 31,
                 unit: 'V',
-                icon: 'shore',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
+                height: 'h-mini-360',
                 width: 0,
                 scaleVisible: true,
                 type: 1,
@@ -37,36 +36,36 @@
             }"></gauge-render>
             </div>
 
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-3 h-mini-410">
                 <gauge-render v-bind="{
-                title: 'DC BUS Power Available',
-                signalId: 32,
-                unit: 'KW',
-                icon: 'shore',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'raw',
-                textSize: 20,
-                unitTextSize: 10,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-1 h-mini-370">
-                <gauge-render v-bind="{
-                title: 'Power from shore',
+                title: 'Current',
                 signalId: 31,
-                unit: 'KW',
-                icon: 'shore',
+                unit: 'A',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-360',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-2 h-mini-360">
+                <gauge-render v-bind="{
+                title: 'Power Flowing in',
+                signalId: 31,
+                unit: 'W',
+                icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -85,12 +84,12 @@
             }"></gauge-render>
             </div>
 
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-2 h-mini-360">
                 <gauge-render v-bind="{
-                title: 'Power to Hotel',
+                title: 'Power Flowing out',
                 signalId: 32,
-                unit: 'KW',
-                icon: 'shore',
+                unit: 'W',
+                icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -109,12 +108,12 @@
             }"></gauge-render>
             </div>
 
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-2 h-mini-360">
                 <gauge-render v-bind="{
-                title: 'Voltage to Hotel',
+                title: 'State of Charge',
                 signalId: 32,
-                unit: 'V',
-                icon: 'shore',
+                unit: '%',
+                icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -122,31 +121,7 @@
                 width: 0,
                 scaleVisible: true,
                 type: 1,
-                scaleInterval: 40,
-                valueMode: 'raw',
-                textSize: 20,
-                unitTextSize: 10,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-1 h-mini-370">
-                <gauge-render v-bind="{
-                title: 'Voltage from shore',
-                signalId: 32,
-                unit: 'V',
-                icon: 'shore',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
+                scaleInterval: 25,
                 valueMode: 'raw',
                 textSize: 20,
                 unitTextSize: 10,
@@ -159,27 +134,26 @@
 
         </div>
 
-        <div class="ui col mini-2 gap-no pad-no has-header grid type1 cols-mini-2">
+        <div class="ui col mini-1 gap-no pad-no has-header grid type1 cols-mini-6">
 
             <header class="ui col">
-                <font>Cooling System</font>
+                <font>e-Motion Battery 2</font>
                 <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
             </header>
 
-
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-3 h-mini-410">
                 <gauge-render v-bind="{
-                title: 'Sea Water Pressure',
+                title: 'Voltage',
                 signalId: 31,
-                unit: 'bar',
-                icon: 'pressure',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                unit: 'V',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
+                height: 'h-mini-360',
                 width: 0,
                 scaleVisible: true,
                 type: 1,
@@ -194,36 +168,36 @@
             }"></gauge-render>
             </div>
 
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-3 h-mini-410">
                 <gauge-render v-bind="{
-                title: 'Fresh Water Pressure',
-                signalId: 32,
-                unit: 'bar',
-                icon: 'pressure',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'raw',
-                textSize: 20,
-                unitTextSize: 10,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-1 h-mini-370">
-                <gauge-render v-bind="{
-                title: 'Sea Water Flow',
+                title: 'Current',
                 signalId: 31,
-                unit: 'L/m',
-                icon: 'tanks',
+                unit: 'A',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-360',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-2 h-mini-360">
+                <gauge-render v-bind="{
+                title: 'Power Flowing in',
+                signalId: 31,
+                unit: 'W',
+                icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -242,12 +216,12 @@
             }"></gauge-render>
             </div>
 
-            <div class="ui col mini-1 h-mini-370">
+            <div class="ui col mini-2 h-mini-360">
                 <gauge-render v-bind="{
-                title: 'Fresh Water Flow',
+                title: 'Power Flowing out',
                 signalId: 32,
-                unit: 'L/m',
-                icon: 'tanks',
+                unit: 'W',
+                icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
@@ -256,6 +230,30 @@
                 scaleVisible: true,
                 type: 1,
                 scaleInterval: 40,
+                valueMode: 'raw',
+                textSize: 20,
+                unitTextSize: 10,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-2 h-mini-360">
+                <gauge-render v-bind="{
+                title: 'State of Charge',
+                signalId: 32,
+                unit: '%',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-310',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 25,
                 valueMode: 'raw',
                 textSize: 20,
                 unitTextSize: 10,
@@ -267,7 +265,6 @@
             </div>
 
         </div>
-
 
     </div>
 
