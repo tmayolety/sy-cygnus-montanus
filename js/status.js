@@ -13,9 +13,13 @@ $( document ).ready(function() {
 
     setTimeout(function() {
 
+
+        console.log("Paso 1: Intentando conectar socket...");
+
         let initSocketPromise = new Promise(function(resolve) {
 
             sock.on('deviceStats', function(msg) {
+                console.log("Paso 2: Socket conectado, datos recibidos.");
                 sock.off('deviceStats');
                 socketConnectionEstablished.value = true;
                 helpers.clockAndDate();
@@ -24,10 +28,11 @@ $( document ).ready(function() {
         });
 
         initSocketPromise.then(function() {
-
+            console.log("Paso 3: Verificando API...");
             let checkAPIPromise = new Promise(function(resolve) {
 
                 $.getJSON(ACTIVE_SERVER + ":" + API.Port + "/devices", function() {
+                    console.log("Paso 4: API respondió correctamente.");
                     APIConnectionEstablished.value = true;
                     resolve(true);
                 })
@@ -37,7 +42,7 @@ $( document ).ready(function() {
             });
 
             checkAPIPromise.then(function() {
-                console.log('Getting Data...');
+                console.log('Paso 5: Datos obtenidos, continuando...');
             });
 
         });
