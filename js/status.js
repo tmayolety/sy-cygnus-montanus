@@ -265,7 +265,7 @@ const status = {
     
                 try {
                     var item = JSON.parse(msg);
-    
+                    console.log("Received deviceStats:", item); 
                     if ($("#deviceLast_" + item.deviceId).length) {
                         //console.log(`Updating device ${item.deviceId} data...`);
     
