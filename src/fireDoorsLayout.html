@@ -5,7 +5,7 @@
         <div class="ui grid cols-mini-1 gap-sm pad-sm has-header col mini-1">
 
             <header class="ui col">
-                <font>Fire Doors Layout</font>
+                <font>Hatches Layout</font>
                 <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
@@ -17,50 +17,21 @@
 
                 <div class="ui grid type1 gap-lg pad-lg align-start col mini-6 xl-6 visible-xl hidden-sm">
 
-                    <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow "
-                        style="overflow:hidden!important;">
-
-                        <header class="col-header size-mini text-size-10">Bridge Deck</header>
+                    <div class="ui col mini-1 type1 gap-no pad-lg" style="overflow:hidden!important;">
 
                         <div class="ui col mini-1 middle-center" style="justify-content: normal!important; ">
-                            <!--1 BD Lobby - Gym Area Sliding Fire Door Opened-->
+
                             <door-render
                                 v-bind="{ signalId: 475, x: 29.5, y: 59, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--2 W/H - W/H Corridor Sliding Fire Door Opened-->
+
                             <door-render
                                 v-bind="{ signalId: 474, x: 32.8, y: 53, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--3 W/H Corridor - Crew Staircase Sliding Fire Door Opened-->
                             <door-render
                                 v-bind="{ signalId: 245, x: 41.2, y: 47, size: 10, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--4 W/H Corridor - Bridge Deck Lobby Slidinig Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 242, x: 43, y: 50, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+
                             <span id="FireDoorLayout_1"></span>
                         </div>
                     </div>
-                    <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow "
-                        style="overflow: hidden!important;">
-                        <header class="col-header size-mini text-size-10">Main Deck</header>
-                        <div class="ui col mini-1 middle-center" style="justify-content: normal!important;">
-                            <!--5 OD Pantry - OD Saloon Sliding Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 277, x: 32, y: 45, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--6 OD Lobby - OD Saloon Sliding Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 512, x: 32, y: 60.5, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--7 OD Pantry - OD Crew Staircase Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 59, x: 41, y: 45, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--8 OD Corridor - OD Lobby Sliding Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 501, x: 40.8, y: 51, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <!--9 OD Corridor - Crew Staircase Sliding Fire Door Opened-->
-                            <door-render
-                                v-bind="{ signalId: 502, x: 41.6, y: 47, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
-                            <span id="FireDoorLayout_2"></span>
-                        </div>
-                    </div>
-
                 </div>
 
 
@@ -71,9 +42,3 @@
     </div>
 
 </article>
-
-
-
-
-
-

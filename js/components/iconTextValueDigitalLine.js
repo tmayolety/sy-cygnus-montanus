@@ -30,9 +30,7 @@ components.iconTextValueDigitalLine = {
                 <div class="col-80 align-middle-left " :class= '[valueTextColor, valueCellColor]'><span class="font-bold glow">{{valueText}}</span></div>
                 
                 <span style="display: none;">{{value}}</span> 
-                </li>
-                
-                `,
+                </li>`,
 
     data() {
         return {

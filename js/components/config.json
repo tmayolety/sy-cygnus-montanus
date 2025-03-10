@@ -330,45 +330,15 @@
               "file": "iconTextValueDigitalLine"
             },
             {
+              "label": "icon-text-value-analogue-line-render",
+              "file": "iconTextValueAnalogueLine"
+            },
+            {
               "label": "icon-two-options-digital-line-render",
               "file": "iconTwoOptionsDigitalLine"
             }
           ],
           "mount": ".variousSystemsApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
-          "name": "variousSystemsApp2",
-          "component": [
-            {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
-            },
-            {
-              "label": "icon-text-value-analogue-line-render",
-              "file": "iconTextValueAnalogueLine"
-            }
-          ],
-          "mount": ".variousSystemsApp2",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
-          "name": "watertightListApp",
-          "component": [
-            {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
-            }
-          ],
-          "mount": ".watertightListApp",
           "config": {
             "compilerOptions": {
               "isCustomElement": "tag => tag.startsWith('font')"
