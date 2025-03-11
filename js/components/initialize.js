@@ -165,7 +165,6 @@ components.initializeApp = {
             $.ajax({
                 url: ACTIVE_SERVER + ":" + API.Port + "/devices"
             }).then(function (data) {
-                console.log(data)
                 var json = JSON.parse(data);
                 json.forEach(function (item) {
                     deviceData[parseInt(item.Id)] = item;
