@@ -253,10 +253,20 @@ const status = {
                 if (value.IP != '0') {
                     console.log('Channel connected: ' + key);
                     sock.on(key, function(msg) {
+                        if (!msg || typeof msg !== "string") {
+                            console.error(`🚨 Mensaje inválido en canal ${key}:`, msg);
+                        } else {
+                            console.log(`📩 Mensaje válido en canal ${key}, procesando...`);
+                            bringValues(msg);
+                        }
+                        
                         console.log(`📩 Evento recibido en canal ${key}:`, msg);
                         try {
+                            console.log("Ejecutando screen.renderData...");
                             screen.renderData(msg);
+                            console.log("Ejecutando bringValues...");
                             bringValues(msg);
+                            console.log("✅ bringValues ejecutado con éxito.");
                         } catch (error) {
                             console.error(`Error rendering data for channel ${key}:`, error);
                         }
