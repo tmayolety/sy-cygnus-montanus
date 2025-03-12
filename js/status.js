@@ -13,34 +13,21 @@ $( document ).ready(function() {
 
     setTimeout(function() {
 
-
-        console.log("Paso 1: Intentando conectar socket...");
-
         let initSocketPromise = new Promise(function(resolve) {
 
-           // let timeout = setTimeout(() => {
-           //     console.warn("No received deviceStats, continuing anyway...");
-           //     socketConnectionEstablished.value = true; // Forzar que pase a paso 3
-           //     resolve(true);
-           // }, 5000); // Si en 5s no recibe `deviceStats`, sigue igual
-        
             sock.on('deviceStats', function(msg) {
-                console.log("Paso 2: Socket conectado, datos recibidos.");
                 sock.off('deviceStats');
                 socketConnectionEstablished.value = true;
                 helpers.clockAndDate();
-                //clearTimeout(timeout);
                 resolve(true);
             });
-
         });
 
         initSocketPromise.then(function() {
-            console.log("Paso 3: Verificando API...");
+
             let checkAPIPromise = new Promise(function(resolve) {
 
                 $.getJSON(ACTIVE_SERVER + ":" + API.Port + "/devices", function() {
-                    console.log("Paso 4: API respondió correctamente.");
                     APIConnectionEstablished.value = true;
                     resolve(true);
                 })
@@ -50,7 +37,7 @@ $( document ).ready(function() {
             });
 
             checkAPIPromise.then(function() {
-                console.log('Paso 5: Datos obtenidos, continuando...');
+                console.log('Getting Data...');
             });
 
         });
@@ -83,7 +70,7 @@ const status = {
             });
 
             sock.on('connect', function(){
-                console.log('Socket connected successfully.');
+
                 clearTimeout(socketConnected);
                 $('#alarmPLC').removeClass('open');
                 ACTIVE_SERVER = SERVER_1_IP;
@@ -92,15 +79,11 @@ const status = {
                 resolve(true);
 
             });
-            sock.on('error', function(err) {
-                console.error('Socket encountered an error:', err);
-            });
 
         });
         connectServer_1.then(function() {
             console.log('Connected to Server 1');
             status.initSocketConnections();
-
 
         }).catch(function() {
 
@@ -124,6 +107,7 @@ const status = {
                 });
 
                 sock.on('connect', function(){
+
                     clearTimeout(socketConnected);
                     $('#alarmPLC').removeClass('open');
                     ACTIVE_SERVER = SERVER_2_IP;
@@ -136,8 +120,6 @@ const status = {
             connectServer_2.then(function() {
                 console.log('Connected to Server 2');
                 status.initSocketConnections();
-
-
             }).catch(function() {
                 sock.disconnect();
                 console.log('BOTH SERVER FAILED TO CONNECT. Retrying again in 20 seconds...');
@@ -150,15 +132,13 @@ const status = {
     },
     initSocketConnections: function () {
 
-        console.log('Initializing socket connections...');
-
         setTimeout( function() {
-            console.log('Subscribing to channels...');
             status.subscribeChannels();
         }, 12000);
 
+
         sock.on('disconnect', function(){
-            console.log('Socket disconnected. Reconnecting in 2 seconds...');
+
             socketConnected = setTimeout(function() {
 
                 $('#popUpAlarmTitle').html('SERVER CONNECTION LOST');
@@ -175,20 +155,16 @@ const status = {
         });
 
         sock.on('connect', function(){
-            console.log('Socket reconnected successfully.');
             clearTimeout(socketConnected);
             $('#alarmPLC').removeClass('open');
 
-        });
-
-        sock.on('reconnect_failed', function() {
-            console.error('Socket failed to reconnect.');
         });
 
         //SIGNAL LIMITS CHANNEL SUBSCRIBE
         sock.on('limits', function(msg) {
 
             var json = JSON.parse(msg);
+
             if (typeof json.HH !== 'undefined')
             {
                 helpers.limitChange(json.alarmId, json.HH, json.H, json.L, json.LL);
@@ -242,88 +218,51 @@ const status = {
         });
     },
     subscribeChannels: function () {
-        console.log('Entering subscribeChannels function...');
-        
-        try {
-            console.log('Iterating through deviceData...');
-            $.each(deviceData, function(key, value) {
-                console.log(`Checking device: ${key}, IP: ${value.IP}`);
-    
-                if (value.IP != '0') {
-                    console.log('Channel connected: ' + key);
-    
-                    sock.on(key, function(msg) {
-                        console.log(`📩 Evento recibido en canal ${key}:`, msg);
-    
-                        if (!msg) {
-                            console.warn(`⚠️ Mensaje vacío en canal ${key}`);
-                            return;
-                        }
-    
-                        try {
-                            console.log("Ejecutando screen.renderData...");
-                            screen.renderData(msg);
-    
-                            console.log("Ejecutando bringValues...");
-                            bringValues(msg);
-    
-                            console.log("✅ bringValues ejecutado con éxito.");
-                        } catch (error) {
-                            console.error(`❌ Error en canal ${key}:`, error);
-                        }
-                    });
-    
-                } else {
-                    console.warn(`⚠️ Device ${key} tiene IP = 0, saltando canal.`);
+
+        //SIGNAL DEVICES TO DISPLAY CHANNELS SUBSCRIBE
+        $.each( deviceData, function( key, value ) {
+            if (value.IP != '0') {
+                console.log('Channel connected: ' + key);
+                sock.on( key, function(msg) {
+
+                    screen.renderData(msg);
+                    bringValues(msg);
+
+                });
+            }
+        });
+
+        sock.on( "deviceStats", function(msg) {
+            var item = JSON.parse(msg);
+
+            if ($("#deviceLast_" + item.deviceId).length) {
+                if (item.deviceId == 1) {
+                    if ($('#popUpAlarmTitle').text() == 'ALARM PLC CONNECTION LOST') {
+                        $('#alarmPLC').removeClass('open');
+                    }
                 }
-            });
-    
-            console.log('✅ Finalizado el proceso de suscripción a canales.');
-        } catch (error) {
-            console.error('❌ Error en subscribeChannels:', error);
-        }
+                document.getElementById('deviceLast_' + item.deviceId).innerHTML = item.last.toFixed(1);
+                document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
+            }
+        });
+
+        alarms.activeAlarmSubscribe();
     }
-    
 }
 
 function bringValues(msg) {
-    console.log("📩 Mensaje recibido antes de parsear:", msg);
-    try {
-        var json = JSONH.parse(msg);  // Cambiar JSONH.parse() por JSON.parse()
-        json.forEach(function (item) {
-            console.log(`➡️ Procesando signalId: ${item.signalId}, raw: ${item.raw}, escalated: ${item.escalatedValue}`);
-            if (typeof valueRaw[item.signalId] == 'undefined') {
-                valueRaw[item.signalId] = Vue.ref();
-                valueEscalated[item.signalId] = Vue.ref();
-                valueFiltered[item.signalId] = Vue.ref();
-            } else {
-                valueRaw[item.signalId].value = item.raw;
-                valueEscalated[item.signalId].value = item.escalatedValue;
-                valueFiltered[item.signalId].value = item.filteredValue;
-            }
-        });
-    } catch (error) {
-        console.error("❌ Error al parsear mensaje en bringValues:", error);
-        console.log("📩 Mensaje recibido (RAW):", msg);
-    }
+    var json = JSONH.parse(msg);
+    json.forEach(function (item) {
+
+        if (typeof valueRaw[item.signalId] == 'undefined') {
+            valueRaw[item.signalId] =  Vue.ref();
+            valueEscalated[item.signalId] = Vue.ref();
+            valueFiltered[item.signalId] = Vue.ref();
+        } else {
+            valueRaw[item.signalId].value = item.raw;
+            valueEscalated[item.signalId].value = item.escalatedValue;
+            valueFiltered[item.signalId].value = item.filteredValue;
+        }
+
+    });
 }
-
-
-//function bringValues(msg) {
-//    var json = JSONH.parse(msg);
-//    json.forEach(function (item) {
-//
-//        if (typeof valueRaw[item.signalId] == 'undefined') {
-//            valueRaw[item.signalId] =  Vue.ref();
-//            valueEscalated[item.signalId] = Vue.ref();
-//            valueFiltered[item.signalId] = Vue.ref();
-//        } else {
-//            valueRaw[item.signalId].value = item.raw;
-//            valueEscalated[item.signalId].value = item.escalatedValue;
-//            valueFiltered[item.signalId].value = item.filteredValue;
-//        }
-//
-//    });
-//}
-
-
