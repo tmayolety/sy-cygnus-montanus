@@ -307,20 +307,42 @@ const status = {
 }
 
 function bringValues(msg) {
-    var json = JSONH.parse(msg);
-    json.forEach(function (item) {
-
-        if (typeof valueRaw[item.signalId] == 'undefined') {
-            valueRaw[item.signalId] =  Vue.ref();
-            valueEscalated[item.signalId] = Vue.ref();
-            valueFiltered[item.signalId] = Vue.ref();
-        } else {
-            valueRaw[item.signalId].value = item.raw;
-            valueEscalated[item.signalId].value = item.escalatedValue;
-            valueFiltered[item.signalId].value = item.filteredValue;
-        }
-
-    });
+    console.log("📩 Mensaje recibido antes de parsear:", msg);
+    try {
+        var json = JSON.parse(msg);  // Cambiar JSONH.parse() por JSON.parse()
+        json.forEach(function (item) {
+            if (typeof valueRaw[item.signalId] == 'undefined') {
+                valueRaw[item.signalId] = Vue.ref();
+                valueEscalated[item.signalId] = Vue.ref();
+                valueFiltered[item.signalId] = Vue.ref();
+            } else {
+                valueRaw[item.signalId].value = item.raw;
+                valueEscalated[item.signalId].value = item.escalatedValue;
+                valueFiltered[item.signalId].value = item.filteredValue;
+            }
+        });
+    } catch (error) {
+        console.error("❌ Error al parsear mensaje en bringValues:", error);
+        console.log("📩 Mensaje recibido (RAW):", msg);
+    }
 }
+
+
+//function bringValues(msg) {
+//    var json = JSONH.parse(msg);
+//    json.forEach(function (item) {
+//
+//        if (typeof valueRaw[item.signalId] == 'undefined') {
+//            valueRaw[item.signalId] =  Vue.ref();
+//            valueEscalated[item.signalId] = Vue.ref();
+//            valueFiltered[item.signalId] = Vue.ref();
+//        } else {
+//            valueRaw[item.signalId].value = item.raw;
+//            valueEscalated[item.signalId].value = item.escalatedValue;
+//            valueFiltered[item.signalId].value = item.filteredValue;
+//        }
+//
+//    });
+//}
 
 
