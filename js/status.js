@@ -18,21 +18,21 @@ $( document ).ready(function() {
 
         let initSocketPromise = new Promise(function(resolve) {
 
-            let timeout = setTimeout(() => {
-                console.warn("No received deviceStats, continuing anyway...");
-                socketConnectionEstablished.value = true; // Forzar que pase a paso 3
-                resolve(true);
-            }, 5000); // Si en 5s no recibe `deviceStats`, sigue igual
+           // let timeout = setTimeout(() => {
+           //     console.warn("No received deviceStats, continuing anyway...");
+           //     socketConnectionEstablished.value = true; // Forzar que pase a paso 3
+           //     resolve(true);
+           // }, 5000); // Si en 5s no recibe `deviceStats`, sigue igual
         
-
             sock.on('deviceStats', function(msg) {
                 console.log("Paso 2: Socket conectado, datos recibidos.");
                 sock.off('deviceStats');
                 socketConnectionEstablished.value = true;
                 helpers.clockAndDate();
-                clearTimeout(timeout);
+                //clearTimeout(timeout);
                 resolve(true);
             });
+
         });
 
         initSocketPromise.then(function() {
