@@ -253,7 +253,7 @@ const status = {
                 if (value.IP != '0') {
                     console.log('Channel connected: ' + key);
                     sock.on(key, function(msg) {
-                       
+                        console.log(`📩 Evento recibido en canal ${key}:`, msg);
                         try {
                             screen.renderData(msg);
                             bringValues(msg);
