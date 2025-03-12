@@ -254,7 +254,12 @@ const status = {
     
                     sock.on(key, function(msg) {
                         console.log(`📩 Evento recibido en canal ${key}:`, msg);
-                        
+    
+                        if (!msg) {
+                            console.warn(`⚠️ Mensaje vacío en canal ${key}`);
+                            return;
+                        }
+    
                         try {
                             console.log("Ejecutando screen.renderData...");
                             screen.renderData(msg);
@@ -264,116 +269,21 @@ const status = {
     
                             console.log("✅ bringValues ejecutado con éxito.");
                         } catch (error) {
-                            console.error(`Error rendering data for channel ${key}:`, error);
+                            console.error(`❌ Error en canal ${key}:`, error);
                         }
                     });
     
                 } else {
-                    console.warn(`Device ${key} has IP set to 0, skipping channel connection.`);
+                    console.warn(`⚠️ Device ${key} tiene IP = 0, saltando canal.`);
                 }
             });
     
-            console.log('Setting up "deviceStats" event listener...');
-            sock.on("deviceStats", function(msg) {
-                try {
-                    var item = JSON.parse(msg);
-                    if ($("#deviceLast_" + item.deviceId).length) {
-                        document.getElementById('deviceLast_' + item.deviceId).innerHTML = item.last.toFixed(1);
-                        document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
-                    } else {
-                        console.warn(`Device element "deviceLast_${item.deviceId}" not found.`);
-                    }
-                } catch (error) {
-                    console.error('Error processing "deviceStats" message:', error);
-                }
-            });
-    
-            console.log('Subscribing to active alarms...');
-            alarms.activeAlarmSubscribe();
-    
+            console.log('✅ Finalizado el proceso de suscripción a canales.');
         } catch (error) {
-            console.error('Error in subscribeChannels function:', error);
+            console.error('❌ Error en subscribeChannels:', error);
         }
-    
-        console.log('Exiting subscribeChannels function.');
     }
     
-    //subscribeChannels: function () {
-    //    console.log('Entering subscribeChannels function...');
-    //
-    //    try {
-    //        // SIGNIFICAR DISPOSITIVOS PARA SUSCRIBIRSE A LOS CANALES
-    //        console.log('Iterating through deviceData...');
-    //        $.each(deviceData, function(key, value) {
-    //            console.log(`Checking device: ${key}, IP: ${value.IP}`);
-    //
-    //            if (value.IP != '0') {
-    //                console.log('Channel connected: ' + key);
-//
-    //                if (!msg || typeof msg !== "string") {
-    //                    console.error(`🚨 Mensaje inválido en canal ${key}:`, msg);
-    //                } else {
-    //                    console.log(`📩 Mensaje válido en canal ${key}, procesando...`);
-    //                    bringValues(msg);
-    //                }
-    //                
-    //                sock.on(key, function(msg) {
-    //   
-    //                    
-    //                    console.log(`📩 Evento recibido en canal ${key}:`, msg);
-    //                    try {
-    //                        console.log("Ejecutando screen.renderData...");
-    //                        screen.renderData(msg);
-    //                        console.log("Ejecutando bringValues...");
-    //                        bringValues(msg);
-    //                        console.log("✅ bringValues ejecutado con éxito.");
-    //                    } catch (error) {
-    //                        console.error(`Error rendering data for channel ${key}:`, error);
-    //                    }
-    //                });
-    //            } else {
-    //                console.warn(`Device ${key} has IP set to 0, skipping channel connection.`);
-    //            }
-    //        });
-    //
-    //        // EVENTO `deviceStats`
-    //        console.log('Setting up "deviceStats" event listener...');
-    //        sock.on("deviceStats", function(msg) {
-    //           
-    //
-    //            try {
-    //                var item = JSON.parse(msg);
-    //                //console.log("Received deviceStats:", item); 
-    //                if ($("#deviceLast_" + item.deviceId).length) {
-    //                    //console.log(`Updating device ${item.deviceId} data...`);
-    //
-    //                    if (item.deviceId == 1) {
-    //                        if ($('#popUpAlarmTitle').text() == 'ALARM PLC CONNECTION LOST') {
-    //                            $('#alarmPLC').removeClass('open');
-    //                            console.log('Removed PLC alarm popup.');
-    //                        }
-    //                    }
-    //
-    //                    document.getElementById('deviceLast_' + item.deviceId).innerHTML = item.last.toFixed(1);
-    //                    document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
-    //                } else {
-    //                    console.warn(`Device element "deviceLast_${item.deviceId}" not found.`);
-    //                }
-    //            } catch (error) {
-    //                console.error('Error processing "deviceStats" message:', error);
-    //            }
-    //        });
-    //
-    //        // ACTIVACIÓN DE LAS ALARMAS
-    //        console.log('Subscribing to active alarms...');
-    //        alarms.activeAlarmSubscribe();
-    //
-    //    } catch (error) {
-    //        console.error('Error in subscribeChannels function:', error);
-    //    }
-    //
-    //    console.log('Exiting subscribeChannels function.');
-    //}
 }
 
 function bringValues(msg) {
