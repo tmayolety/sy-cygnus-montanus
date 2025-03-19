@@ -7,6 +7,14 @@ let socketConnectionEstablished = Vue.ref(false);
 let APIConnectionEstablished = Vue.ref(false);
 let componentLoadingText = Vue.ref('');
 
+// Simulación del evento deviceStats START
+function simulateDeviceStats() {
+    socketConnectionEstablished.value = true;
+    helpers.clockAndDate();
+    console.log('Simulación de deviceStats completada');
+}
+// Simulación del evento deviceStats END
+
 $( document ).ready(function() {
 
     status.initConnections ();
@@ -15,12 +23,18 @@ $( document ).ready(function() {
 
         let initSocketPromise = new Promise(function(resolve) {
 
-            sock.on('deviceStats', function(msg) {
-                sock.off('deviceStats');
-                socketConnectionEstablished.value = true;
-                helpers.clockAndDate();
-                resolve(true);
-            });
+            //sock.on('deviceStats', function(msg) {
+            //    sock.off('deviceStats');
+            //    socketConnectionEstablished.value = true;
+            //    helpers.clockAndDate();
+            //    resolve(true);
+            //});
+
+                        // Simulación del evento deviceStats
+                        setTimeout(function() {
+                            simulateDeviceStats();
+                            resolve(true);
+                        }, 5000); // Simula el evento después de 5 segundos
         });
 
         initSocketPromise.then(function() {
