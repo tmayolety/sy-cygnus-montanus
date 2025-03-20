@@ -276,6 +276,11 @@
     absoluteRenderComponentApp.component('timeline-render', components.timelineComponent)
     absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
 
+    const homeApp = Vue.createApp({})
+    homeApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
+    homeApp.component('gauge-render', components.gauge)
+    homeApp.mount('.homeApp')
+
 </script>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
