@@ -6699,4 +6699,10 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   }
 }
 
+@media (min-height: 537px) {
+  .hiddenOutWideScreen {
+    display: none!important; 
+  }
+}
+
 
