@@ -17,12 +17,12 @@ function simulateDeviceStats() {
 
 $( document ).ready(function() {
 
-    status.initConnections ();
+    status.initConnections();
 
     setTimeout(function() {
 
         let initSocketPromise = new Promise(function(resolve) {
-
+            //COMENTADO POR SIMULACIÓN
             //sock.on('deviceStats', function(msg) {
             //    sock.off('deviceStats');
             //    socketConnectionEstablished.value = true;
