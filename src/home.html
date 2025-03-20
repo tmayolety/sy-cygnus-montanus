@@ -1,6 +1,119 @@
 <article class="hiddenOutWideScreen">
 
-
-    <h1>TEST WIDE SCREEN</h1>
+        <div class="ui grid type1 cols-mini-1 pad-lg gap-xl wideScreenApp">
+            <div class="ui grid type1 cols-mini-1 col sm-1 gap-med pad-lg has-header">
+                <header class="ui col">
+                    <font>Main Bus Bar</font>
+                    <span class="gradients">
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
+                </header>
+    
+                <div class="ui grid cols-mini-4  bg-no pad-no gap-med">
+    
+                    <div class="ui col mini-4 grid cols-mini-5 bg-no pad-no gap-sm align-start radius shadow">
+    
+                        <div class="ui col mini-1 ">
+                            <gauge-render v-bind="{
+                                title: 'Current',
+                                signalId: 123,
+                                unit: 'A',
+                                icon: 'shore',
+                                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                text1: 'text-size-8 color-text-type-secondary-dark',
+                                text2: 'text-size-14 font-bold',
+                                height: 'h-mini-230',
+                                width: 0,
+                                scaleVisible: true,
+                                type: 1,
+                                scaleInterval: 40,
+                                valueMode: 'raw',
+                                textSize: 20,
+                                unitTextSize: 10,
+                                marginTopValue: 'mg-top-mini-25',
+                                valueDecimals: 0,
+                                limitsEditable: 1,
+                                timeDelay: 3000,
+                            }"></gauge-render>
+                        </div>
+    
+                        <div class="ui col mini-1 ">
+                            <gauge-render v-bind="{
+                                title: 'Voltage',
+                                signalId: 125,
+                                unit: 'V',
+                                icon: 'shore',
+                                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                text1: 'text-size-8 color-text-type-secondary-dark',
+                                text2: 'text-size-14 font-bold',
+                                height: 'h-mini-230',
+                                width: 0,
+                                scaleVisible: true,
+                                type: 1,
+                                scaleInterval: 40,
+                                valueMode: 'raw',
+                                textSize: 20,
+                                unitTextSize: 10,
+                                marginTopValue: 'mg-top-mini-25',
+                                valueDecimals: 0,
+                                limitsEditable: 1,
+                                timeDelay: 3000,
+                            }"></gauge-render>
+                        </div>
+    
+                        <div class="ui col mini-1">
+                            <gauge-render v-bind="{
+                                title: 'Frequency',
+                                signalId: 124,
+                                unit: 'Hz',
+                                icon: 'shore',
+                                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                text1: 'text-size-8 color-text-type-secondary-dark',
+                                text2: 'text-size-14 font-bold',
+                                height: 'h-mini-230',
+                                width: 0,
+                                scaleVisible: true,
+                                type: 1,
+                                scaleInterval: 40,
+                                valueMode: 'raw',
+                                textSize: 20,
+                                unitTextSize: 10,
+                                marginTopValue: 'mg-top-mini-25',
+                                valueDecimals: 0,
+                                limitsEditable: 1,
+                                timeDelay: 3000,
+                            }"></gauge-render>
+                        </div>
+    
+                        <div class="ui col mini-1 ">
+                            <gauge-render v-bind="{
+                                title: 'Active Power',
+                                signalId: 127,
+                                unit: 'Kw',
+                                icon: 'shore',
+                                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                text1: 'text-size-8 color-text-type-secondary-dark',
+                                text2: 'text-size-14 font-bold',
+                                height: 'h-mini-230',
+                                width: 0,
+                                scaleVisible: true,
+                                type: 1,
+                                scaleInterval: 40,
+                                valueMode: 'raw',
+                                textSize: 20,
+                                unitTextSize: 10,
+                                marginTopValue: 'mg-top-mini-25',
+                                valueDecimals: 0,
+                                limitsEditable: 1,
+                                timeDelay: 3000,
+                            }"></gauge-render>
+                        </div>
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
 
 </article>
