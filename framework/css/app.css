@@ -6691,9 +6691,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
 .hiddeScrollBar::-webkit-scrollbar {
   display: none;
 }
-@media screen and (max-width: 536px) {
+@media screen and (max-width: 537px) {
   .wideScreenOn {
-    display: none; 
+    display: none!important; 
   }
 }
 
