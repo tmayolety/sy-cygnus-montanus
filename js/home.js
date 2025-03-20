@@ -3,11 +3,11 @@ var screen = {
     }
 }
 
-if (typeof wideScreenMounted == 'undefined') {
-    const wideScreenApp = Vue.createApp({})
-    wideScreenApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
-    wideScreenApp.component('gauge-render', components.gauge)
-    wideScreenApp.mount('.wideScreenApp')
-    wideScreenMounted = true;
+if (typeof homeMounted == 'undefined') {
+    const homeApp = Vue.createApp({})
+    homeApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
+    homeApp.component('gauge-render', components.gauge)
+    homeApp.mount('.homeApp')
+    homeMounted = true;
 }
 
