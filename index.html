@@ -145,7 +145,6 @@
             $("#SteeringSystemNav").load("src/steeringSystem.html");
 
             $("#HomeSystem").load("src/home.html", function () {
-                setTimeout(() => {
                     if (typeof homeMounted == 'undefined') {
                         const homeApp = Vue.createApp({});
                         homeApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font');
@@ -153,8 +152,6 @@
                         homeApp.mount('.homeApp');
                         homeMounted = true;
                     }
-                }, 20000);
-
             });
 
             $.ajax({
