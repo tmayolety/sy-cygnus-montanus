@@ -145,6 +145,7 @@
             $("#SteeringSystemNav").load("src/steeringSystem.html");
 
             $("#HomeSystem").load("src/home.html", function () {
+                setTimeout(() => {
                     if (typeof homeMounted == 'undefined') {
                         const homeApp = Vue.createApp({});
                         homeApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font');
@@ -152,6 +153,8 @@
                         homeApp.mount('.homeApp');
                         homeMounted = true;
                     }
+                }, 1500);
+
             });
 
             $.ajax({
@@ -246,7 +249,7 @@
         </section>
         <section class="dev-sectionContent dev-menuNavigation-fire" style="display:none; overflow: hidden;"
             id="FireSystemNav"></section>
-        <section class="dev-sectionContent dev-menuNavigation-splash marginTopWideScreen" id="HomeSystem">
+        <section class="dev-sectionContent dev-menuNavigation-splash marginTopWideScreen" style="overflow: hidden;" id="HomeSystem">
 
             <script language="JavaScript">
 

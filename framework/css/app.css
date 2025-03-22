@@ -6692,13 +6692,12 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   display: none;
 }
 
-
 @media (max-height: 537px) {
   .wideScreenOn {
     display: none!important; 
   }
   .marginTopWideScreen{
-    margin-top:-3.3em!important;
+    margin-top:-3.5em!important;
   }
 }
 
