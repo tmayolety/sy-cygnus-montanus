@@ -88,7 +88,7 @@ function addCurrentDataPoint() {
 loadDataFromLocalStorage();
 
 // Añadir nuevo punto cada 30 minutos
-setInterval(addCurrentDataPoint, 30 * 60 * 1);
+setInterval(addCurrentDataPoint, 30 * 60 * 100);
 
 // Para pruebas: añadir cada 5 segundos
 // setInterval(addCurrentDataPoint, 5000);
