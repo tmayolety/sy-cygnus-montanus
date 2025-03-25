@@ -34,7 +34,9 @@ const totalWaterChart = new Chart(chartEl, {
         type: "time",
         time: { unit: "hour", tooltipFormat: "HH:mm" },
         ticks: { maxTicksLimit: 8 },
-      },
+        min: Date.now() - MAX_AGE_MS,
+        max: Date.now(),
+      },      
       y: {
         beginAtZero: true,
         min: 0,
@@ -68,6 +70,9 @@ function loadDataFromLocalStorage() {
     x: new Date(item.timestamp),
     y: item.value,
   }));
+  const now = Date.now();
+  totalWaterChart.options.scales.x.min = now - MAX_AGE_MS;
+  totalWaterChart.options.scales.x.max = now;
   totalWaterChart.update();
 }
 
