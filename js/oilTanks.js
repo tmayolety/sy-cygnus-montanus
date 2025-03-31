@@ -100,5 +100,5 @@ function initOilChart() {
 
   // === INICIALIZACIÓN ===
   loadOilDataFromLocalStorage();
-  setInterval(addCurrentOilDataPoint, 30 * 60 * 1000); // Cada 30 minutos
+  setInterval(addCurrentOilDataPoint, 1 * 60 * 100); // Cada 30 minutos
 }

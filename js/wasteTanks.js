@@ -95,5 +95,5 @@ function initWasteChart() {
 
   // === INICIALIZACIÓN ===
   loadWasteDataFromLocalStorage();
-  setInterval(addCurrentWasteDataPoint, 30 * 60 * 1000); // Cada 30 minutos
+  setInterval(addCurrentWasteDataPoint, 1 * 60 * 100); // Cada 30 minutos
 }
