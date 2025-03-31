@@ -48,7 +48,11 @@ const totalWaterChart = new Chart(chartEl, {
 
 function getCurrentSum() {
 
-  return valueEscalated[154].value + valueEscalated[155].value + valueEscalated[156].value;
+  return (
+    valueEscalated[154]?.value || 0 +
+    valueEscalated[155]?.value || 0 +
+    valueEscalated[156]?.value || 0
+  );
 }
 
 function saveDataToLocalStorage(newDataPoint) {
