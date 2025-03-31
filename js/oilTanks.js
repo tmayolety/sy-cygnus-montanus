@@ -44,7 +44,7 @@ function initOilChart() {
           type: "time",
           time: { unit: "hour", tooltipFormat: "HH:mm" },
           ticks: { maxTicksLimit: 8 },
-          min: Date.now() - MAX_AGE_MS,
+          min: Date.now() - MAX_AGE_MS_OIL,
           max: Date.now(),
         },
         y: {

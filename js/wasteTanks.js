@@ -39,7 +39,7 @@ function initWasteChart() {
             type: "time",
             time: { unit: "hour", tooltipFormat: "HH:mm" },
             ticks: { maxTicksLimit: 8 },
-            min: Date.now() - MAX_AGE_MS,
+            min: Date.now() - MAX_AGE_MS_WASTE,
             max: Date.now(),
           },
           y: {
