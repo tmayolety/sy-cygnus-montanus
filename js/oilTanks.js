@@ -65,7 +65,7 @@ function initOilChart() {
         y: {
           display: true,
           beginAtZero: true,
-          min: parseInt(signalsData[453].SignalMin || "0") + parseInt(signalsData[454].SignalMin || "0"),
+          min: 0,
           max: 85000,
         },
       },
