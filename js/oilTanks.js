@@ -21,9 +21,6 @@ function initOilChart() {
   const LOCAL_STORAGE_KEY_OIL = "totalOilData";
   const MAX_AGE_MS_OIL = 3 * 24 * 60 * 60 * 1000; // 3 días
 
-  // === VERIFICAR SI HAY RENDER ===
-  if (!chartElOil || isNaN(parseInt(chartElOil.getAttribute("width")))) return;
-
   // === CREAR GRÁFICO DE ACEITE ===
   const totalOilChart = new Chart(chartElOil, {
     type: "line",
@@ -45,25 +42,12 @@ function initOilChart() {
       scales: {
         x: {
           type: "time",
-          time: {
-            unit: "hour",
-            stepSize: 1,
-            tooltipFormat: "HH:mm",
-            displayFormats: {
-              second: "HH:mm:ss",
-              minute: "HH:mm",
-              hour: "HH:mm",
-            },
-          },
-          ticks: {
-            major: { enabled: true },
-            maxTicksLimit: 8,
-          },
-          min: Date.now() - MAX_AGE_MS_OIL,
+          time: { unit: "hour", tooltipFormat: "HH:mm" },
+          ticks: { maxTicksLimit: 8 },
+          min: Date.now() - MAX_AGE_MS,
           max: Date.now(),
         },
         y: {
-          display: true,
           beginAtZero: true,
           min: 0,
           max: 85000,

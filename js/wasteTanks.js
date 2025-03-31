@@ -17,8 +17,6 @@ function initWasteChart() {
   const LOCAL_STORAGE_KEY_WASTE = "totalWasteData";
   const MAX_AGE_MS_WASTE = 3 * 24 * 60 * 60 * 1000; // 3 días
 
-  if (!chartElWaste || isNaN(parseInt(chartElWaste.getAttribute("width")))) return;
-
   const totalWasteChart = new Chart(chartElWaste, {
     type: "line",
     data: {
@@ -33,38 +31,23 @@ function initWasteChart() {
       }],
     },
     options: {
-      plugins: {
-        legend: { display: false },
-      },
-      animation: { duration: 0 },
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          type: "time",
-          time: {
-            unit: "hour",
-            stepSize: 1,
-            tooltipFormat: "HH:mm",
-            displayFormats: {
-              second: "HH:mm:ss",
-              minute: "HH:mm",
-              hour: "HH:mm",
-            },
+        plugins: { legend: { display: false } },
+        animation: { duration: 0 },
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            type: "time",
+            time: { unit: "hour", tooltipFormat: "HH:mm" },
+            ticks: { maxTicksLimit: 8 },
+            min: Date.now() - MAX_AGE_MS,
+            max: Date.now(),
           },
-          ticks: {
-            major: { enabled: true },
-            maxTicksLimit: 8,
+          y: {
+            beginAtZero: true,
+            min: 0,
+            max: 85000,
           },
-          min: Date.now() - MAX_AGE_MS_WASTE,
-          max: Date.now(),
         },
-        y: {
-          display: true,
-          beginAtZero: true,
-          min: 0,
-          max: 85000,
-        },
-      },
     },
   });
 
