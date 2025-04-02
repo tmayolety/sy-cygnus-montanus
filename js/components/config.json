@@ -124,6 +124,21 @@
 
       },
       {
+        "name": "pumpApp",
+        "component": [
+          {
+            "label": "load-render",
+            "file": "load"
+          }
+        ],
+        "mount": ".pumpApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+    },
+      {
           "name": "singleLineApp",
           "component": [
             {
