@@ -137,7 +137,7 @@
             "isCustomElement": "tag => tag.startsWith('font')"
           }
         }
-    },
+      },
       {
           "name": "singleLineApp",
           "component": [
