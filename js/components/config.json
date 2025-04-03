@@ -309,6 +309,10 @@
           {
             "label": "icon-two-options-digital-line-render",
             "file": "iconTwoOptionsDigitalLine"
+          },
+          {
+            "label": "icon-text-value-digital-two-id-line-render",
+            "file": "iconTextValueDigitalTwoIDLine"
           }
         ],
         "mount": ".valveListApp",

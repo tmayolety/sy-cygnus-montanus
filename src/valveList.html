@@ -1,132 +1,262 @@
 <article>
-    <div class="ui grid type1 cols-mini-1 hidden-phone">
+  <div class="ui grid type1 cols-mini-1 hidden-phone">
+    <div
+      class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header valveListApp"
+    >
+      <header class="ui col">
+        <font>Valves List</font>
+        <span class="gradients">
+          <span class="gradient-left"></span>
+          <span class="gradient-right"></span>
+        </span>
+      </header>
 
-        <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header valveListApp">
-            <header class="ui col">
-            <font>Valves List</font>
-            <span class="gradients">
-            <span class="gradient-left"></span>
-            <span class="gradient-right"></span>
-            </span>  
-            </header>
-
-            <div class="ui grid cols-mini-4 bg-no pad-no gap-med">
-
-                <div class="ui col mini-2 sm-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med">
-                        <header class="col-header size-med">Bilge Valves</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 1, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 2, title: 'SPS Port Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 11, title: 'SPS Stbd Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 13, title: 'Engine Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 15, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 57, title: 'Port SPS Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 59, title: 'Stbd SPS Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 61, title: 'Engine Room Bilge Valve Port', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 63, title: 'Engine Room Bilge Valve Stbd', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 65, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 371, title: 'Lazzarete Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 373, title: 'Owners Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 107, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 308, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 310, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 321, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 323, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 325, title: 'Anchor Locker Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 375, title: 'Chain Lockers Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-
-               
-
-                </div>
-
-                <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med radius shadow">
-                        <header class="col-header size-med">Water Valves</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 48, title: 'Water Tanks Fwd Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 50, title: 'Water Tanks Fwd Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 52, title: 'Water Tanks Fwd Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 54, title: 'Water Tanks Fwd Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 99, title: 'Port Fwd Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 101, title: 'Port Fwd Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 103, title: 'Stbd Fwd Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 105, title: 'Stbd Fwd Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 405, title: 'Stbd Aft Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 407, title: 'Stbd Aft Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 409, title: 'Port Aft Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 411, title: 'Port Aft Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 418, title: 'Anchor Wash Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 377, title: 'Water Tanks Aft Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 379, title: 'Water Tanks Aft Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 381, title: 'Water Tanks Aft Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 383, title: 'Water Tanks Aft Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med">
-                        <header class="col-header size-med">Fuel Valves</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 17, title: 'Fuel Tank Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 19, title: 'Fuel Tank Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 21, title: 'Fuel Tank Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 23, title: 'Fuel Tank Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 25, title: 'Fuel Tank Keel IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 27, title: 'Fuel Tank Keel OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 29, title: 'Fuel Day Tank Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 31, title: 'Fuel Day Tank Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 33, title: 'Fuel Day Tank Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 35, title: 'Fuel Day Tank Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 40, title: 'Fuel Supply Port Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 42, title: 'Fuel Return Port Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 44, title: 'Fuel Supply Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 46, title: 'Fuel Return Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med">
-                        <header class="col-header size-med">Fuel Valves</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-                                
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 69, title: 'Stbd Fuel Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 71, title: 'Stbd Fuel Tank OUT Valve ', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 73, title: 'Port Fuel Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 75, title: 'Port Fuel Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 77, title: 'Keel Fuel Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 79, title: 'Keel Fuel Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 81, title: 'Stbd Fuel Day Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 83, title: 'Stbd Fuel Day Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 85, title: 'Port Fuel Day Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 87, title: 'Port Fuel Day Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 91, title: 'Port Generator Fuel Supply Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 93, title: 'Port Generator Fuel Return Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 95, title: 'Stbd Generator Fuel Supply Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 97, title: 'Stbd Generator Fuel Return Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div class="ui grid cols-mini-4 bg-no pad-no gap-med">
+        <div
+          class="ui col mini-2 sm-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med">
+            <header class="col-header size-med">Bilge Valves</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 9, signalId2: 26, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'Transition' }"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 1,  title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 2, title: 'SPS Port Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 11, title: 'SPS Stbd Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 13, title: 'Engine Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 15, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 57, title: 'Port SPS Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 59, title: 'Stbd SPS Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 61, title: 'Engine Room Bilge Valve Port', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 63, title: 'Engine Room Bilge Valve Stbd', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 65, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 371, title: 'Lazzarete Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 373, title: 'Owners Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 107, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 308, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 310, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 321, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 323, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 325, title: 'Anchor Locker Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 375, title: 'Chain Lockers Bilge Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
             </div>
+          </div>
         </div>
-    </div>
 
+        <div
+          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med radius shadow">
+            <header class="col-header size-med">Water Valves</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 48, title: 'Water Tanks Fwd Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 50, title: 'Water Tanks Fwd Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 52, title: 'Water Tanks Fwd Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 54, title: 'Water Tanks Fwd Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 99, title: 'Port Fwd Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 101, title: 'Port Fwd Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 103, title: 'Stbd Fwd Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 105, title: 'Stbd Fwd Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 405, title: 'Stbd Aft Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 407, title: 'Stbd Aft Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 409, title: 'Port Aft Water Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 411, title: 'Port Aft Water Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 418, title: 'Anchor Wash Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 377, title: 'Water Tanks Aft Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 379, title: 'Water Tanks Aft Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 381, title: 'Water Tanks Aft Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 383, title: 'Water Tanks Aft Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med">
+            <header class="col-header size-med">Fuel Valves</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 17, title: 'Fuel Tank Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 19, title: 'Fuel Tank Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 21, title: 'Fuel Tank Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 23, title: 'Fuel Tank Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 25, title: 'Fuel Tank Keel IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 27, title: 'Fuel Tank Keel OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 29, title: 'Fuel Day Tank Stbd IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 31, title: 'Fuel Day Tank Stbd OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 33, title: 'Fuel Day Tank Port IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 35, title: 'Fuel Day Tank Port OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 40, title: 'Fuel Supply Port Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 42, title: 'Fuel Return Port Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 44, title: 'Fuel Supply Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 46, title: 'Fuel Return Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med">
+            <header class="col-header size-med">Fuel Valves</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 69, title: 'Stbd Fuel Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 71, title: 'Stbd Fuel Tank OUT Valve ', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 73, title: 'Port Fuel Tank IN Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 75, title: 'Port Fuel Tank OUT Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 77, title: 'Keel Fuel Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 79, title: 'Keel Fuel Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 81, title: 'Stbd Fuel Day Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 83, title: 'Stbd Fuel Day Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 85, title: 'Port Fuel Day Tank Valve IN', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 87, title: 'Port Fuel Day Tank Valve OUT', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 91, title: 'Port Generator Fuel Supply Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 93, title: 'Port Generator Fuel Return Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 95, title: 'Stbd Generator Fuel Supply Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 97, title: 'Stbd Generator Fuel Return Valve', icon: 'valve', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'med' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </article>

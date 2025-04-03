@@ -1,29 +1,15 @@
 components.iconTextValueDigitalLine = {
     props: ['signalId', 'icon', 'title', 'size', 'countingHoursSignalId', 'zeroText', 'oneText', 'zeroColor', 'oneColor', 'valueMode', 'sizeWidthTitle'],
-    template: /*html*/`<li ref="iconTextValueDigitalLineElement">
+    template: /*html*/`<li>
                 <div class="col-40 align-middle-center">
                 <i class="ui" :class= '[iconSize, iconColor]' :id="svgId"></i>
                 </div>
                 <div class="col-150-min">
 
-                    <div class="flip-col go-bt " :class="[flipClass]">
-
-                        <div class="flip-col--container">
-
-                           <div class="ui col col-150-min textColorTheme" style="font-size:11px; text-align:left;">  
-
-                                Id: {{signalId}} {{deviceName}} RAW: {{rawToShow}}     
-
-                           </div>                     
-
-                           <div class="ui col " style=" text-align: left;" :class='[sizeWidth]' v-on:click="flipComponent()">
-                               <span>{{title}}</span>
-                           </div>
-
-                        </div>
-
+                    <div class="ui col " style=" text-align: left;" :class='[sizeWidth]'>
+                        <span>{{title}}</span>
                     </div>
-       
+
                 </div>
 
                 <div v-if="countingHours" className="col-100 align-middle-center "><span className="font-bold">{{countingHoursValue}}</span>&nbsp;<span>h</span></div>
@@ -43,43 +29,25 @@ components.iconTextValueDigitalLine = {
                 valueTextColor: null,
                 countingHours: false,
                 valueCellColor: null,
-                flipClass: 'event-click',
-                raw: valueRaw[this.signalId],
-                rawToShow: null,
-                signalData: signalsData[this.signalId],
-                deviceName: null,
                 sizeWidth: null,
         }
     },
     mounted(){
 
-        let rawData;
-        if (Vue.isProxy(this.signalData)){
-            rawData = Vue.toRaw(this.signalData)
-
-        }
-        if(typeof rawData !== "undefined"){
-            this.deviceName = deviceData[rawData.Device].Name
-
-        }
-        
         this.getSize()
 
         if (!isNaN(this.value)) {
             this.evaluate(this.value)
-            this.rawToShow = this.raw
         }
 
         const svgContent = iconRegistry[this.icon]
         $( "#"+this.svgId).html(svgContent)
         
-
     },
     updated(){
         
         if (!isNaN(this.value)) {
             this.evaluate(this.value)
-            this.rawToShow = this.raw
         }
 
     },
@@ -114,13 +82,7 @@ components.iconTextValueDigitalLine = {
                 this.sizeWidth = 'col-450-min';
             }
         },
-        flipComponent() {
-            this.flipClass = '';
-            setTimeout(this.unFlipComponent, 3000)
-        },
-        unFlipComponent() {
-            this.flipClass = 'event-click';
-        }
+       
 
     }
 };
