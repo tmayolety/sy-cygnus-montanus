@@ -38,9 +38,10 @@ components.gauge = {
                         <div v-bind="{ id: rndID}"  class="circularGauge"></div>
 
                             <div class="infos-container visible" :class='[marginTopValue]'>
-                                <i class="ui status-icon glow visible" :class='[icon, iconClass]' :id="svgId"></i>
-                                <div class="ui clr-subvalue-ui color-text-type-secondary-dark" :class='[unitTextSizeClass]'>{{unit}}</div>
+                                <!--<i class="ui status-icon glow visible" :class='[icon, iconClass]' :id="svgId"></i>-->
                                 <div class="ui font-bold" :class='[textSizeClass]'>{{valueDisplay}}</div>
+                                <div class="ui clr-subvalue-ui color-text-type-secondary-dark" :class='[unitTextSizeClass]'>{{unit}}</div>
+                                
                                 <div style="display: none!important;">{{value}}</div>
                             </div>
 
@@ -220,7 +221,7 @@ components.gauge = {
         endAngle = -40;
         barSize = 20;
         if (this.width < 300) {
-          barSize = 9;
+          barSize = 15;
         }
         break;
     }

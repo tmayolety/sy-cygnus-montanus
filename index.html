@@ -126,6 +126,7 @@
             $("#LoadsNav").load("src/loads.html");
             $("#FireDoorsNav").load("src/fireDoorsLayout.html");
             $("#Various1Nav").load("src/variousSystems.html");
+            $("#hundestedNav").load("src/hundested.html");
             $("#InsulationNav").load("src/insulation.html");
             $("#NavLightsNav").load("src/navLights.html");
             $("#NavEquipmentNav").load("src/navEquipment.html");
@@ -143,8 +144,8 @@
             $("#LightingNav").load("src/lighting.html");
             $("#PumpsNav").load("src/loads.html");
             $("#HydraulicsNav").load("src/hydraulics.html");
-            $("#ACSystemNav").load("src/acSystem.html");
-            $("#SteeringSystemNav").load("src/steeringSystem.html");
+          //  $("#ACSystemNav").load("src/acSystem.html");
+           // $("#SteeringSystemNav").load("src/steeringSystem.html");
 
             $("#HomeSystem").load("src/home.html", function () {
                 setTimeout(() => {
@@ -225,16 +226,20 @@
             id="LightingNav"></section>
         <section class="dev-sectionContent dev-menuNavigation-hydraulics" style="display:none; overflow: hidden;"
             id="HydraulicsNav"></section>
-        <section class="dev-sectionContent dev-menuNavigation-acSystem" style="display:none; overflow: hidden;"
-            id="ACSystemNav"></section>
+        <!--<section class="dev-sectionContent dev-menuNavigation-acSystem" style="display:none; overflow: hidden;"
+            id="ACSystemNav"></section>-->
         <section class="dev-sectionContent dev-menuNavigation-fireDoorsLayout" id="FireDoorsNav" style="display:none;">
         </section>
         <section class="dev-sectionContent dev-menuNavigation-variousSystems" style="display:none; overflow: auto;"
             id="Various1Nav"></section>
+            <section class="dev-sectionContent dev-menuNavigation-hundested" style="display:none; overflow: auto;"
+            id="hundestedNav"></section>
+            
         <section class="dev-sectionContent dev-menuNavigation-insulation" style="display:none;" id="InsulationNav">
         </section>
-        <section class="dev-sectionContent dev-menuNavigation-steeringSystem" style="display:none;"
-            id="SteeringSystemNav"></section>
+        <!--<section class="dev-sectionContent dev-menuNavigation-steeringSystem" style="display:none;"
+            id="SteeringSystemNav"></section>-->
+            
         <section class="dev-sectionContent dev-menuNavigation-navEquipment" style="display:none;" id="NavEquipmentNav">
         </section>
         <section class="dev-sectionContent dev-menuNavigation-activeAlarms" style="display:none; overflow: hidden;"
@@ -324,10 +329,10 @@
         absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
 
     </script>
-
+<!--
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+-->
 </body>
 
 </html>

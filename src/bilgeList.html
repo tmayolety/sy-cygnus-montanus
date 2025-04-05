@@ -1,100 +1,174 @@
 <article>
-    <div class="ui grid type1 cols-mini-1 hidden-phone">
+  <div class="ui grid type1 cols-mini-1 hidden-phone">
+    <div
+      class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header bilgeListApp"
+    >
+      <header class="ui col">
+        <font>Loads and Bilges List</font>
+        <span class="gradients">
+          <span class="gradient-left"></span>
+          <span class="gradient-right"></span>
+        </span>
+      </header>
 
-        <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header bilgeListApp">
-            <header class="ui col">
-                <font>Loads and Bilges List</font>
-                <span class="gradients">
-            <span class="gradient-left"></span>
-            <span class="gradient-right"></span>
-            </span>
-                
-                
-            </header>
-
-            <div class="ui grid cols-mini-3 cols-xl-3 bg-no pad-no gap-med">
-
-                <div class="ui col mini-2 sm-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med">
-                        <header class="col-header size-med">Pumps</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 89, title: 'Fuel Transfer Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 201, title: 'SPS Port Bilge Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 202, title: 'SPS Stbd Bilge Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 203, title: 'Battery Port Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 204, title: 'Battery Stbd Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 205, title: 'Port Engine Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 206, title: 'Stbd Engine Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 207, title: 'Port Pump Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 208, title: 'Stbd Pump Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 209, title: 'Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 210, title: 'Fire Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 327, title: 'Crew Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 328, title: 'Forepeak Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 329, title: 'Chain Lockers Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 330, title: 'Lazarette Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 331, title: 'Guest Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-
-                    <div class="ui col mini-1 has-col-header-med radius shadow">
-                        <header class="col-header size-med">Bilge System</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-
-
-
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 3, title: 'Bilge Tank Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-
-
-
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 4, title: 'Pump Room Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 5, title: 'Battery Port Space Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 6, title: 'Battery Stbd Space Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 7, title: 'Engine Room Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 8, title: 'Guest Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 165, title: 'Hundested SPS Port Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 166, title: 'Hundested SPS Stbd Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 305, title: 'Crew Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 306, title: 'Forepeak Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 307, title: 'Chain Lockers Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 369, title: 'Lazarette Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 370, title: 'Owners Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"></icon-text-value-digital-line-render>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
-                    <div class="ui col mini-1 has-col-header-med radius shadow">
-                        <header class="col-header size-med">Bilge Valves</header>
-                        <div class="col-content overflow">
-                            <ul class="ui table size-mini resp">
-
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 1, signalIdOptionTwo: 2, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 9, signalIdOptionTwo: 10, title: 'SPS Port Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 11, signalIdOptionTwo: 12, title: 'SPS Stbd Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 13, signalIdOptionTwo: 14, title: 'Engine Room Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger', sizeWidthTitle: 'large'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 15, signalIdOptionTwo: 16, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 308, signalIdOptionTwo: 309, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 310, signalIdOptionTwo: 311, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 371, signalIdOptionTwo: 372, title: 'Lazarette Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 373, signalIdOptionTwo: 374, title: 'Owners Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                <icon-two-options-digital-line-render  v-bind="{  signalIdOptionOne: 375, signalIdOptionTwo: 376, title: 'Chain Lockers Bilge Valve', icon: 'valve', size: '20', zeroOptionOneText: 'Closed', zeroOptionTwoText: 'Opened' , zeroOptionOneColor: 'success', zeroOptionTwoColor: 'danger', oneOptionOneText: 'OK', oneOptionTwoText: 'Faulty' , oneOptionOneColor: 'success', oneOptionTwoColor: 'danger'}"></icon-two-options-digital-line-render>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+      <div class="ui grid cols-mini-3 cols-xl-3 bg-no pad-no gap-med">
+        <div
+          class="ui col mini-2 sm-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med">
+            <header class="col-header size-med">Pumps</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 89, title: 'Fuel Transfer Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 201, title: 'SPS Port Bilge Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 202, title: 'SPS Stbd Bilge Pump', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 203, title: 'Battery Port Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 204, title: 'Battery Stbd Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 205, title: 'Port Engine Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 206, title: 'Stbd Engine Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 207, title: 'Port Pump Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 208, title: 'Stbd Pump Room Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 209, title: 'Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 210, title: 'Fire Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 327, title: 'Crew Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 328, title: 'Forepeak Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 329, title: 'Chain Lockers Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 330, title: 'Lazarette Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 331, title: 'Guest Bilge Pump', icon: 'onOff', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
             </div>
+          </div>
         </div>
-    </div>
 
+        <div
+          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med radius shadow">
+            <header class="col-header size-med">Bilge System</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 3, title: 'Bilge Tank Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 4, title: 'Pump Room Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 5, title: 'Battery Port Space Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 6, title: 'Battery Stbd Space Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 7, title: 'Engine Room Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 8, title: 'Guest Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 165, title: 'Hundested SPS Port Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'large' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 166, title: 'Hundested SPS Stbd Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger', sizeWidthTitle: 'large' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 305, title: 'Crew Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 306, title: 'Forepeak Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 307, title: 'Chain Lockers Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 369, title: 'Lazarette Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render
+                  v-bind="{  signalId: 370, title: 'Owners Bilge Level', icon: 'bilges', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Alarm', oneColor: 'danger' }"
+                ></icon-text-value-digital-line-render>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
+        >
+          <div class="ui col mini-1 has-col-header-med radius shadow">
+            <header class="col-header size-med">Bilge Valves</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 1, signalId2: 2, title: 'Guest Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 9, signalId2: 10, title: 'SPS Port Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 11, signalId2: 12, title: 'SPS Stbd Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 13, signalId2: 14, title: 'Engine Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 15, signalId2: 16, title: 'Pump Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 57, signalId2: 58, title: 'Stbd Engine Room Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 316, signalId2: 317, title: 'Crew Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 318, signalId2: 319, title: 'Forepeak Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 379, signalId2: 380, title: 'Lazzarete Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 381, signalId2: 382, title: 'Owners Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+                <icon-text-value-digital-two-id-line-render
+                  v-bind="{  signalId: 383, signalId2: 384, title: 'Chain Lockers Bilge Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"
+                ></icon-text-value-digital-two-id-line-render>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </article>

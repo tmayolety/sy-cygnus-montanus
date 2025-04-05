@@ -289,6 +289,10 @@
           {
             "label": "icon-two-options-digital-line-render",
             "file": "iconTwoOptionsDigitalLine"
+          },
+          {
+            "label": "icon-text-value-digital-two-id-line-render",
+            "file": "iconTextValueDigitalTwoIDLine"
           }
         ],
         "mount": ".bilgeListApp",
@@ -365,8 +369,35 @@
           }
       },
       {
+        "name": "hundestedApp",
+        "component": [
+          {
+            "label": "icon-text-value-digital-line-render",
+            "file": "iconTextValueDigitalLine"
+          },
+          {
+            "label": "icon-text-value-analogue-line-render",
+            "file": "iconTextValueAnalogueLine"
+          },
+          {
+            "label": "icon-two-options-digital-line-render",
+            "file": "iconTwoOptionsDigitalLine"
+          }
+        ],
+        "mount": ".hundestedApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+    },
+      {
           "name": "fireDoorsLayoutApp",
           "component": [
+            {
+              "label": "basic-text-with-digital-line-render",
+              "file": "basicTextWithTitleDigital"
+            },
             {
               "label": "door-render",
               "file": "door"

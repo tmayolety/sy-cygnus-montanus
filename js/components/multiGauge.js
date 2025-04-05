@@ -57,9 +57,12 @@ components.multiGauge = {
           <div :class= '["circularGauge-wrapper", centerValueClass, gaugeCenterSize]'>
               <div v-bind="{ id: gaugeCenterId}" class="circularGauge"></div>
               <div :class= '["infos-container", gaugeCenterinfo]'>
+                  <!--
                   <i :class= '["ui","status-icon",gaugeCenterIcon]' :id="svgCenterId"></i>
-                  <div :class='[gaugeCenterValue1]'>{{centerUnit}}</div>
+                  -->
                   <div :class='[gaugeCenterValue2]'>{{centerValueShow}}</div>
+                  <div :class='[gaugeCenterValue1]'>{{centerUnit}}</div>
+                  
                   <div :class='[gaugeCenterValue3]'></div>
                   <div :class='[gaugeCenterValue4]'></div>
               </div>
@@ -69,6 +72,7 @@ components.multiGauge = {
           <div class="" :class= '["circularGauge-wrapper","multi-gauge-left","value-bg-default", leftValueClass, gaugeLeftSize]'>
               <div class="circularGauge" v-bind="{ id: gaugeLeftId}"></div>
               <div :class= '["infos-container", gaugeLeftInfo]'>
+              
                   <i :class= '["ui","status-icon", gaugeLeftIcon]' style="position:relative; align-self:start;" :id="svgLeftId"></i>
                   <div :class= '[gaugeLeftValue1]' style="align-self:start; position:relative;">{{leftValueShow}} <small class="font-regular clr-subvalue-ui"> &nbsp;{{leftUnit}}</small></div>
                   <div :class= '[gaugeLeftValue2]' style="align-self:start; position:relative;">{{leftTitle}}</div>
