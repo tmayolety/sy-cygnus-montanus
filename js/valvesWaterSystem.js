@@ -2,7 +2,7 @@ var screen = {
     renderData: function (msg) {
     }
 };
-$("#ValvesFuelLayout").load("src/ga/valves/Water.svg");
+$("#ValvesWaterLayout").load("src/ga/valves/Water.svg");
 
 $( ".dev-writeButton" ).unbind().click(function() {
 
