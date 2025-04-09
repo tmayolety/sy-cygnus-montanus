@@ -2,7 +2,8 @@ var screen = {
     renderData: function (msg) {
     }
 };
-$("#ValvesFuelLayout").load("src/ga/valves/Fuel.svg");
+
+$("#valvesFuelLayout_1").load("src/ga/valves/Fuel.svg");
 
 $( ".dev-writeButton" ).unbind().click(function() {
 

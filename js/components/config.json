@@ -500,7 +500,7 @@
         "file": "iconTriEstateDigitalLine"
       }
     ],
-    "mount": "#valveFuelSystemApp",
+    "mount": ".valveFuelSystemApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"
