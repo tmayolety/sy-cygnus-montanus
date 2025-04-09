@@ -24,6 +24,7 @@
     <script src="js/components/iconTriEstateDigitalLine.js"></script>
     <script src="js/components/iconTextDigitalLine.js"></script>
     <script src="js/components/iconLayout.js"></script>
+    <script src="js/components/iconLayoutTwoID.js"></script>
     <script src="js/components/valveLayout.js"></script>
     <script src="js/components/pumpLayout.js"></script>
     <script src="js/components/basicHorizontalBar.js"></script>
@@ -113,7 +114,9 @@
             $("#generators12Nav").load("src/generators12.html");
             $("#generators34Nav").load("src/generators34.html");
             $("#emotionBatteriesNav").load("src/emotionBatteries.html");
-            $("#BilgeFireApp").load("src/valvesBilgeFire.html");
+            $("#ValveFuelSystem").load("src/valvesFuelSystem.html");
+            $("#ValveFireBilgeSystem").load("src/valvesFireBilgeSystem.html");
+            $("#ValveWaterSystem").load("src/valvesWaterSystem.html");
             $("#ShorePowerNav").load("src/shorePower.html");
             $("#BilgeNav").load("src/bilges.html");
             $("#BilgeListNav").load("src/bilgeList.html");
@@ -196,8 +199,12 @@
         </section>
         <section class="dev-sectionContent dev-menuNavigation-emotionBatteries" id="emotionBatteriesNav"
             style="display:none;"></section>
-        <section class="dev-sectionContent dev-menuNavigation-valvesBilgeFire" style="display:none;overflow: auto;"
-            id="BilgeFireApp"></section>
+        <section class="dev-sectionContent dev-menuNavigation-valvesFuelSystem" style="display:none;overflow: hidden;"
+            id="ValveFuelSystem"></section>
+        <section class="dev-sectionContent dev-menuNavigation-valvesFireBilgeSystem" style="display:none;overflow: hidden;"
+            id="ValveFireBilgeSystem"></section>
+            <section class="dev-sectionContent dev-menuNavigation-valvesWaterSystem" style="display:none;overflow: hidden;"
+            id="ValveWaterSystem"></section>
         <section class="dev-sectionContent dev-menuNavigation-shorePower shorePowerApp"
             style="display:none;overflow: hidden;" id="ShorePowerNav"></section>
         <section class="dev-sectionContent dev-menuNavigation-bilgeSystem" style="display:none;" id="BilgeNav">

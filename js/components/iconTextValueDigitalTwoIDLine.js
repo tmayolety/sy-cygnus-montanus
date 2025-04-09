@@ -13,7 +13,7 @@ components.iconTextValueDigitalTwoIDLine = {
                 </div>
 
                 <div v-if="countingHours" className="col-100 align-middle-center "><span className="font-bold">{{countingHoursValue}}</span>&nbsp;<span>h</span></div>
-                <div class="col-80 align-middle-left " :class= '[valueTextColor, valueCellColor]'><span class="font-bold glow">{{valueText}}</span></div>
+                <div class="col-80 align-middle-left " :class= '[valueTextColor]'><span class="font-bold glow" :class='[valueCellColor]'>{{valueText}}</span></div>
                 
                 <span style="display: none;">{{value}}</span> 
                 <span style="display: none;">{{value2}}</span> 
@@ -61,13 +61,16 @@ components.iconTextValueDigitalTwoIDLine = {
             if (value  == 1 && this.value2 == 0) {
                 this.valueText = this.oneText;
                 this.iconColor = 'color-fill-type-' + this.oneColor; this.valueTextColor = 'color-text-type-' + this.oneColor;
+                this.valueCellColor = ''
             } else if (value  == 0 && this.value2 == 1) {
                 this.valueText = this.zeroText;
                 this.iconColor = 'color-fill-type-'+ this.zeroColor; this.valueTextColor = 'color-text-type-'+ this.zeroColor;
+                this.valueCellColor = ''
             } else if ((value  == 0 && this.value2 == 0) || (value  == 1 && this.value2 == 1)) {
                 this.valueText = this.transitionText;
                 this.iconColor = 'color-fill-type-'+ this.oneColor + ' blinking-element';
-                this.valueTextColor = 'color-text-type-'+ this.oneColor + ' blinking-element';
+                this.valueTextColor = 'color-text-type-'+ this.oneColor 
+                this.valueCellColor = 'blinking-element'
             }
              else {
                 this.valueText = 'N/A'

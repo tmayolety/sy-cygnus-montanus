@@ -47,7 +47,7 @@ components.iconLayout = {
     methods: {
         getIconColor(value, valueTwo) {
             let color;
-            if (isNaN(value) || value === 'undefined') {
+            if (isNaN(value) || value == 'undefined') {
                 color = 'color-fill-type-dark';
             } else {
                 if (parseInt(value) != 0) {

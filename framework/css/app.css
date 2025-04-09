@@ -6487,13 +6487,8 @@ html[data-scheme="scheme3"] .textColorTheme{ color: rgb(255, 255, 255)!important
 }
 
 @keyframes blinker {
-  50% {
-      opacity: 0.6;
-  }
-}
-@keyframes blinker {
   0% { opacity: 1; }
-  50% { opacity: 0.6; }
+  50% { opacity: 0.3; }
   100% { opacity: 1; }
 }
 
@@ -6707,4 +6702,11 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   }
 }
 
-
+#ValvesBilgeLayout_3 svg {
+  width: 1080px;
+  height: 100%;
+  /*max-height: 780px; /* o lo que necesites */
+  /*overflow: hidden;*/
+  /*object-fit: contain;*/
+  /*display: block;*/
+}
