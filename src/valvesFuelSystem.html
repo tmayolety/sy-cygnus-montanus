@@ -1,47 +1,254 @@
 <article>
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-phone valveFuelSystemApp">
-        <div class="ui grid cols-mini-1 gap-xl pad-lg col mini-1">
-            <div class="ui col mini-1 top-center h-mini-870" style="overflow:hidden;">
-                 <span id="valvesFuelLayout_1" style="width: 1150px; height: 870px;" ></span>
-
-                <!-- FEEDBACKS VALUES -->
-                 <icon-layout-two-id-render v-bind="{ signalId: 17, signalIdTwo: 18, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 29.85, y: 70.35, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 19, signalIdTwo: 20, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 31.45, y: 72.5, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 21, signalIdTwo: 22, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 29.85, y: 22.75, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 23, signalIdTwo: 24, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 31.45, y: 24.75, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 25, signalIdTwo: 26, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 67.45, y: 56.45, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 27, signalIdTwo: 28, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 67.45, y: 52.9, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 29, signalIdTwo: 30, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47, y: 70.35, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 31, signalIdTwo: 32, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 48.35, y: 72.5, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 33, signalIdTwo: 34, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47, y: 22.75, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 35, signalIdTwo: 36, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 48.35, y: 24.75, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 40, signalIdTwo: 41, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.1, y: 13, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 42, signalIdTwo: 43, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.1, y: 18, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 44, signalIdTwo: 45, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.1, y: 78.7, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 46, signalIdTwo: 47, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.1, y: 83.7, transitionColor:'danger' }"></icon-layout-two-id-render>
-
-                 <!--VALVES VALUES-->
-                 <valve-layout-render v-bind="{ openSignalId: 17, closeSignalId: 18, openCommandSignalId: 77, closeCommandSignalId: 78, writeMode: 1, name: 'Fuel Tank Stbd IN', openColor: 'success', closeColor: 'danger', x: 26, y: 75 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 19, closeSignalId: 20, openCommandSignalId: 79, closeCommandSignalId: 80, writeMode: 1, name: 'Fuel Tank Stbd OUT', openColor: 'success', closeColor: 'danger', x: 36.8, y: 70.5 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 21, closeSignalId: 22, openCommandSignalId: 81, closeCommandSignalId: 82, writeMode: 1, name: 'Fuel Tank Port IN', openColor: 'success', closeColor: 'danger', x: 26, y: 21}"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 23, closeSignalId: 24, openCommandSignalId: 83, closeCommandSignalId: 84, writeMode: 1, name: 'Fuel Tank Port OUT', openColor: 'success', closeColor: 'danger', x: 36.8, y: 29 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 25, closeSignalId: 26, openCommandSignalId: 85, closeCommandSignalId: 86, writeMode: 1, name: 'Fuel Tank Keel IN', openColor: 'success', closeColor: 'danger', x: 72, y: 62 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 27, closeSignalId: 28, openCommandSignalId: 87, closeCommandSignalId: 88, writeMode: 1, name: 'Fuel Tank Keel OUT', openColor: 'success', closeColor: 'danger', x: 72, y: 49 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 29, closeSignalId: 30, openCommandSignalId: 89, closeCommandSignalId: 90, writeMode: 1, name: 'Fuel Day tank Stbd IN', openColor: 'success', closeColor: 'danger', x: 42.5, y: 75}"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 31, closeSignalId: 32, openCommandSignalId: 91, closeCommandSignalId: 92, writeMode: 1, name: 'Fuel Day tank Stbd OUT', openColor: 'success', closeColor: 'danger', x: 54, y: 70.5 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 33, closeSignalId: 34, openCommandSignalId: 93, closeCommandSignalId: 94, writeMode: 1, name: 'Fuel Day tank Port IN', openColor: 'success', closeColor: 'danger', x: 42.5, y: 21 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 35, closeSignalId: 36, openCommandSignalId: 95, closeCommandSignalId: 96, writeMode: 1, name: 'Fuel Day tank Port OUT', openColor: 'success', closeColor: 'danger', x: 54, y: 29 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 40, closeSignalId: 41, openCommandSignalId: 99, closeCommandSignalId: 100, writeMode: 1, name: 'Fuel Supply Port Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 11 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 42, closeSignalId: 43, openCommandSignalId: 101, closeCommandSignalId: 102, writeMode: 1, name: 'Fuel Return Port Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 22.3 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 44, closeSignalId: 45, openCommandSignalId: 103, closeCommandSignalId: 104, writeMode: 1, name: 'Fuel Supply Stbd Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 76 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 46, closeSignalId: 47, openCommandSignalId: 105, closeCommandSignalId: 106, writeMode: 1, name: 'Fuel Return Stbd Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 88 }"></valve-layout-render>
-
-                 <!-- FUEL TRANSFER PUMP RUNNING -->
-                 <icon-layout-render v-bind="{ signalId: 37, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 59.15, y: 35.4 }"></icon-layout-render>
-
-             </div>
+  <div
+    class="ui grid type1 cols-mini-6 pad-lg gap-sm hidden-phone valveFuelSystemApp"
+  >
+    <div class="ui col mini-2 grid cols-mini-1 bg-no pad-no gap-sm align-start">
+      <div class="ui col mini-1 has-col-header-med radius shadow">
+        <header class="col-header size-med">Fuel System</header>
+        <div class="col-content overflow">
+        <ul class="ui table size-mini resp">
+            <list-valve-controls-render v-bind="{
+                                    feedbackOpenSignalId: 17,
+                                    feedbackCloseSignalId: 18,
+                                    commandOpenSignalId: 77,
+                                    commandCloseSignalId: 78,
+                                    title: 'Fuel Tank Stbd IN',
+                                    zeroText: 'Closed',
+                                    zeroColor: 'danger',
+                                    oneText: 'Opened',
+                                    oneColor: 'success',
+                                    transitionText: 'In Transit',
+                                    writeMode: 1
+                                  }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                                  feedbackOpenSignalId: 19,
+                                  feedbackCloseSignalId: 20,
+                                  commandOpenSignalId: 79,
+                                  commandCloseSignalId: 80,
+                                  title: 'Fuel Tank Stbd OUT',
+                                  zeroText: 'Closed',
+                                  zeroColor: 'danger',
+                                  oneText: 'Opened',
+                                  oneColor: 'success',
+                                  transitionText: 'In Transit',
+                                  writeMode: 1
+                                }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 21,
+                                feedbackCloseSignalId: 22,
+                                commandOpenSignalId: 81,
+                                commandCloseSignalId: 82,
+                                title: 'Fuel Tank Port IN',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                              feedbackOpenSignalId: 23,
+                              feedbackCloseSignalId: 24,
+                              commandOpenSignalId: 83,
+                              commandCloseSignalId: 84,
+                              title: 'Fuel Tank Port OUT',
+                              zeroText: 'Closed',
+                              zeroColor: 'danger',
+                              oneText: 'Opened',
+                              oneColor: 'success',
+                              transitionText: 'In Transit',
+                              writeMode: 1
+                            }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                            feedbackOpenSignalId: 25,
+                            feedbackCloseSignalId: 26,
+                            commandOpenSignalId: 85,
+                            commandCloseSignalId: 86,
+                            title: 'Fuel Tank Keel IN',
+                            zeroText: 'Closed',
+                            zeroColor: 'danger',
+                            oneText: 'Opened',
+                            oneColor: 'success',
+                            transitionText: 'In Transit',
+                            writeMode: 1
+                          }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                          feedbackOpenSignalId: 27,
+                          feedbackCloseSignalId: 28,
+                          commandOpenSignalId: 87,
+                          commandCloseSignalId: 88,
+                          title: 'Fuel Tank Keel OUT',
+                          zeroText: 'Closed',
+                          zeroColor: 'danger',
+                          oneText: 'Opened',
+                          oneColor: 'success',
+                          transitionText: 'In Transit',
+                          writeMode: 1
+                        }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                        feedbackOpenSignalId: 29,
+                        feedbackCloseSignalId: 30,
+                        commandOpenSignalId: 89,
+                        commandCloseSignalId: 90,
+                        title: 'Fuel Day tank Stbd IN',
+                        zeroText: 'Closed',
+                        zeroColor: 'danger',
+                        oneText: 'Opened',
+                        oneColor: 'success',
+                        transitionText: 'In Transit',
+                        writeMode: 1
+                      }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                      feedbackOpenSignalId: 31,
+                      feedbackCloseSignalId: 32,
+                      commandOpenSignalId: 91,
+                      commandCloseSignalId: 92,
+                      title: 'Fuel Day tank Stbd OUT',
+                      zeroText: 'Closed',
+                      zeroColor: 'danger',
+                      oneText: 'Opened',
+                      oneColor: 'success',
+                      transitionText: 'In Transit',
+                      writeMode: 1
+                    }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                    feedbackOpenSignalId: 33,
+                    feedbackCloseSignalId: 34,
+                    commandOpenSignalId: 93,
+                    commandCloseSignalId: 94,
+                    title: 'Fuel Day tank Port IN',
+                    zeroText: 'Closed',
+                    zeroColor: 'danger',
+                    oneText: 'Opened',
+                    oneColor: 'success',
+                    transitionText: 'In Transit',
+                    writeMode: 1
+                  }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                  feedbackOpenSignalId: 35,
+                  feedbackCloseSignalId: 36,
+                  commandOpenSignalId: 95,
+                  commandCloseSignalId: 96,
+                  title: 'Fuel Day tank Port OUT',
+                  zeroText: 'Closed',
+                  zeroColor: 'danger',
+                  oneText: 'Opened',
+                  oneColor: 'success',
+                  transitionText: 'In Transit',
+                  writeMode: 1
+                }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+                feedbackOpenSignalId: 40,
+                feedbackCloseSignalId: 41,
+                commandOpenSignalId: 99,
+                commandCloseSignalId: 100,
+                title: 'Fuel Supply Port Generator',
+                zeroText: 'Closed',
+                zeroColor: 'danger',
+                oneText: 'Opened',
+                oneColor: 'success',
+                transitionText: 'In Transit',
+                writeMode: 1
+              }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+              feedbackOpenSignalId: 42,
+              feedbackCloseSignalId: 43,
+              commandOpenSignalId: 101,
+              commandCloseSignalId: 102,
+              title: 'Fuel Supply Port Generator',
+              zeroText: 'Closed',
+              zeroColor: 'danger',
+              oneText: 'Opened',
+              oneColor: 'success',
+              transitionText: 'In Transit',
+              writeMode: 1
+            }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+            feedbackOpenSignalId: 44,
+            feedbackCloseSignalId: 45,
+            commandOpenSignalId: 103,
+            commandCloseSignalId: 104,
+            title: 'Fuel Supply Stbd Generator',
+            zeroText: 'Closed',
+            zeroColor: 'danger',
+            oneText: 'Opened',
+            oneColor: 'success',
+            transitionText: 'In Transit',
+            writeMode: 1
+          }"></list-valve-controls-render>
+            <list-valve-controls-render v-bind="{
+            feedbackOpenSignalId: 46,
+            feedbackCloseSignalId: 47,
+            commandOpenSignalId: 105,
+            commandCloseSignalId: 106,
+            title: 'Fuel Return Stbd Generator',
+            zeroText: 'Closed',
+            zeroColor: 'danger',
+            oneText: 'Opened',
+            oneColor: 'success',
+            transitionText: 'In Transit',
+            writeMode: 1
+          }"></list-valve-controls-render>
+        </ul>
         </div>
+      </div>
     </div>
-    </article>
+    <div class="ui grid cols-mini-1 gap-xl pad-lg col mini-4">
+      <div class="ui col mini-1 top-center h-mini-870" style="overflow: hidden">
+        <span
+          id="valvesFuelLayout_1"
+          style="width: 1150px; height: 870px"
+        ></span>
 
+        <!-- FEEDBACKS VALUES -->
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 17, signalIdTwo: 18, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 19.75, y: 70.35, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 19, signalIdTwo: 20, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 22.2, y: 72.5, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 21, signalIdTwo: 22, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 19.75, y: 22.75, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 23, signalIdTwo: 24, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 22.2, y: 24.75, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 25, signalIdTwo: 26, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 76.2, y: 56.45, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 27, signalIdTwo: 28, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 76.2, y: 52.9, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 29, signalIdTwo: 30, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 45.45, y: 70.35, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 31, signalIdTwo: 32, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47.55, y: 72.5, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 33, signalIdTwo: 34, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 45.45, y: 22.75, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 35, signalIdTwo: 36, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47.55, y: 24.75, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 40, signalIdTwo: 41, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 53.1, y: 13, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 42, signalIdTwo: 43, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 53.1, y: 18, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 44, signalIdTwo: 45, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 53.1, y: 78.7, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
+        <icon-layout-two-id-render
+          v-bind="{ signalId: 46, signalIdTwo: 47, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 53.1, y: 83.7, transitionColor:'danger' }"
+        ></icon-layout-two-id-render>
 
+        <!-- FUEL TRANSFER PUMP RUNNING -->
+        <icon-layout-render
+          v-bind="{ signalId: 37, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 63.7, y: 35.4 }"
+        ></icon-layout-render>
+      </div>
+    </div>
+  </div>
+</article>

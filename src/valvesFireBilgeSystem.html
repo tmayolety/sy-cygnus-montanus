@@ -1,47 +1,180 @@
 <article>
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-phone" id="valveFireBilgeSystemApp">
-        <div class="ui grid cols-mini-1 gap-xl pad-lg col mini-1">
-            <div class="ui col mini-1 top-center h-mini-870" style="overflow:hidden;">
-                 <span id="ValvesFireBilgeLayout"  style="width: 1850px; height: 870px;"></span>
+    <div class="ui grid type1 cols-mini-1 pad-sm gap-sm hidden-phone" id="valveFireBilgeSystemApp">
+        <div class="ui grid cols-mini-1 gap-sm pad-sm col mini-1">
+            <div class="ui col mini-1 top-center h-mini-515" style="overflow:hidden;">
+                <span id="ValvesFireBilgeLayout" style="width: 2100px; height: 100%;"></span>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 1, signalIdTwo: 2, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 40.65, y: 52.1, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 9, signalIdTwo: 10, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 29.55, y: 45, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 11, signalIdTwo: 12, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 29.55, y: 50, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 13, signalIdTwo: 14, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.15, y: 48.45, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 15, signalIdTwo: 16, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 69.2, y: 55.1, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 316, signalIdTwo: 317, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 77.7, y: 39.7, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 318, signalIdTwo: 319, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 97, y: 49.3, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 379, signalIdTwo: 380, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 7.1, y: 51.6, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 381, signalIdTwo: 382, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 10.2, y: 51.6, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
+                    v-bind="{ signalId: 383, signalIdTwo: 384, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 98.6, y: 54.5, transitionColor:'danger' }"></icon-layout-two-id-render>
+            </div>
 
-                <!-- FEEDBACKS VALUES -->
-                 <icon-layout-two-id-render v-bind="{ signalId: 17, signalIdTwo: 18, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 31.1, y: 66.25, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 19, signalIdTwo: 20, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 32.6, y: 68.1, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 21, signalIdTwo: 22, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 31.1, y: 21.35, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 23, signalIdTwo: 24, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 32.6, y: 23.3, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 25, signalIdTwo: 26, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 66.40, y: 53, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 27, signalIdTwo: 28, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 66.40, y: 49.7, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 29, signalIdTwo: 30, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47.15, y: 66.25, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 31, signalIdTwo: 32, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 48.45, y: 68.1, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 33, signalIdTwo: 34, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 47.15, y: 21.35, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 35, signalIdTwo: 36, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 48.45, y: 23.3, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 40, signalIdTwo: 41, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 51.95, y: 12.3, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 42, signalIdTwo: 43, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 51.95, y: 16.99, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 44, signalIdTwo: 45, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 51.95, y: 73.9, transitionColor:'danger' }"></icon-layout-two-id-render>
-                 <icon-layout-two-id-render v-bind="{ signalId: 46, signalIdTwo: 47, size: 20, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 51.95, y: 78.65, transitionColor:'danger' }"></icon-layout-two-id-render>
+            <div class="ui col mini-1 grid cols-mini-2 bg-no pad-no gap-sm align-start">
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Bilge System</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+                            <list-valve-controls-render v-bind="{
+                                              feedbackOpenSignalId: 1,
+                                              feedbackCloseSignalId: 2,
+                                              commandOpenSignalId: 115,
+                                              commandCloseSignalId: 116,
+                                              title: 'Guest Bilge Valve',
+                                              zeroText: 'Closed',
+                                              zeroColor: 'danger',
+                                              oneText: 'Opened',
+                                              oneColor: 'success',
+                                              transitionText: 'In Transit',
+                                              writeMode: 1
+                                            }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 9,
+                                            feedbackCloseSignalId: 10,
+                                            commandOpenSignalId: 65,
+                                            commandCloseSignalId: 66,
+                                            title: 'SPS Port Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 11,
+                                            feedbackCloseSignalId: 12,
+                                            commandOpenSignalId: 67,
+                                            commandCloseSignalId: 68,
+                                            title: 'SPS Stbd Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 13,
+                                            feedbackCloseSignalId: 14,
+                                            commandOpenSignalId: 69,
+                                            commandCloseSignalId: 70,
+                                            title: 'Engine Room Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 15,
+                                            feedbackCloseSignalId: 16,
+                                            commandOpenSignalId: 73,
+                                            commandCloseSignalId: 74,
+                                            title: 'Pump Room Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
 
-                 <!--VALVES VALUES-->
-                 <valve-layout-render v-bind="{ openSignalId: 17, closeSignalId: 18, openCommandSignalId: 77, closeCommandSignalId: 78, writeMode: 1, name: 'Fuel Tank Stbd IN', openColor: 'success', closeColor: 'danger', x: 27.5, y: 64.7 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 19, closeSignalId: 20, openCommandSignalId: 79, closeCommandSignalId: 80, writeMode: 1, name: 'Fuel Tank Stbd OUT', openColor: 'success', closeColor: 'danger', x: 37.5, y: 72 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 21, closeSignalId: 22, openCommandSignalId: 81, closeCommandSignalId: 82, writeMode: 1, name: 'Fuel Tank Port IN', openColor: 'success', closeColor: 'danger', x: 27.4, y: 20}"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 23, closeSignalId: 24, openCommandSignalId: 83, closeCommandSignalId: 84, writeMode: 1, name: 'Fuel Tank Port OUT', openColor: 'success', closeColor: 'danger', x: 37.4, y: 27.4 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 25, closeSignalId: 26, openCommandSignalId: 85, closeCommandSignalId: 86, writeMode: 1, name: 'Fuel Tank Keel IN', openColor: 'success', closeColor: 'danger', x: 71, y: 58 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 27, closeSignalId: 28, openCommandSignalId: 87, closeCommandSignalId: 88, writeMode: 1, name: 'Fuel Tank Keel OUT', openColor: 'success', closeColor: 'danger', x: 71, y: 47 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 29, closeSignalId: 30, openCommandSignalId: 89, closeCommandSignalId: 90, writeMode: 1, name: 'Fuel Day tank Stbd IN', openColor: 'success', closeColor: 'danger', x: 43, y: 64.7}"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 31, closeSignalId: 32, openCommandSignalId: 91, closeCommandSignalId: 92, writeMode: 1, name: 'Fuel Day tank Stbd OUT', openColor: 'success', closeColor: 'danger', x: 54, y: 66.7 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 33, closeSignalId: 34, openCommandSignalId: 93, closeCommandSignalId: 94, writeMode: 1, name: 'Fuel Day tank Port IN', openColor: 'success', closeColor: 'danger', x: 43, y: 20 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 35, closeSignalId: 36, openCommandSignalId: 95, closeCommandSignalId: 96, writeMode: 1, name: 'Fuel Day tank Port OUT', openColor: 'success', closeColor: 'danger', x: 54, y: 27 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 40, closeSignalId: 41, openCommandSignalId: 99, closeCommandSignalId: 100, writeMode: 1, name: 'Fuel Supply Port Generator', openColor: 'success', closeColor: 'danger', x: 57, y: 8 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 42, closeSignalId: 43, openCommandSignalId: 101, closeCommandSignalId: 102, writeMode: 1, name: 'Fuel Return Port Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 21 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 44, closeSignalId: 45, openCommandSignalId: 103, closeCommandSignalId: 104, writeMode: 1, name: 'Fuel Supply Stbd Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 71 }"></valve-layout-render>
-                 <valve-layout-render v-bind="{ openSignalId: 46, closeSignalId: 47, openCommandSignalId: 105, closeCommandSignalId: 106, writeMode: 1, name: 'Fuel Return Stbd Generator', openColor: 'success', closeColor: 'danger', x: 58, y: 83 }"></valve-layout-render>
+                        </ul>
+                    </div>
+                </div>
 
-                 <!-- FUEL TRANSFER PUMP RUNNING -->
-                 <icon-layout-render v-bind="{ signalId: 37, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 58.58, y: 33.4 }"></icon-layout-render>
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Bilge System</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+                            <list-valve-controls-render v-bind="{
+                                              feedbackOpenSignalId: 316,
+                                              feedbackCloseSignalId: 317,
+                                              commandOpenSignalId: 329,
+                                              commandCloseSignalId: 330,
+                                              title: 'Crew Bilge Valve',
+                                              zeroText: 'Closed',
+                                              zeroColor: 'danger',
+                                              oneText: 'Opened',
+                                              oneColor: 'success',
+                                              transitionText: 'In Transit',
+                                              writeMode: 1
+                                            }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 318,
+                                            feedbackCloseSignalId: 319,
+                                            commandOpenSignalId: 331,
+                                            commandCloseSignalId: 332,
+                                            title: 'Forepeak Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 379,
+                                            feedbackCloseSignalId: 380,
+                                            commandOpenSignalId: 409,
+                                            commandCloseSignalId: 410,
+                                            title: 'Lazarette Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 381,
+                                            feedbackCloseSignalId: 382,
+                                            commandOpenSignalId: 411,
+                                            commandCloseSignalId: 412,
+                                            title: 'Owners Cabin Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 383,
+                                            feedbackCloseSignalId: 384,
+                                            commandOpenSignalId: 333,
+                                            commandCloseSignalId: 334,
+                                            title: 'Chain Locker Bilge Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                    
+                        </ul>
+                    </div>
+                </div>
 
-             </div>
+            </div>
         </div>
     </div>
-    </article>
-
-
+</article>

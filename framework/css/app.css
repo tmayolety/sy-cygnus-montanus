@@ -6702,11 +6702,12 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   }
 }
 
-#ValvesBilgeLayout_3 svg {
-  width: 1080px;
-  height: 100%;
-  /*max-height: 780px; /* o lo que necesites */
-  /*overflow: hidden;*/
-  /*object-fit: contain;*/
-  /*display: block;*/
+.valve-wrapper {
+  border-radius: 50%;
+}
+
+.highlight-valve {
+  box-shadow: 0 0 15px 8px rgba(239, 229, 86);
+  transition: box-shadow 0.4s ease;
+  z-index: 5;
 }

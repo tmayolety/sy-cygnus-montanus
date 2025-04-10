@@ -488,16 +488,8 @@
         "file": "iconLayoutTwoID"
       },
       {
-        "label": "valve-layout-render",
-        "file": "valveLayout"
-      },
-      {
-        "label": "pump-layout-render",
-        "file": "pumpLayout"
-      },
-      {
-        "label": "icon-tri-estate-digital-line-render",
-        "file": "iconTriEstateDigitalLine"
+        "label": "list-valve-controls-render",
+        "file": "listValveControls"
       }
     ],
     "mount": ".valveFuelSystemApp",
@@ -519,16 +511,8 @@
         "file": "iconLayoutTwoID"
       },
       {
-        "label": "valve-layout-render",
-        "file": "valveLayout"
-      },
-      {
-        "label": "pump-layout-render",
-        "file": "pumpLayout"
-      },
-      {
-        "label": "icon-tri-estate-digital-line-render",
-        "file": "iconTriEstateDigitalLine"
+        "label": "list-valve-controls-render",
+        "file": "listValveControls"
       }
     ],
     "mount": "#valveFireBilgeSystemApp",
