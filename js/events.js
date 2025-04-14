@@ -2,8 +2,6 @@ var screen = {
     renderData: function (msg) {
     }
 };
-
-
 var events = {
     refreshEvents() {
         const query = {
@@ -23,6 +21,9 @@ var events = {
                 } catch (e) {
                     console.error("Error parsing events data:", e);
                 }
+            },
+            error: function (xhr, status, error) {
+                console.error("AJAX error loading events:", status, error);
             }
         });
     },
@@ -33,20 +34,14 @@ var events = {
         const $list = $('#eventLogList');
         $list.empty();
 
-        $list.append(`
-            <li class="thead" id="alarmLogListHeader">
-                <div class="col-170 align-middle-center"><span>Time (GMT)</span></div>
-                <div class="col-80 align-middle-center"><span>Event #</span></div>
-                <div class="col-270-min align-middle-center"><span>Event Description</span></div>
-            </li>
-        `);
-
         json.forEach(item => {
             const id = item.ObjectId || item.alarmId;
-            const desc = alarmData && alarmData[id] ? alarmData[id].alarmDescription : 'No description';
+            const desc = alarmData?.[id]?.alarmDescription || 'No description';
+            const date = item.Date || item.alarmTime || '';
+
             $list.append(`
                 <li>
-                    <div class="col-170 align-middle-center"><span>${item.Date || item.alarmTime}</span></div>
+                    <div class="col-170 align-middle-center"><span>${date}</span></div>
                     <div class="col-80 align-middle-center"><span>${id}</span></div>
                     <div class="col-270-min align-middle-center"><span>${desc}</span></div>
                 </li>
@@ -55,7 +50,6 @@ var events = {
     }
 };
 
-// Arranque inicial y refresco continuo
 $(document).ready(() => {
     events.refreshEvents();
     setInterval(events.refreshEvents, 5000); // refrescar cada 5 segundos
