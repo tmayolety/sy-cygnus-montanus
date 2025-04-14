@@ -1,6 +1,6 @@
 $.getScript("js/tanks.js");
 
-$("#OilTanks_layout").load("src/ga/tanks/tanks.svg", function () {
+$("#OilTanks_layout").load("src/ga/tanks/oilTanks.svg", function () {
   initOilChart(); // Se ejecuta solo una vez
 });
 
