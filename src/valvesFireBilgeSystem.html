@@ -12,6 +12,8 @@
                     <icon-layout-two-id-render
                     v-bind="{ signalId: 13, signalIdTwo: 14, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 52.15, y: 48.45, transitionColor:'danger' }"></icon-layout-two-id-render>
                     <icon-layout-two-id-render
+                    v-bind="{ signalId: 57, signalIdTwo: 58, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 53.2, y: 58.8, transitionColor:'danger' }"></icon-layout-two-id-render>
+                    <icon-layout-two-id-render
                     v-bind="{ signalId: 15, signalIdTwo: 16, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 69.2, y: 55.1, transitionColor:'danger' }"></icon-layout-two-id-render>
                     <icon-layout-two-id-render
                     v-bind="{ signalId: 316, signalIdTwo: 317, size: 15, icon: 'circle', zeroColor: 'danger', oneColor: 'success', x: 77.7, y: 39.7, transitionColor:'danger' }"></icon-layout-two-id-render>
@@ -74,7 +76,20 @@
                                             feedbackCloseSignalId: 14,
                                             commandOpenSignalId: 69,
                                             commandCloseSignalId: 70,
-                                            title: 'Engine Room Bilge Valve',
+                                            title: 'Engine Room Bilge Port Valve',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                                          <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 57,
+                                            feedbackCloseSignalId: 58,
+                                            commandOpenSignalId: 71,
+                                            commandCloseSignalId: 72,
+                                            title: 'Engine Room Bilge Stbd Valve',
                                             zeroText: 'Closed',
                                             zeroColor: 'danger',
                                             oneText: 'Opened',
@@ -95,6 +110,7 @@
                                             transitionText: 'In Transit',
                                             writeMode: 1
                                           }"></list-valve-controls-render>
+
 
                         </ul>
                     </div>
