@@ -277,8 +277,8 @@ var alarms = {
         sock.on('eventsToFront', function(msg) {
 
             var json = JSON.parse(msg);
-            events.printHeaderEvents(json);
-            events.updateEventsList(json);
+           // events.printHeaderEvents(json);
+           // events.updateEventsList(json);
             helpers.activeEventPulse();
 
         });

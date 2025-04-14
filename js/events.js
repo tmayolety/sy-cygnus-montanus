@@ -6,102 +6,57 @@ var screen = {
 
 var events = {
     refreshEvents() {
-
-        var query = {
+        const query = {
             Section: "event",
             Limit: 50,
             Filter: 1
-        }
+        };
 
         $.ajax({
-            url: ACTIVE_SERVER + ":" + API.Port + "/systemLog",
+            url: `${ACTIVE_SERVER}:${API.Port}/systemLog`,
             type: 'post',
-            data: JSON.stringify(query)
-        }).then(function(data) {
-
-            $('#eventLogList').html('');
-            var json = JSON.parse(data);
-            events.printEventLog(json);
-            events.firstPrintHeaderEvents(json);
-
-            $('#eventLogList').prepend('<li class="thead" id="alarmLogListHeader">' +
-                '<div class="col-170 align-middle-center"><span>Time (GMT)</span></div>' +
-                '<div class="col-80 align-middle-center"><span>Event #</span></div>' +
-                '<div class="col-270-min align-middle-center"><span>Event Description</span></div>' +
-                '</li>');
-
-        });
-    },
-    printEventLog(json) {
-        if (json !== null) {
-            json.forEach(function (item) {
-                if (typeof (item) !== 'undefined') {
-                    if (!$("#eventLog_" + item.Id).length) {
-                        if (item.ObjectId == null) {
-                            item.ObjectId = item.alarmId;
-                        }
-                        $('#eventLogList').append('<li>' +
-                            '<div class="col-170 align-middle-center"><span>' + item.Date + '</span></div>' +
-                            '<div class="col-80 align-middle-center"><span>' + item.ObjectId + '</span></div>' +
-                            '<div class="col-270-min align-middle-center"><span>' + alarmData[parseInt(item.ObjectId)].alarmDescription + '</span></div>' +
-                            '</li>');
-
-                    }
+            data: JSON.stringify(query),
+            success: function (data) {
+                try {
+                    const json = JSON.parse(data);
+                    events.render(json);
+                } catch (e) {
+                    console.error("Error parsing events data:", e);
                 }
-            });
-        }
-    },
-    printHeaderEvents: function (json) {
-        if (json !== null) {
-            if (typeof (json) !== 'undefined') {
-                Object.values(json).forEach(function (item) {
-                    if (item.ObjectId == null) {
-                        item.ObjectId = item.alarmId;
-                    }
-                    $('#headerEvents').prepend('<li class="glow" >' +
-                        '<div class="col-160 align-top-center font-bold">' + item.alarmTime + '</div>' +
-                        '<div><span>' + alarmData[parseInt(item.ObjectId)].alarmDescription + '</span></div>' +
-                        '</li>');
-
-                    $('#headerEvents').children().last().remove();
-                });
             }
-        }
-    },
-    updateEventsList: function (json) {
-
-        $('#eventLogList').children().first().remove();
-        Object.values(json).forEach(function(item) {
-            if (item.ObjectId == null){ item.ObjectId = item.alarmId; }
-            $('#eventLogList').prepend('<li>' +
-                '<div class="col-170 align-middle-center"><span>' + item.alarmTime + '</span></div>' +
-                '<div class="col-80 align-middle-center"><span>'+ item.alarmId + '</span></div>' +
-                '<div class="col-270-min align-middle-center"><span>' + alarmData[parseInt(item.ObjectId)].alarmDescription + '</span></div>' +
-                '</li>');
-
-            $('#eventLogList').children().last().remove();
         });
-        $('#eventLogList').prepend('<li class="thead" id="alarmLogListHeader">' +
-            '<div class="col-170 align-middle-center"><span>Time (GMT)</span></div>' +
-            '<div class="col-80 align-middle-center"><span>Event #</span></div>' +
-            '<div class="col-270-min align-middle-center"><span>Event Description</span></div>' +
-            '</li>');
     },
-    firstPrintHeaderEvents: function (json) {
-        var count = 0;
-        if (json !== null) {
-            Object.values(json).forEach(function (item) {
-                if (count < 15) {
-                    if (item.ObjectId == null) {
-                        item.ObjectId = item.alarmId;
-                    }
-                    $('#headerEvents').append('<li class="glow" >' +
-                        '<div class="col-160 align-top-center font-bold">' + item.Date + '</div>' +
-                        '<div><span>' + alarmData[parseInt(item.ObjectId)].alarmDescription + '</span></div>' +
-                        '</li>');
-                    count = count + 1;
-                }
-            });
-        }
+
+    render(json) {
+        if (!Array.isArray(json)) return;
+
+        const $list = $('#eventLogList');
+        $list.empty();
+
+        $list.append(`
+            <li class="thead" id="alarmLogListHeader">
+                <div class="col-170 align-middle-center"><span>Time (GMT)</span></div>
+                <div class="col-80 align-middle-center"><span>Event #</span></div>
+                <div class="col-270-min align-middle-center"><span>Event Description</span></div>
+            </li>
+        `);
+
+        json.forEach(item => {
+            const id = item.ObjectId || item.alarmId;
+            const desc = alarmData && alarmData[id] ? alarmData[id].alarmDescription : 'No description';
+            $list.append(`
+                <li>
+                    <div class="col-170 align-middle-center"><span>${item.Date || item.alarmTime}</span></div>
+                    <div class="col-80 align-middle-center"><span>${id}</span></div>
+                    <div class="col-270-min align-middle-center"><span>${desc}</span></div>
+                </li>
+            `);
+        });
     }
 };
+
+// Arranque inicial y refresco continuo
+$(document).ready(() => {
+    events.refreshEvents();
+    setInterval(events.refreshEvents, 5000); // refrescar cada 5 segundos
+});
