@@ -1,7 +1,7 @@
 let currentMode = null;
 
 setInterval(() => {
-    const val = valueRaw[77]?.value;
+    const val = valueRaw[1]?.value;
 
     if (val !== currentMode && (val == 0 || val == 1)) {
         currentMode = val;
