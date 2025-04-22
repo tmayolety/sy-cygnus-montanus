@@ -94,7 +94,6 @@ components.signalListSystem = {
       return el != null;
     });
   
-    // Inicialmente mostramos solo un subconjunto
     this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
 
   },
@@ -102,7 +101,7 @@ components.signalListSystem = {
     filteredByDevice() {
       return (this.filteredSignals || []).filter(signal =>
         signal != null &&
-        //signal.TypeInOut == 'in' &&
+        signal.TypeInOut == 'in' &&
         signal.Device == this.activatedDevice
       );
     }
@@ -114,8 +113,7 @@ components.signalListSystem = {
 
     handleDeviceChange(){
       this.filteredSignals = this.signalListData.filter(signal => 
-        //signal.TypeInOut == 'in' && 
-        signal.Device == this.activatedDevice
+        signal.TypeInOut == 'in' && signal.Device == this.activatedDevice
       );
       this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
 
