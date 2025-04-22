@@ -277,6 +277,25 @@
     }
   },
   {
+    "name": "temperatureApp",
+    "component": [
+      {
+        "label": "icon-text-value-analogue-line-render",
+        "file": "iconTextValueAnalogueLine"
+      },
+      {
+        "label": "analogue-value-render",
+        "file": "analogueValue"
+      }
+    ],
+    "mount": ".temperatureApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
     "name": "bilgeListApp",
     "component": [
       {

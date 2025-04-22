@@ -1,252 +1,260 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 130 1920 380" height="300" width="900">
-	<title>tanks</title>
-
-	<path id="Forma 1" style="fill: #6d92ab" d="m57.1 64.6l-0.2-3 96.3-5 0.1 3z"/>
-	<path id="Forma 2" style="fill: #6d92ab" d="m152.5 59.4l-0.2-3 113-4.7 0.1 3z"/>
-	<path id="Forma 3" style="fill: #6d92ab" d="m265.4 54.7l-0.1-3 50.9-1.7 0.1 3z"/>
-	<path id="Forma 4" style="fill: #6d92ab" d="m316 52.8l-0.1-3 116.7-4.5 0.2 3z"/>
-	<path id="Forma 5" style="fill: #6d92ab" d="m432.7 48.3v-3l79-1.9 0.1 3z"/>
-	<path id="Forma 6" style="fill: #6d92ab" d="m511.3 46.2l-0.1-3 111.4-1.1v3z"/>
-	<path id="Forma 7" style="fill: #6d92ab" d="m622.6 45.1v-3l109.7 0.7v3z"/>
-	<path id="Forma 8" style="fill: #6d92ab" d="m732.3 45.8v-3l108.8 2.1-0.1 3z"/>
-	<path id="Forma 9" style="fill: #6d92ab" d="m841 47.9l0.1-3 69.7 3.9-0.1 2.9z"/>
-	<path id="Forma 10" style="fill: #6d92ab" d="m910.5 51.6l0.2-3 170.3 14.1-0.2 2.9z"/>
-	<path id="Forma 11" style="fill: #6d92ab" d="m1079.6 65.6l0.4-2.9 92 12-0.4 2.9z"/>
-	<path id="Forma 12" style="fill: #6d92ab" d="m1171.5 77.6l0.5-2.9 99.6 16.3-0.5 3z"/>
-	<path id="Forma 13" style="fill: #6d92ab" d="m1271 93.9l0.6-2.9 87.8 17.6-0.6 2.9z"/>
-	<path id="Forma 14" style="fill: #6d92ab" d="m1357.9 111.1l0.6-2.9 84.8 19.1-0.6 3z"/>
-	<path id="Forma 15" style="fill: #6d92ab" d="m1442.3 130.3l0.7-3 78.2 19.2-0.7 2.9z"/>
-	<path id="Forma 16" style="fill: #6d92ab" d="m1519.3 148.8l0.7-2.9 79.5 21.1-0.8 2.9z"/>
-	<path id="Forma 17" style="fill: #6d92ab" d="m1598.7 169.9l0.8-2.9 95.2 25.7-0.8 2.9z"/>
-	<path id="Forma 18" style="fill: #6d92ab" d="m1693.4 195.2l0.8-2.9 110.3 31.7-0.8 2.9z"/>
-	<path id="Forma 19" style="fill: #6d92ab" d="m1803.7 226.8l0.9-2.8 55.7 16.8-0.8 2.9z"/>
-	<path id="Forma 20" style="fill: #6d92ab" d="m1858.6 242.9l2.6-1.6 2.3 3.9-2.6 1.5z"/>
-	<path id="Forma 21" style="fill: #6d92ab" d="m1860.7 246l3-0.1 0.1 8h-3z"/>
-	<path id="Forma 22" style="fill: #6d92ab" d="m1861.3 252.8l2 2.2-4.3 3.9-2-2.3z"/>
-	<path id="Forma 23" style="fill: #6d92ab" d="m1858.3 255.4l0.8 2.9-67.1 19.5-0.8-2.9z"/>
-	<path id="Forma 24" style="fill: #6d92ab" d="m1792.4 274.5l0.8 2.9-113.4 32.2-0.9-2.9z"/>
-	<path id="Forma 25" style="fill: #6d92ab" d="m1680.2 307l0.8 2.9-135.2 36-0.8-2.9z"/>
-	<path id="Forma 26" style="fill: #6d92ab" d="m1546.2 343l0.7 2.9-121.6 29.2-0.7-2.9z"/>
-	<path id="Forma 27" style="fill: #6d92ab" d="m1425.7 372l0.6 2.9-78.2 17.4-0.6-2.9z"/>
-	<path id="Forma 28" style="fill: #6d92ab" d="m1347.5 389.4l0.6 2.9-84.3 16.4-0.6-3z"/>
-	<path id="Forma 29" style="fill: #6d92ab" d="m1264.7 405.4l0.4 2.9-99.7 16.7-0.5-3z"/>
-	<path id="Forma 30" style="fill: #6d92ab" d="m1165.5 421.9l0.4 2.9-78.2 10.1-0.4-3z"/>
-	<path id="Forma 31" style="fill: #6d92ab" d="m1088.4 431.4l0.3 3-79.1 8.3-0.3-3z"/>
-	<path id="Forma 32" style="fill: #6d92ab" d="m1009.3 439.7l0.3 3-79.6 5.9-0.2-2.9z"/>
-	<path id="Forma 33" style="fill: #6d92ab" d="m932 445.8l0.2 3-84.8 4.4-0.2-3z"/>
-	<path id="Forma 34" style="fill: #6d92ab" d="m849.7 450.3l0.1 3-95.8 2.5v-3z"/>
-	<path id="Forma 35" style="fill: #6d92ab" d="m756.1 453.3v3l-99.9 0.3v-3z"/>
-	<path id="Forma 36" style="fill: #6d92ab" d="m657.7 454v3l-83-0.5v-3z"/>
-	<path id="Forma 37" style="fill: #6d92ab" d="m576.1 454l-0.1 3-92.4-2.1v-3z"/>
-	<path id="Forma 38" style="fill: #6d92ab" d="m483.5 451.9l-0.1 3-117.1-3.5 0.1-3z"/>
-	<path id="Forma 39" style="fill: #6d92ab" d="m368.5 448.4l-0.2 3-126.1-5.5 0.1-3z"/>
-	<path id="Forma 40" style="fill: #6d92ab" d="m244.2 443l-0.1 3-100.6-3.8 0.1-3z"/>
-	<path id="Forma 41" style="fill: #6d92ab" d="m145 439.4l-0.2 3-90.7-5.2 0.2-3z"/>
-	<path id="Forma 42" style="fill: #6d92ab" d="m56.6 434.9l-1.6 2.6-7.3-4.7 1.6-2.6z"/>
-	<path id="Forma 43" style="fill: #6d92ab" d="m49.5 430.4l-2 2.2-6.1-5.4 2-2.2z"/>
-	<path id="Forma 44" style="fill: #6d92ab" d="m43.5 425.3l-2.5 1.7-3.7-5.2 2.5-1.8z"/>
-	<path id="Forma 45" style="fill: #6d92ab" d="m39.7 420.2l-2.6 1.4-3.9-7.7 2.7-1.3z"/>
-	<path id="Forma 46" style="fill: #6d92ab" d="m36 412.7l-2.8 1.1-3.1-7.8 2.7-1.1z"/>
-	<path id="Forma 47" style="fill: #6d92ab" d="m32.9 405.1l-2.9 0.7-1.7-6.6 2.9-0.7z"/>
-	<path id="Forma 48" style="fill: #6d92ab" d="m30.5 399l-2.9 0.7-4.2-19 2.9-0.6z"/>
-	<path id="Forma 49" style="fill: #6d92ab" d="m26.3 380.2l-2.9 0.4-2.1-14 2.9-0.5z"/>
-	<path id="Forma 50" style="fill: #6d92ab" d="m24.3 366l-3 0.3-2.6-27.8 3-0.3z"/>
-	<path id="Forma 51" style="fill: #6d92ab" d="m21.3 338.5l-3 0.1-1.9-90.9 3-0.1z"/>
-	<path id="Forma 52" style="fill: #6d92ab" d="m19.4 248.5h-3l1.4-89.5 3 0.1z"/>
-	<path id="Forma 53" style="fill: #6d92ab" d="m20.4 159.8l-2.9-0.5 5.2-37.7 2.9 0.4z"/>
-	<path id="Forma 54" style="fill: #6d92ab" d="m25.6 122.2l-2.9-0.7 8.2-30.8 2.9 0.8z"/>
-	<path id="Forma 55" style="fill: #6d92ab" d="m33.7 91.7l-2.7-1.3 6.2-13.2 2.7 1.3z"/>
-	<path id="Forma 56" style="fill: #6d92ab" d="m39.6 79l-2.1-2.2 7.5-7.1 2.1 2.1z"/>
-	<path id="Forma 57" style="fill: #6d92ab" d="m46.7 72l-1.7-2.5 6.3-4.3 1.7 2.4z"/>
-	<path id="Forma 58" style="fill: #6d92ab" d="m52.9 67.7l-1.5-2.6 6.7-4 1.6 2.6z"/>
-	<path id="Forma 59" style="fill: #6d92ab" d="m383 155.2l0.1-3 112.2 0.7v3z"/>
-	<path id="Forma 60" style="fill: #6d92ab" d="m491.9 152.9h3l0.2 68.3h-3z"/>
-	<path id="Forma 61" style="fill: #6d92ab" d="m493.9 218.8v3h-111.9v-3z"/>
-	<path id="Forma 62" style="fill: #6d92ab" d="m385.2 220.5h-3l-0.5-68.1h3z"/>
-	<path id="Forma 63" style="fill: #6d92ab" d="m382.2 277.3h3l-0.3 67.6-3-0.1z"/>
-	<path id="Forma 64" style="fill: #6d92ab" d="m383.6 346.3v-3l110.8-0.3v3z"/>
-	<path id="Forma 65" style="fill: #6d92ab" d="m495.4 344.7h-3v-67.1h3z"/>
-	<path id="Forma 66" style="fill: #6d92ab" d="m382.9 279.3v-3h112v3z"/>
-	<path id="Forma 67" style="fill: #6d92ab" d="m382.7 230.7v-3h112.3v3z"/>
-	<path id="Forma 68" style="fill: #6d92ab" d="m492.5 228h3v42h-3z"/>
-	<path id="Forma 69" style="fill: #6d92ab" d="m495.1 267.3v3h-112.1v-3z"/>
-	<path id="Forma 70" style="fill: #6d92ab" d="m385.5 269.4h-3v-41.4h3z"/>
-	<path id="Forma 71" style="fill: #6d92ab" d="m624.2 114.5v-3h124.4v3z"/>
-	<path id="Forma 72" style="fill: #6d92ab" d="m746.8 111.6h3v110.3h-3z"/>
-	<path id="Forma 73" style="fill: #6d92ab" d="m750 220.1v3h-125.2v-3z"/>
-	<path id="Forma 74" style="fill: #6d92ab" d="m627.2 222.3h-3v-111h3z"/>
-	<path id="Forma 75" style="fill: #6d92ab" d="m752.3 114.4v-3h39v3z"/>
-	<path id="Forma 76" style="fill: #6d92ab" d="m789.5 111.3h3v110.1h-3z"/>
-	<path id="Forma 77" style="fill: #6d92ab" d="m792.9 219.4v3h-41.1v-3z"/>
-	<path id="Forma 78" style="fill: #6d92ab" d="m754.5 220.7h-3v-109h3z"/>
-	<path id="Forma 79" style="fill: #6d92ab" d="m624.9 278.8v-3h124.9v3z"/>
-	<path id="Forma 80" style="fill: #6d92ab" d="m747.5 276.4h3v109.4h-3z"/>
-	<path id="Forma 81" style="fill: #6d92ab" d="m750.3 383.9v3h-125.6v-3z"/>
-	<path id="Forma 82" style="fill: #6d92ab" d="m626.7 385.4h-3v-109.2h3z"/>
-	<path id="Forma 83" style="fill: #6d92ab" d="m752.3 278.8v-3h38.7v3z"/>
-	<path id="Forma 84" style="fill: #6d92ab" d="m788.9 276.2h3v109.3h-3z"/>
-	<path id="Forma 85" style="fill: #6d92ab" d="m791.5 383.5v3h-39.2v-3z"/>
-	<path id="Forma 86" style="fill: #6d92ab" d="m754.7 385.6h-3v-109.4h3z"/>
-	<path id="Forma 95" style="fill: #6d92ab" d="m798.9 223.6v-3h324.8v3z"/>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+	<title>oilTanks</title>
+	<style>
+		.s0 { fill: #6d92ab } 
+		.s1 { fill: none } 
+		.s2 { fill: #2e485a;stroke: #6d92ab;stroke-width: .5 } 
+	</style>
+	<path id="Forma 1" style="fill: #6d92ab" d="m26.8 30.3l-0.1-1.4 45.1-2.4 0.1 1.4z"/>
+	<path id="Forma 2" style="fill: #6d92ab" d="m71.5 27.8l-0.1-1.4 53-2.2v1.4z"/>
+	<path id="Forma 3" style="fill: #6d92ab" d="m124.4 25.6v-1.4l23.8-0.8 0.1 1.4z"/>
+	<path id="Forma 4" style="fill: #6d92ab" d="m148.1 24.8v-1.5l54.7-2.1 0.1 1.4z"/>
+	<path id="Forma 5" style="fill: #6d92ab" d="m202.8 22.6v-1.4l37.1-0.9v1.4z"/>
+	<path id="Forma 6" style="fill: #6d92ab" d="m239.7 21.7l-0.1-1.4 52.2-0.6v1.4z"/>
+	<path id="Forma 7" style="fill: #6d92ab" d="m291.8 21.1v-1.4l51.5 0.4v1.4z"/>
+	<path id="Forma 8" style="fill: #6d92ab" d="m343.3 21.5v-1.4l51 0.9-0.1 1.5z"/>
+	<path id="Forma 9" style="fill: #6d92ab" d="m394.2 22.5l0.1-1.5 32.6 1.9v1.3z"/>
+	<path id="Forma 10" style="fill: #6d92ab" d="m426.8 24.2l0.1-1.4 79.8 6.6-0.1 1.4z"/>
+	<path id="Forma 11" style="fill: #6d92ab" d="m506.1 30.7l0.1-1.3 43.2 5.6-0.2 1.4z"/>
+	<path id="Forma 12" style="fill: #6d92ab" d="m549.1 36.4l0.3-1.4 46.7 7.7-0.3 1.4z"/>
+	<path id="Forma 13" style="fill: #6d92ab" d="m595.8 44l0.3-1.3 41.1 8.2-0.3 1.4z"/>
+	<path id="Forma 14" style="fill: #6d92ab" d="m636.5 52.1l0.3-1.4 39.7 9-0.2 1.4z"/>
+	<path id="Forma 15" style="fill: #6d92ab" d="m676.1 61.1l0.3-1.4 36.7 9-0.4 1.3z"/>
+	<path id="Forma 16" style="fill: #6d92ab" d="m712.2 69.8l0.3-1.4 37.3 9.9-0.4 1.3z"/>
+	<path id="Forma 17" style="fill: #6d92ab" d="m749.4 79.6l0.4-1.3 44.6 12-0.4 1.4z"/>
+	<path id="Forma 18" style="fill: #6d92ab" d="m793.8 91.5l0.4-1.4 51.7 14.9-0.4 1.4z"/>
+	<path id="Forma 19" style="fill: #6d92ab" d="m845.5 106.3l0.4-1.3 26.1 7.9-0.4 1.3z"/>
+	<path id="Forma 20" style="fill: #6d92ab" d="m871.2 113.9l1.2-0.8 1.1 1.8-1.2 0.7z"/>
+	<path id="Forma 21" style="fill: #6d92ab" d="m872.2 115.3h1.4l0.1 3.7h-1.5z"/>
+	<path id="Forma 22" style="fill: #6d92ab" d="m872.5 118.5l0.9 1-2 1.9-0.9-1.1z"/>
+	<path id="Forma 23" style="fill: #6d92ab" d="m871.1 119.7l0.4 1.4-31.5 9.1-0.4-1.3z"/>
+	<path id="Forma 24" style="fill: #6d92ab" d="m840.2 128.7l0.4 1.3-53.2 15.1-0.4-1.3z"/>
+	<path id="Forma 25" style="fill: #6d92ab" d="m787.6 143.9l0.4 1.4-63.4 16.8-0.4-1.3z"/>
+	<path id="Forma 26" style="fill: #6d92ab" d="m724.8 160.8l0.3 1.3-57 13.7-0.3-1.3z"/>
+	<path id="Forma 27" style="fill: #6d92ab" d="m668.3 174.4l0.3 1.3-36.7 8.2-0.3-1.4z"/>
+	<path id="Forma 28" style="fill: #6d92ab" d="m631.6 182.5l0.3 1.4-39.5 7.7-0.3-1.4z"/>
+	<path id="Forma 29" style="fill: #6d92ab" d="m592.8 190l0.2 1.4-46.7 7.8-0.3-1.4z"/>
+	<path id="Forma 30" style="fill: #6d92ab" d="m546.3 197.8l0.2 1.3-36.6 4.8-0.2-1.4z"/>
+	<path id="Forma 31" style="fill: #6d92ab" d="m510.2 202.2l0.1 1.4-37 3.9-0.2-1.4z"/>
+	<path id="Forma 32" style="fill: #6d92ab" d="m473.1 206.1l0.1 1.4-37.3 2.8-0.1-1.4z"/>
+	<path id="Forma 33" style="fill: #6d92ab" d="m436.9 209l0.1 1.4-39.8 2-0.1-1.4z"/>
+	<path id="Forma 34" style="fill: #6d92ab" d="m398.3 211.1v1.4l-44.9 1.2v-1.4z"/>
+	<path id="Forma 35" style="fill: #6d92ab" d="m354.4 212.5v1.4l-46.8 0.1v-1.4z"/>
+	<path id="Forma 36" style="fill: #6d92ab" d="m308.3 212.8v1.4l-38.9-0.2v-1.4z"/>
+	<path id="Forma 37" style="fill: #6d92ab" d="m270 212.8v1.4l-43.3-1v-1.4z"/>
+	<path id="Forma 38" style="fill: #6d92ab" d="m226.6 211.8v1.4l-54.9-1.6 0.1-1.4z"/>
+	<path id="Forma 39" style="fill: #6d92ab" d="m172.7 210.2l-0.1 1.4-59.1-2.6 0.1-1.4z"/>
+	<path id="Forma 40" style="fill: #6d92ab" d="m114.5 207.7l-0.1 1.4-47.1-1.8v-1.4z"/>
+	<path id="Forma 41" style="fill: #6d92ab" d="m68 206l-0.1 1.4-42.5-2.5 0.1-1.4z"/>
+	<path id="Forma 42" style="fill: #6d92ab" d="m26.5 203.9l-0.7 1.2-3.4-2.2 0.7-1.2z"/>
+	<path id="Forma 43" style="fill: #6d92ab" d="m23.2 201.8l-0.9 1-2.9-2.6 0.9-1z"/>
+	<path id="Forma 44" style="fill: #6d92ab" d="m20.4 199.4l-1.2 0.8-1.7-2.5 1.2-0.8z"/>
+	<path id="Forma 45" style="fill: #6d92ab" d="m18.6 197l-1.2 0.6-1.8-3.6 1.2-0.6z"/>
+	<path id="Forma 46" style="fill: #6d92ab" d="m16.9 193.5l-1.3 0.5-1.5-3.7 1.3-0.5z"/>
+	<path id="Forma 47" style="fill: #6d92ab" d="m15.4 189.9l-1.3 0.3-0.8-3.1 1.3-0.3z"/>
+	<path id="Forma 48" style="fill: #6d92ab" d="m14.3 187l-1.4 0.4-1.9-8.9 1.3-0.3z"/>
+	<path id="Forma 49" style="fill: #6d92ab" d="m12.3 178.2l-1.3 0.2-1-6.6 1.3-0.2z"/>
+	<path id="Forma 50" style="fill: #6d92ab" d="m11.4 171.6l-1.4 0.1-1.2-13 1.4-0.2z"/>
+	<path id="Forma 51" style="fill: #6d92ab" d="m10 158.7h-1.4l-0.9-42.6h1.4z"/>
+	<path id="Forma 52" style="fill: #6d92ab" d="m9.1 116.5h-1.4l0.6-42 1.4 0.1z"/>
+	<path id="Forma 53" style="fill: #6d92ab" d="m9.6 74.9l-1.4-0.2 2.4-17.7 1.4 0.2z"/>
+	<path id="Forma 54" style="fill: #6d92ab" d="m12 57.3l-1.4-0.3 3.9-14.5 1.3 0.4z"/>
+	<path id="Forma 55" style="fill: #6d92ab" d="m15.8 43l-1.3-0.6 2.9-6.2 1.3 0.6z"/>
+	<path id="Forma 56" style="fill: #6d92ab" d="m18.6 37l-1-1 3.5-3.3 1 1z"/>
+	<path id="Forma 57" style="fill: #6d92ab" d="m21.9 33.8l-0.8-1.2 2.9-2 0.8 1.1z"/>
+	<path id="Forma 58" style="fill: #6d92ab" d="m24.8 31.7l-0.7-1.2 3.1-1.9 0.8 1.3z"/>
+	<path id="Forma 59" style="fill: #6d92ab" d="m179.5 72.8l0.1-1.5 52.6 0.4v1.4z"/>
+	<path id="Forma 60" style="fill: #6d92ab" d="m230.6 71.7h1.4l0.1 32h-1.4z"/>
+	<path id="Forma 61" style="fill: #6d92ab" d="m231.5 102.6v1.4h-52.4v-1.4z"/>
+	<path id="Forma 62" style="fill: #6d92ab" d="m180.6 103.4h-1.4l-0.3-32h1.4z"/>
+	<path id="Forma 63" style="fill: #6d92ab" d="m179.2 130h1.4l-0.2 31.7-1.4-0.1z"/>
+	<path id="Forma 64" style="fill: #6d92ab" d="m179.8 162.3v-1.4l52-0.1v1.4z"/>
+	<path id="Forma 65" style="fill: #6d92ab" d="m232.2 161.6h-1.4v-31.5h1.4z"/>
+	<path id="Forma 66" style="fill: #6d92ab" d="m179.5 130.9v-1.4h52.5v1.4z"/>
+	<path id="Forma 67" style="fill: #6d92ab" d="m179.4 108.1v-1.4h52.6v1.4z"/>
+	<path id="Forma 68" style="fill: #6d92ab" d="m230.9 106.9h1.4v19.7h-1.4z"/>
+	<path id="Forma 69" style="fill: #6d92ab" d="m232.1 125.3v1.4h-52.6v-1.4z"/>
+	<path id="Forma 70" style="fill: #6d92ab" d="m180.7 126.3h-1.4v-19.4h1.4z"/>
+	<path id="Forma 71" style="fill: #6d92ab" d="m292.6 53.7v-1.4h58.3v1.4z"/>
+	<path id="Forma 72" style="fill: #6d92ab" d="m350.1 52.3h1.4v51.7h-1.4z"/>
+	<path id="Forma 73" style="fill: #6d92ab" d="m351.6 103.2v1.4h-58.7v-1.4z"/>
+	<path id="Forma 74" style="fill: #6d92ab" d="m294 104.2h-1.4v-52h1.4z"/>
+	<path id="Forma 75" style="fill: #6d92ab" d="m352.6 53.6v-1.4h18.3v1.4z"/>
+	<path id="Forma 76" style="fill: #6d92ab" d="m370.1 52.2h1.4v51.6h-1.4z"/>
+	<path id="Forma 77" style="fill: #6d92ab" d="m371.7 102.8v1.5h-19.3v-1.5z"/>
+	<path id="Forma 78" style="fill: #6d92ab" d="m353.7 103.5h-1.4v-51.1h1.4z"/>
+	<path id="Forma 79" style="fill: #6d92ab" d="m292.9 130.7v-1.4h58.6v1.4z"/>
+	<path id="Forma 80" style="fill: #6d92ab" d="m350.4 129.6h1.4v51.2h-1.4z"/>
+	<path id="Forma 81" style="fill: #6d92ab" d="m351.7 180v1.4h-58.9v-1.4z"/>
+	<path id="Forma 82" style="fill: #6d92ab" d="m293.8 180.7h-1.4v-51.2h1.4z"/>
+	<path id="Forma 83" style="fill: #6d92ab" d="m352.6 130.7v-1.4h18.2v1.4z"/>
+	<path id="Forma 84" style="fill: #6d92ab" d="m369.8 129.5h1.4v51.2h-1.4z"/>
+	<path id="Forma 85" style="fill: #6d92ab" d="m371 179.8v1.4h-18.4v-1.4z"/>
+	<path id="Forma 86" style="fill: #6d92ab" d="m353.8 180.8l-1.4-0.1v-51.2h1.4z"/>
+	<path id="Forma 95" style="fill: #6d92ab" d="m374.5 104.8v-1.4h152.2v1.4z"/>
 	<g id="Stbd AdBlue">
-		<path id="Forma 169" style="fill: none" d="m1263 375v8h-167v-8z"/>
-		<path id="Forma 170" style="fill: none" d="m1191 382v13h-95v-13z"/>
-		<path id="Forma 171" style="fill: none" d="m1153 394v7h-57v-7z"/>
-		<path id="Forma 172" style="fill: none" d="m1215 383v8h-29v-8z"/>
-		<path id="Forma 173" style="fill: none" d="m1239 383v4h-26v-4z"/>
-		<path id="Forma 174" style="fill: none" d="m1251 383v2h-14v-2z"/>
-		<path id="Forma 175" style="fill: none" d="m1257 382v2h-9v-2z"/>
-		<path id="Forma 176" style="fill: none" d="m1244 385v1h-6v-1z"/>
-		<path id="Forma 177" style="fill: none" d="m1231 387v1h-17v-1z"/>
-		<path id="Forma 178" style="fill: none" d="m1202 390v3h-14v-3z"/>
-		<path id="Forma 179" style="fill: none" d="m1207 390v2h-7v-2z"/>
-		<path id="Forma 180" style="fill: none" d="m1219 387v3h-5v-3z"/>
-		<path id="Forma 181" style="fill: none" d="m1227 386v3h-9v-3z"/>
-		<path id="Forma 182" style="fill: none" d="m1175 394v3h-25v-3z"/>
-		<path id="Forma 183" style="fill: none" d="m1183 393v4h-14v-4z"/>
-		<path id="Forma 184" style="fill: none" d="m1163 395v5h-15v-5z"/>
-		<path id="Forma 185" style="fill: none" d="m1171 396v2h-12v-2z"/>
-		<path id="Forma 186" style="fill: none" d="m1121 395v11h-25v-11z"/>
-		<path id="Forma 187" style="fill: none" d="m1127 400v5h-7v-5z"/>
-		<path id="Forma 188" style="fill: none" d="m1134 398v7h-8v-7z"/>
-		<path id="Forma 189" style="fill: none" d="m1141 398v5h-13v-5z"/>
-		<path id="Forma 190" style="fill: none" d="m1146 397v5h-13v-5z"/>
-		<path id="Forma 191" style="fill: none" d="m1115 401v6h-19v-6z"/>
-		<path id="Forma 192" style="fill: none" d="m1109 396v12h-10v-12z"/>
-		<path id="Forma 193" style="fill: none" d="m1103 389v20h-7v-20z"/>
+		<path id="Forma 169" style="fill: none" d="m592 175.8v3.7h-78.3v-3.7z"/>
+		<path id="Forma 170" style="fill: none" d="m558.3 179.1v6.1h-44.5v-6.1z"/>
+		<path id="Forma 171" style="fill: none" d="m540.5 184.7v3.3h-26.8l0.1-3.3z"/>
+		<path id="Forma 172" style="fill: none" d="m569.5 179.5v3.8h-13.6v-3.8z"/>
+		<path id="Forma 173" style="fill: none" d="m580.8 179.5v1.9h-12.2v-1.9z"/>
+		<path id="Forma 174" style="fill: none" d="m586.4 179.5v1h-6.6v-1z"/>
+		<path id="Forma 175" style="fill: none" d="m589.2 179.1v0.9h-4.2v-0.9z"/>
+		<path id="Forma 176" style="fill: none" d="m583.1 180.5v0.4h-2.8v-0.4z"/>
+		<path id="Forma 177" style="fill: none" d="m577 181.4v0.5h-7.9v-0.5z"/>
+		<path id="Forma 178" style="fill: none" d="m563.4 182.8v1.4h-6.5v-1.4z"/>
+		<path id="Forma 179" style="fill: none" d="m565.8 182.8v0.9h-3.3v-0.9z"/>
+		<path id="Forma 180" style="fill: none" d="m571.4 181.4v1.4h-2.3v-1.4z"/>
+		<path id="Forma 181" style="fill: none" d="m575.2 180.9v1.4h-4.3v-1.4z"/>
+		<path id="Forma 182" style="fill: none" d="m550.8 184.7v1.4h-11.7v-1.4z"/>
+		<path id="Forma 183" style="fill: none" d="m554.5 184.2v1.9h-6.5v-1.9z"/>
+		<path id="Forma 184" style="fill: none" d="m545.2 185.2v2.3h-7.1v-2.3z"/>
+		<path id="Forma 185" style="fill: none" d="m548.9 185.6v1h-5.6v-1z"/>
+		<path id="Forma 186" style="fill: none" d="m525.5 185.2v5.1h-11.8l0.1-5.1z"/>
+		<path id="Forma 187" style="fill: none" d="m528.3 187.5v2.3h-3.3v-2.3z"/>
+		<path id="Forma 188" style="fill: none" d="m531.6 186.6v3.2h-3.8v-3.2z"/>
+		<path id="Forma 189" style="fill: none" d="m534.8 186.6v2.3h-6v-2.3z"/>
+		<path id="Forma 190" style="fill: none" d="m537.2 186.1v2.3h-6.1v-2.3z"/>
+		<path id="Forma 191" style="fill: none" d="m522.7 188v2.8h-9v-2.8z"/>
+		<path id="Forma 192" style="fill: none" d="m519.8 185.6v5.7h-4.6v-5.7z"/>
+		<path id="Forma 193" style="fill: none" d="m517 182.3v9.4h-3.3v-9.4z"/>
 	</g>
-	<path id="Forma 96" style="fill: #6d92ab" d="m1122.2 220.5h3v54.5h-3z"/>
-	<path id="Forma 97" style="fill: #6d92ab" d="m1125.2 273.8v3h-327.2v-3z"/>
-	<path id="Forma 98" style="fill: #6d92ab" d="m801.1 275.9h-3v-55.4h3z"/>
-	<path id="Forma 99" style="fill: #6d92ab" d="m1096.3 412.5h-3v-37.4h3z"/>
-	<path id="Forma 100" style="fill: #6d92ab" d="m1093.4 375v-3h171.8v3z"/>
-	<path id="Forma 101" style="fill: #6d92ab" d="m1262.9 372h3v13.7h-3z"/>
-	<path id="Forma 102" style="fill: #6d92ab" d="m1265.2 382.3l0.4 3-172.4 27.8-0.5-3z"/>
-	<path id="Forma 103" style="fill: #6d92ab" d="m1094.1 124.5v-3h171.9v3z"/>
-	<path id="Forma 104" style="fill: #6d92ab" d="m1267.4 124.3h-3v-11.3h3z"/>
-	<path id="Forma 105" style="fill: #6d92ab" d="m1095.5 124.6h-3v-37.8h3z"/>
-	<path id="Forma 106" style="fill: #6d92ab" d="m1092.6 88.4l0.4-3 174.6 27.4-0.5 3z"/>
-	<path id="Forma 107" style="fill: #6d92ab" d="m1094 128.4v-3h54.5v3z"/>
-	<path id="Forma 108" style="fill: #6d92ab" d="m1145.9 126.6h3v26.5h-3z"/>
-	<path id="Forma 109" style="fill: #6d92ab" d="m1148 151v3h-54v-3z"/>
-	<path id="Forma 110" style="fill: #6d92ab" d="m1096.1 153h-3v-27.1h3z"/>
-	<path id="Forma 111" style="fill: #6d92ab" d="m1150.3 128.4v-3h52.7v3z"/>
-	<path id="Forma 112" style="fill: #6d92ab" d="m1201.4 125.4h3v27.3h-3z"/>
-	<path id="Forma 113" style="fill: #6d92ab" d="m1149.8 126h3v27.8h-3z"/>
-	<path id="Forma 114" style="fill: #6d92ab" d="m1151.5 154.5v-3h52.7v3z"/>
-	<path id="Forma 115" style="fill: #6d92ab" d="m1412.3 224v-3h88.8v3z"/>
-	<path id="Forma 116" style="fill: #6d92ab" d="m1499.3 221.4h3v54.7h-3z"/>
-	<path id="Forma 117" style="fill: #6d92ab" d="m1410.3 221.2h3v55.2h-3z"/>
-	<path id="Forma 118" style="fill: #6d92ab" d="m1410.5 276.9v-3h92v3z"/>
-	<path id="Forma 168" style="fill: #6d92ab" d="m1267.1 277.3h3l0.3 57.6-3 0.1z"/>
-	<path id="Forma 119" style="fill: #6d92ab" d="m1268.3 166.1v-3h89.7v3z"/>
-	<path id="Forma 120" style="fill: #6d92ab" d="m1356.2 163.2h3v57.7h-3z"/>
-	<path id="Forma 121" style="fill: #6d92ab" d="m1359.4 219.4v3h-91.3v-3z"/>
-	<path id="Forma 122" style="fill: #6d92ab" d="m1269.7 220.6h-3v-57.4h3z"/>
-	<path id="Forma 123" style="fill: #6d92ab" d="m1267.9 279.8v-3h90.4v3z"/>
-	<path id="Forma 124" style="fill: #6d92ab" d="m1355.8 277.5h3v55.9h-3z"/>
-	<path id="Forma 125" style="fill: #6d92ab" d="m1358.4 331.9v3h-90.2v-3z"/>
+	<path id="Forma 96" style="fill: #6d92ab" d="m526 103.4h1.4v25.5h-1.4z"/>
+	<path id="Forma 97" style="fill: #6d92ab" d="m527.4 128.3v1.4h-153.3v-1.4z"/>
+	<path id="Forma 98" style="fill: #6d92ab" d="m375.5 129.3h-1.4v-25.9h1.4z"/>
+	<path id="Forma 99" style="fill: #6d92ab" d="m513.9 193.4h-1.4v-17.6h1.4z"/>
+	<path id="Forma 100" style="fill: #6d92ab" d="m512.5 175.8v-1.4h80.6v1.4z"/>
+	<path id="Forma 101" style="fill: #6d92ab" d="m592 174.4h1.4v6.4h-1.4z"/>
+	<path id="Forma 102" style="fill: #6d92ab" d="m593.1 179.2l0.2 1.4-80.9 13-0.2-1.4z"/>
+	<path id="Forma 103" style="fill: #6d92ab" d="m512.9 58.4v-1.4h80.5v1.4z"/>
+	<path id="Forma 104" style="fill: #6d92ab" d="m594.1 58.3h-1.4v-5.3h1.4z"/>
+	<path id="Forma 105" style="fill: #6d92ab" d="m513.5 58.4h-1.4v-17.7h1.4z"/>
+	<path id="Forma 106" style="fill: #6d92ab" d="m512.2 41.4l0.1-1.4 81.9 12.9-0.2 1.4z"/>
+	<path id="Forma 107" style="fill: #6d92ab" d="m512.8 60.2v-1.4h25.6v1.4z"/>
+	<path id="Forma 108" style="fill: #6d92ab" d="m537.1 59.3h1.4v12.5h-1.4z"/>
+	<path id="Forma 109" style="fill: #6d92ab" d="m538.1 70.8v1.4h-25.3v-1.4z"/>
+	<path id="Forma 110" style="fill: #6d92ab" d="m513.8 71.7h-1.4v-12.7h1.4z"/>
+	<path id="Forma 111" style="fill: #6d92ab" d="m539.2 60.2v-1.4h24.7v1.4z"/>
+	<path id="Forma 112" style="fill: #6d92ab" d="m563.2 58.8h1.4v12.8h-1.4z"/>
+	<path id="Forma 113" style="fill: #6d92ab" d="m539 59.1h1.4v13h-1.4z"/>
+	<path id="Forma 114" style="fill: #6d92ab" d="m539.8 72.4v-1.4h24.7v1.4z"/>
+	<path id="Forma 115" style="fill: #6d92ab" d="m662 105v-1.4h41.6v1.4z"/>
+	<path id="Forma 116" style="fill: #6d92ab" d="m702.8 103.8h1.4v25.6h-1.4z"/>
+	<path id="Forma 117" style="fill: #6d92ab" d="m661.1 103.7h1.4v25.9h-1.4z"/>
+	<path id="Forma 118" style="fill: #6d92ab" d="m661.2 129.8v-1.4h43.1v1.4z"/>
+	<path id="Forma 168" style="fill: #6d92ab" d="m594 130h1.4l0.1 27h-1.4z"/>
+	<path id="Forma 119" style="fill: #6d92ab" d="m594.5 77.9v-1.4h42.1v1.4z"/>
+	<path id="Forma 120" style="fill: #6d92ab" d="m635.7 76.5h1.4v27h-1.4z"/>
+	<path id="Forma 121" style="fill: #6d92ab" d="m637.2 102.8v1.5h-42.8v-1.5z"/>
+	<path id="Forma 122" style="fill: #6d92ab" d="m595.2 103.4h-1.4v-26.9h1.4z"/>
+	<path id="Forma 123" style="fill: #6d92ab" d="m594.3 131.2v-1.4h42.4v1.4z"/>
+	<path id="Forma 124" style="fill: #6d92ab" d="m635.5 130.1h1.4v26.2h-1.4z"/>
+	<path id="Forma 125" style="fill: #6d92ab" d="m636.8 155.6v1.4h-42.3v-1.4z"/>
 	<g id="Aft port water tank">
-		<path id="Forma 194" style="fill: none" d="m492 155v64h-107v-64z"/>
+		<path id="Forma 194" style="fill: none" d="m230.6 72.7v30h-50.1v-30z"/>
 	</g>
 	<g id="Ecomar sewage system">
-		<path id="Forma 206" style="fill: none" d="m1258 346v22h-32v-22z"/>
+		<path id="Forma 206" style="fill: none" d="m589.7 162.2v10.3h-15v-10.3z"/>
 	</g>
 	<g id="Chiller unit 1">
-		<path id="Forma 207" style="fill: none" d="m1262 308v16h-33v-16z"/>
+		<path id="Forma 207" style="fill: none" d="m591.6 144.4v7.5h-15.5v-7.5z"/>
 	</g>
 	<g id="Chiller unit 2">
-		<path id="Forma 208" style="fill: none" d="m1262 287v14h-33v-14z"/>
+		<path id="Forma 208" style="fill: none" d="m591.6 134.5v6.6h-15.5v-6.6z"/>
 	</g>
 	<g id="Fwd  port water tank">
-		<path id="Forma 209" style="fill: none" d="m1356 166v53h-86v-53z"/>
+		<path id="Forma 209" style="fill: none" d="m635.6 77.8v24.9h-40.3v-24.9z"/>
 	</g>
 	<g id="Fwd stbd water tank">
-		<path id="Forma 210" style="fill: none" d="m1356 280v52h-86v-52z"/>
+		<path id="Forma 210" style="fill: none" d="m635.6 131.3v24.3h-40.3v-24.4z"/>
 	</g>
 	<g id="Fwd Black Water">
-		<path id="Forma 211" style="fill: none" d="m1499 224v50h-86v-50z"/>
+		<path id="Forma 211" style="fill: none" d="m702.7 105v23.4h-40.4v-23.4z"/>
 	</g>
-	<path id="Forma 195" style="fill: #6d92ab" d="m1222.8 345.8v-3h36.8v3z"/>
-	<path id="Forma 196" style="fill: #6d92ab" d="m1258.3 342.9h3v27.9h-3z"/>
-	<path id="Forma 197" style="fill: #6d92ab" d="m1261.1 367.9v3h-38.5v-3z"/>
-	<path id="Forma 198" style="fill: #6d92ab" d="m1225.7 369.6h-3v-26.3h3z"/>
-	<path id="Forma 199" style="fill: #6d92ab" d="m1226.9 308.4v-3h37.7v3zm34.9-3h3v21.3h-3z"/>
-	<path id="Forma 200" style="fill: #6d92ab" d="m1264.4 323.8v3h-38v-3z"/>
-	<path id="Forma 201" style="fill: #6d92ab" d="m1229.1 325.6h-3v-20.4h3z"/>
-	<path id="Forma 202" style="fill: #6d92ab" d="m1262.1 284.9h3v18.9h-3z"/>
-	<path id="Forma 203" style="fill: #6d92ab" d="m1264.3 301.2v3h-37.9v-3z"/>
-	<path id="Forma 204" style="fill: #6d92ab" d="m1228.7 302.7h-3v-17.8h3z"/>
-	<path id="Forma 205" style="fill: #6d92ab" d="m1226.4 286.8v-3h38.5v3z"/>
+	<path id="Forma 195" style="fill: #6d92ab" d="m573.2 162.1v-1.4h17.2v1.4z"/>
+	<path id="Forma 196" style="fill: #6d92ab" d="m589.8 160.7h1.4v13.1h-1.4z"/>
+	<path id="Forma 197" style="fill: #6d92ab" d="m591.1 172.5v1.4h-18v-1.4z"/>
+	<path id="Forma 198" style="fill: #6d92ab" d="m574.5 173.3l-1.4-0.1v-12.3h1.4z"/>
+	<path id="Forma 199" style="fill: #6d92ab" d="m575.1 144.6v-1.4h17.7v1.4zm16.3-1.4h1.4v9.9h-1.4z"/>
+	<path id="Forma 200" style="fill: #6d92ab" d="m592.7 151.8v1.4h-17.8v-1.4z"/>
+	<path id="Forma 201" style="fill: #6d92ab" d="m576.1 152.6h-1.4v-9.5h1.4z"/>
+	<path id="Forma 202" style="fill: #6d92ab" d="m591.6 133.5h1.4v8.9h-1.4z"/>
+	<path id="Forma 203" style="fill: #6d92ab" d="m592.6 141.2v1.4h-17.7v-1.4z"/>
+	<path id="Forma 204" style="fill: #6d92ab" d="m576 141.9h-1.5v-8.4h1.5z"/>
+	<path id="Forma 205" style="fill: #6d92ab" d="m574.9 134.4v-1.4h18v1.4z"/>
 	<g id="Aft port fuel">
-		<path id="Forma 130" style="fill: none" d="m747 115v105h-120v-105z"/>
+		<path id="Forma 130" style="fill: none" d="m350.2 53.9v49.2h-56.3v-49.2z"/>
 	</g>
 	<g id="Aft stbd fuel">
-		<path id="Forma 132" style="fill: none" d="m748 279v105h-120v-105z"/>
+		<path id="Forma 132" style="fill: none" d="m350.6 130.8v49.2h-56.2v-49.2z"/>
 	</g>
 	<g id="Aft port fuel day tank">
-		<path id="Forma 131" style="fill: none" d="m789 115v104h-35v-104z"/>
+		<path id="Forma 131" style="fill: none" d="m369.8 53.9v48.8h-16.4v-48.8z"/>
 	</g>
 	<g id="Aft stbd fuel day tank">
-		<path id="Forma 133" style="fill: none" d="m789 280v104h-34v-104z"/>
+		<path id="Forma 133" style="fill: none" d="m369.8 131.3v48.7h-15.9v-48.8z"/>
 	</g>
 	<g id="Keel fuel tank">
-		<path id="Forma 134" style="fill: none" d="m1122 224v50h-321v-50z"/>
+		<path id="Forma 134" style="fill: none" d="m525.9 105v23.4h-150.4v-23.4z"/>
 	</g>
 	<g id="WaterMakers">
-		<path id="Forma 135" style="fill: none" d="m1146 128v23h-50v-23z"/>
+		<path id="Forma 135" style="fill: none" d="m537.2 60v10.8h-23.5v-10.8z"/>
 	</g>
 	<g id="WaterSystems">
-		<path id="Forma 136" style="fill: none" d="m1201 128v23h-48v-23z"/>
+		<path id="Forma 136" style="fill: none" d="m563 60v10.8h-22.5v-10.8z"/>
 	</g>
 	<g id="Port  AdBlue">
-		<path id="Forma 137" style="fill: none" d="m1264 115v7h-169v-7z"/>
-		<path id="Forma 138" style="fill: none" d="m1118 92v24h-23v-24z"/>
-		<path id="Forma 139" style="fill: none" d="m1155 98v19h-41v-19z"/>
-		<path id="Forma 140" style="fill: none" d="m1181 102v15h-29v-15z"/>
-		<path id="Forma 141" style="fill: none" d="m1213 107v9h-35v-9z"/>
-		<path id="Forma 142" style="fill: none" d="m1233 110v8h-25v-8z"/>
-		<path id="Forma 143" style="fill: none" d="m1246 113v7h-18v-7z"/>
-		<path id="Forma 144" style="fill: none" d="m1220 108v2h-10v-2z"/>
-		<path id="Forma 145" style="fill: none" d="m1227 109v5h-9v-5z"/>
-		<path id="Forma 146" style="fill: none" d="m1238 112v5h-7v-5z"/>
-		<path id="Forma 147" style="fill: none" d="m1245 112v6h-16v-6z"/>
-		<path id="Forma 149" style="fill: none" d="m1256 113v5h-13v-5z"/>
-		<path id="Forma 166" style="fill: none" d="m1239 111v2h-9v-2z"/>
-		<path id="Forma 150" style="fill: none" d="m1261 114v4h-24v-4z"/>
-		<path id="Forma 151" style="fill: none" d="m1210 106v5h-32v-5z"/>
-		<path id="Forma 152" style="fill: none" d="m1198 104v11h-21v-11z"/>
-		<path id="Forma 153" style="fill: none" d="m1203 105v6h-8v-6z"/>
-		<path id="Forma 154" style="fill: none" d="m1189 103v5h-12v-5z"/>
-		<path id="Forma 155" style="fill: none" d="m1174 101v3h-21v-3z"/>
-		<path id="Forma 156" style="fill: none" d="m1144 96v5h-30v-5z"/>
-		<path id="Forma 157" style="fill: none" d="m1112 91v5h-17v-5z"/>
-		<path id="Forma 158" style="fill: none" d="m1104 90v11h-9v-11z"/>
-		<path id="Forma 159" style="fill: none" d="m1100 89v18h-5v-18z"/>
-		<path id="Forma 160" style="fill: none" d="m1124 93v9h-8v-9z"/>
-		<path id="Forma 161" style="fill: none" d="m1132 94v10h-9v-10z"/>
-		<path id="Forma 162" style="fill: none" d="m1138 95v7h-7v-7z"/>
-		<path id="Forma 163" style="fill: none" d="m1149 97v6h-6v-6z"/>
-		<path id="Forma 164" style="fill: none" d="m1167 100v6h-16v-6z"/>
-		<path id="Forma 167" style="fill: none" d="m1164 99v1h-10v-1z"/>
+		<path id="Forma 137" style="fill: none" d="m592.5 53.9v3.3h-79.2v-3.3z"/>
+		<path id="Forma 138" style="fill: none" d="m524.1 43.1v11.3h-10.8v-11.3z"/>
+		<path id="Forma 139" style="fill: none" d="m541.4 45.9v8.9h-19.2v-8.9z"/>
+		<path id="Forma 140" style="fill: none" d="m553.6 47.8v7h-13.6v-7z"/>
+		<path id="Forma 141" style="fill: none" d="m568.6 50.2v4.2h-16.4v-4.2z"/>
+		<path id="Forma 142" style="fill: none" d="m578 51.6v3.7h-11.8l0.1-3.7z"/>
+		<path id="Forma 143" style="fill: none" d="m584.1 53v3.3h-8.5v-3.3z"/>
+		<path id="Forma 144" style="fill: none" d="m571.9 50.6v1h-4.7v-1z"/>
+		<path id="Forma 145" style="fill: none" d="m575.2 51.1v2.3h-4.3v-2.3z"/>
+		<path id="Forma 146" style="fill: none" d="m580.3 52.5v2.3h-3.3v-2.3z"/>
+		<path id="Forma 147" style="fill: none" d="m583.6 52.5v2.8h-7.5v-2.8z"/>
+		<path id="Forma 149" style="fill: none" d="m588.8 53v2.3h-6.1v-2.3z"/>
+		<path id="Forma 166" style="fill: none" d="m580.8 52v1h-4.2v-1z"/>
+		<path id="Forma 150" style="fill: none" d="m591.1 53.4v1.9h-11.3v-1.9z"/>
+		<path id="Forma 151" style="fill: none" d="m567.2 49.7v2.3h-15v-2.3z"/>
+		<path id="Forma 152" style="fill: none" d="m561.6 48.8v5.1h-9.9v-5.1z"/>
+		<path id="Forma 153" style="fill: none" d="m563.9 49.2v2.8h-3.7v-2.8z"/>
+		<path id="Forma 154" style="fill: none" d="m557.3 48.3v2.3h-5.6v-2.3z"/>
+		<path id="Forma 155" style="fill: none" d="m550.3 47.3v1.5h-9.8v-1.5z"/>
+		<path id="Forma 156" style="fill: none" d="m536.3 45v2.3h-14.1v-2.3z"/>
+		<path id="Forma 157" style="fill: none" d="m521.3 42.7v2.3h-8v-2.3z"/>
+		<path id="Forma 158" style="fill: none" d="m517.5 42.2v5.1h-4.2v-5.1z"/>
+		<path id="Forma 159" style="fill: none" d="m515.6 41.7v8.5h-2.3v-8.5z"/>
+		<path id="Forma 160" style="fill: none" d="m526.9 43.6v4.2h-3.8v-4.2z"/>
+		<path id="Forma 161" style="fill: none" d="m530.6 44.1v4.6h-4.2v-4.6z"/>
+		<path id="Forma 162" style="fill: none" d="m533.4 44.5v3.3h-3.2v-3.3z"/>
+		<path id="Forma 163" style="fill: none" d="m538.6 45.5v2.8h-2.8v-2.8z"/>
+		<path id="Forma 164" style="fill: none" d="m547 46.9v2.8h-7.5v-2.8z"/>
+		<path id="Forma 167" style="fill: none" d="m545.6 46.4v0.5h-4.7v-0.5z"/>
 	</g>
 	<g id="Aft black water">
-		<path id="Forma 129" style="fill: none" d="m493 231v36h-108v-36z"/>
+		<path id="Forma 129" style="fill: none" d="m231.1 108.3v16.9h-50.6v-16.9z"/>
 	</g>
 	<g id="Aft stbd water tank">
-		<path id="Forma 128" style="fill: none" d="m492 280v63h-107v-63z"/>
+		<path id="Forma 128" style="fill: none" d="m230.6 131.3v29.5h-50.1v-29.6z"/>
 	</g>
-<g id="Dirty Oil Tank" onclick="tanks.tankHighlight('#oilTanks', 0, $(this))">
-	<path id="Forma 213" fill-rule="evenodd" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m934 142v76h-69v-76z"/>
-	<path id="Forma 212 copy" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m934 141v78h-69v-78zm0 0v78h-69v-78z"/>
-</g>
-<g id="Clean Oil Tank" onclick="tanks.tankHighlight('#oilTanks', 1, $(this))">
-	<path id="Forma 214" fill-rule="evenodd" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m934 279v77h-69v-77z"/>
-	<path id="Forma 217" fill-rule="evenodd" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m933 279v77h-68v-77z"/>
-</g>
-<g id="Bilge Tank" onclick="tanks.tankHighlight('#oilTanks', 2, $(this))">
-	<path id="Forma 215" fill-rule="evenodd" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m1035 278v34h-39v-34z"/>
-	<path id="Forma 216" fill-rule="evenodd" style="fill: #2e485a; stroke: #6d92ab; stroke-width: 1;" d="m1034 279v32h-37v-32z"/>
-</g>
-
+	<g id="Dirty Oil Tank"  onclick="tanks.tankHighlight('#oilTanks', 0, $(this))">
+		<path id="Forma 213" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m437.8 66.6v35.6h-32.3v-35.6z"/>
+		<path id="Forma 212 copy" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m437.8 66.1v36.6h-32.3v-36.6zm0 0v36.6h-32.4v-36.6z"/>
+	</g>
+	<g id="Clean Oil Tank"  onclick="tanks.tankHighlight('#oilTanks', 1, $(this))">
+		<path id="Forma 214" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m437.8 130.8v36.1h-32.3v-36.1z"/>
+		<path id="Forma 217" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m437.3 130.8v36.1h-31.8v-36.1z"/>
+	</g>
+	<g id="Bilge Tank"  onclick="tanks.tankHighlight('#oilTanks', 2, $(this))">
+		<path id="Forma 216" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m544.7 130.8v15h-17.4v-15z"/>
+	</g>
+	<g id="Sludge Tank"  onclick="tanks.tankHighlight('#oilTanks', 3, $(this))">
+		<path id="Forma 215" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m526.2 130.3v15.9h-18.3v-15.9z"/>
+	</g>
+	<g id="Hydraulic Oil"  onclick="tanks.tankHighlight('#oilTanks', 4, $(this))">
+		<path id="Forma 218" fill-rule="evenodd" style="fill: none;stroke: #6d92ab;stroke-width: .5" d="m564 147v17h-37v-17z"/>
+	</g>
 </svg>

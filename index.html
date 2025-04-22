@@ -52,6 +52,7 @@
     <script src="js/components/cableSystemLayout.js"></script>
     <script src="js/components/iconTriEstateOneSignalDigitalLine.js"></script>
     <script src="js/components/timelineComponent.js"></script>
+    <script src="js/components/analogueValue.js"></script>
     <!-- VUE COMPONENTS -->
 
     <script src="js/jquery/jquery.js"></script>
@@ -142,14 +143,14 @@
             $("#UMSSettingsNav").load("src/umsSettings.html");
             $("#inhibitsGroup").load("src/groupInhibits.html");
             $("#FireSystemNav").load("src/fire.html");
-
+            $("#TemperatureNav").load("src/temperature.html");
             $("#MachineryVentilationNav").load("src/machineryVentilation.html");
             $("#WaterMakerNav").load("src/waterMaker.html");
             $("#LightingNav").load("src/lighting.html");
             $("#PumpsNav").load("src/loads.html");
             $("#HydraulicsNav").load("src/hydraulics.html");
-          //  $("#ACSystemNav").load("src/acSystem.html");
-           // $("#SteeringSystemNav").load("src/steeringSystem.html");
+            //  $("#ACSystemNav").load("src/acSystem.html");
+            // $("#SteeringSystemNav").load("src/steeringSystem.html");
 
             $("#HomeSystem").load("src/home.html", function () {
                 setTimeout(() => {
@@ -202,9 +203,9 @@
             style="display:none;"></section>
         <section class="dev-sectionContent dev-menuNavigation-valvesFuelSystem" style="display:none;overflow: hidden;"
             id="ValveFuelSystem"></section>
-        <section class="dev-sectionContent dev-menuNavigation-valvesFireBilgeSystem" style="display:none;overflow: hidden;"
-            id="ValveFireBilgeSystem"></section>
-            <section class="dev-sectionContent dev-menuNavigation-valvesWaterSystem" style="display:none;overflow: hidden;"
+        <section class="dev-sectionContent dev-menuNavigation-valvesFireBilgeSystem"
+            style="display:none;overflow: hidden;" id="ValveFireBilgeSystem"></section>
+        <section class="dev-sectionContent dev-menuNavigation-valvesWaterSystem" style="display:none;overflow: hidden;"
             id="ValveWaterSystem"></section>
         <section class="dev-sectionContent dev-menuNavigation-shorePower shorePowerApp"
             style="display:none;overflow: hidden;" id="ShorePowerNav"></section>
@@ -240,14 +241,14 @@
         </section>
         <section class="dev-sectionContent dev-menuNavigation-variousSystems" style="display:none; overflow: auto;"
             id="Various1Nav"></section>
-            <section class="dev-sectionContent dev-menuNavigation-hundested" style="display:none; overflow: auto;"
+        <section class="dev-sectionContent dev-menuNavigation-hundested" style="display:none; overflow: auto;"
             id="hundestedNav"></section>
-            
+
         <section class="dev-sectionContent dev-menuNavigation-insulation" style="display:none;" id="InsulationNav">
         </section>
-        <!--<section class="dev-sectionContent dev-menuNavigation-steeringSystem" style="display:none;"
-            id="SteeringSystemNav"></section>-->
-            
+        <section class="dev-sectionContent dev-menuNavigation-temperature" style="display:none;"
+            id="TemperatureNav"></section>
+
         <section class="dev-sectionContent dev-menuNavigation-navEquipment" style="display:none;" id="NavEquipmentNav">
         </section>
         <section class="dev-sectionContent dev-menuNavigation-activeAlarms" style="display:none; overflow: hidden;"
@@ -264,7 +265,8 @@
         </section>
         <section class="dev-sectionContent dev-menuNavigation-fire" style="display:none; overflow: hidden;"
             id="FireSystemNav"></section>
-        <section class="dev-sectionContent dev-menuNavigation-splash marginTopWideScreen" style="overflow: hidden;" id="HomeSystem">
+        <section class="dev-sectionContent dev-menuNavigation-splash marginTopWideScreen" style="overflow: hidden;"
+            id="HomeSystem">
 
             <script language="JavaScript">
 
@@ -337,7 +339,7 @@
         absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
 
     </script>
-<!--
+    <!--
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 -->

@@ -1,0 +1,80 @@
+<article>
+    <div class="ui grid type1 cols-mini-1 pad-sm gap-sm hidden-phone temperatureApp">
+
+        <div class="ui grid cols-mini-1 gap-sm pad-sm has-header
+                col mini-1">
+
+            <header class="ui col">
+                <font>Temperatures</font>
+                <span class="gradients">
+                <span class="gradient-left"></span>
+                <span class="gradient-right"></span>
+                </span>
+            </header>
+
+            <div class="ui col mini-1 gap-lg pad-sm grid type1 cols-mini-6">
+
+                    <div class="ui col mini-6 grid type1 gap-no pad-sm has-col-header-med radius shadow">
+                        <header class="col-header size-lg ">Temperatures Layout</header>
+                        <div class="ui col mini-1  align-middle-center"   style="justify-content: normal!important;" >
+                         
+                            <analogue-value-render v-bind="{signalId: 145, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 146, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 147, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 148, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 149, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 150, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 151, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 152, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 153, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 369, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+                            <analogue-value-render v-bind="{signalId: 370, valueDecimals: 1, x:32, y: 50, buttonSize: 'mini active', valueMode: 'escalated'}"  ></analogue-value-render>
+
+                            <span id="layout_temperature"></span>
+                        </div>
+                    </div>
+
+            </div>
+
+
+            <div class="ui col mini-1 grid cols-mini-2 bg-no pad-no gap-sm align-start">
+
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                  <header class="col-header size-med">Temperatures List</header>
+                  <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Engine room temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Pump room temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'SPS Port temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 148, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'SPS Stbd temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 149, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Battery room Port temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 150, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Battery room Stbd temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                                   
+                    </ul>
+                  </div>
+                </div>
+        
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                  <header class="col-header size-med">Temperatures List</header>
+                  <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 151, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'A1 Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 152, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'A1 Screen Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 153, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'DAU 1_1 Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 369, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Underfloor freezer 1 temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        <icon-text-value-analogue-line-render v-bind="{ signalId: 370, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Underfloor freezer 2 temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                                    
+                    </ul>
+                  </div>
+                </div>
+        
+              </div>
+
+        </div>
+    </div>
+
+</article>
+
+
+
+
