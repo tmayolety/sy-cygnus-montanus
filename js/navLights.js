@@ -4,4 +4,5 @@ var screen = {
     }
 };
 
-$("#NavLightsLayout_1").load("src/ga/sideView/SideView.svg");
+$("#NavLightsLayout_1").load("src/ga/lights/navLights.svg");
+//$("#NavLightsLayout_1").load("src/ga/lights/Navigation_light.svg");

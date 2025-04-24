@@ -448,17 +448,14 @@
   {
     "name": "navLightApp",
     "component": [
-      {
-        "label": "two-options-switch-button-render",
-        "file": "twoOptionsSwitchButton"
-      },
+      
       {
         "label": "icon-layout-render",
         "file": "iconLayout"
       },
       {
-        "label": "basic-text-with-digital-line-render",
-        "file": "basicTextWithTitleDigital"
+        "label": "icon-text-value-digital-line-render",
+        "file": "iconTextValueDigitalLine"
       }
     ],
     "mount": ".navLightApp",
