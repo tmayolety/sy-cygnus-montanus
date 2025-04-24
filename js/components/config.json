@@ -560,20 +560,5 @@
         "isCustomElement": "tag => tag.startsWith('font')"
       }
     }
-  },
-  {
-    "name": "SettingsApp",
-    "component": [
-      {
-        "label": "two-options-switch-button-render",
-        "file": "twoOptionsSwitchButton"
-      }
-    ],
-    "mount": "#SettingsApp",
-    "config": {
-      "compilerOptions": {
-        "isCustomElement": "tag => tag.startsWith('font')"
-      }
-    }
   }
 ]
