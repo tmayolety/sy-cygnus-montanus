@@ -1,0 +1,282 @@
+<article>
+
+
+    <div class="ui grid type1 cols-mini-1 gap-med hidden-phone pad-lg fuelSystemApp">
+
+        <div class="ui col mini-1 gap-sm pad-lg has-header
+                    grid type1 cols-mini-1">
+
+            <header class="ui col">
+                <font>Fuel System</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+            </header>
+
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-6" style="height: 390px;"
+                id="fuelTank">
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 92, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Keel Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3745, scaleStep: 374, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-1" style="height: 390px;">
+                    <div class="ui col mini-1 has-col-header-xl radius shadow">
+                        <header class="col-header size-sm" style="background: none!important; font-size: large;">
+                            Transfer Pump</header>
+                        <div class="ui grid type1 cols-mini-1 pad-xl gap-xl">
+                            <div class="ui col mini-1 middle-center">
+                                <load-render
+                                    v-bind="{ signalId: 3,feedbackStopSignalId: 3,feedbackStartSignalId: 3, feedbackFailSignalId: 1, optionOneText: 'RUN', optionTwoText: 'STOP', NC: 1, size: 'xl',  optionOneSignalIdToWrite: 239, optionTwoSignalIdToWrite: 30861, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonUpColor:'color-bg-type-success',buttonDownColor:'color-bg-type-danger', feedbackColorStart:'color-bg-type-success',feedbackColorStop:'color-bg-type-danger'  }"></load-render>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui col mini-1 grid cols-mini-2 bg-no pad-no gap-sm align-start">
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Fuel System</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+                            <list-valve-controls-render v-bind="{
+                                              feedbackOpenSignalId: 17,
+                                              feedbackCloseSignalId: 18,
+                                              commandOpenSignalId: 77,
+                                              commandCloseSignalId: 78,
+                                              title: 'Fuel Tank Stbd IN',
+                                              zeroText: 'Closed',
+                                              zeroColor: 'danger',
+                                              oneText: 'Opened',
+                                              oneColor: 'success',
+                                              transitionText: 'In Transit',
+                                              findButton:false,
+                                              writeMode: 1
+                                            }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                            feedbackOpenSignalId: 19,
+                                            feedbackCloseSignalId: 20,
+                                            commandOpenSignalId: 79,
+                                            commandCloseSignalId: 80,
+                                            title: 'Fuel Tank Stbd OUT',
+                                            zeroText: 'Closed',
+                                            zeroColor: 'danger',
+                                            oneText: 'Opened',
+                                            oneColor: 'success',
+                                            transitionText: 'In Transit',
+                                            findButton:false,
+                                            writeMode: 1
+                                          }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                          feedbackOpenSignalId: 21,
+                                          feedbackCloseSignalId: 22,
+                                          commandOpenSignalId: 81,
+                                          commandCloseSignalId: 82,
+                                          title: 'Fuel Tank Port IN',
+                                          zeroText: 'Closed',
+                                          zeroColor: 'danger',
+                                          oneText: 'Opened',
+                                          oneColor: 'success',
+                                          transitionText: 'In Transit',
+                                          findButton:false,
+                                          writeMode: 1
+                                        }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                        feedbackOpenSignalId: 23,
+                                        feedbackCloseSignalId: 24,
+                                        commandOpenSignalId: 83,
+                                        commandCloseSignalId: 84,
+                                        title: 'Fuel Tank Port OUT',
+                                        zeroText: 'Closed',
+                                        zeroColor: 'danger',
+                                        oneText: 'Opened',
+                                        oneColor: 'success',
+                                        transitionText: 'In Transit',
+                                        findButton:false,
+                                        writeMode: 1
+                                      }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                      feedbackOpenSignalId: 25,
+                                      feedbackCloseSignalId: 26,
+                                      commandOpenSignalId: 85,
+                                      commandCloseSignalId: 86,
+                                      title: 'Fuel Tank Keel IN',
+                                      zeroText: 'Closed',
+                                      zeroColor: 'danger',
+                                      oneText: 'Opened',
+                                      oneColor: 'success',
+                                      transitionText: 'In Transit',
+                                      findButton:false,
+                                      writeMode: 1
+                                    }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                    feedbackOpenSignalId: 27,
+                                    feedbackCloseSignalId: 28,
+                                    commandOpenSignalId: 87,
+                                    commandCloseSignalId: 88,
+                                    title: 'Fuel Tank Keel OUT',
+                                    zeroText: 'Closed',
+                                    zeroColor: 'danger',
+                                    oneText: 'Opened',
+                                    oneColor: 'success',
+                                    transitionText: 'In Transit',
+                                    findButton:false,
+                                    writeMode: 1
+                                  }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                  feedbackOpenSignalId: 29,
+                                  feedbackCloseSignalId: 30,
+                                  commandOpenSignalId: 89,
+                                  commandCloseSignalId: 90,
+                                  title: 'Fuel Day tank Stbd IN',
+                                  zeroText: 'Closed',
+                                  zeroColor: 'danger',
+                                  oneText: 'Opened',
+                                  oneColor: 'success',
+                                  transitionText: 'In Transit',
+                                  findButton:false,
+                                  writeMode: 1
+                                }"></list-valve-controls-render>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Fuel System</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+
+
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 31,
+                                feedbackCloseSignalId: 32,
+                                commandOpenSignalId: 91,
+                                commandCloseSignalId: 92,
+                                title: 'Fuel Day tank Stbd OUT',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                      findButton:false,
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                              feedbackOpenSignalId: 33,
+                              feedbackCloseSignalId: 34,
+                              commandOpenSignalId: 93,
+                              commandCloseSignalId: 94,
+                              title: 'Fuel Day tank Port IN',
+                              zeroText: 'Closed',
+                              zeroColor: 'danger',
+                              oneText: 'Opened',
+                              oneColor: 'success',
+                              transitionText: 'In Transit',
+                      findButton:false,
+                              writeMode: 1
+                            }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                            feedbackOpenSignalId: 35,
+                            feedbackCloseSignalId: 36,
+                            commandOpenSignalId: 95,
+                            commandCloseSignalId: 96,
+                            title: 'Fuel Day tank Port OUT',
+                            zeroText: 'Closed',
+                            zeroColor: 'danger',
+                            oneText: 'Opened',
+                            oneColor: 'success',
+                            transitionText: 'In Transit',
+                      findButton:false,
+                            writeMode: 1
+                          }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                          feedbackOpenSignalId: 40,
+                          feedbackCloseSignalId: 41,
+                          commandOpenSignalId: 99,
+                          commandCloseSignalId: 100,
+                          title: 'Fuel Supply Port Generator',
+                          zeroText: 'Closed',
+                          zeroColor: 'danger',
+                          oneText: 'Opened',
+                          oneColor: 'success',
+                          transitionText: 'In Transit',
+                      findButton:false,
+                          writeMode: 1
+                        }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                        feedbackOpenSignalId: 42,
+                        feedbackCloseSignalId: 43,
+                        commandOpenSignalId: 101,
+                        commandCloseSignalId: 102,
+                        title: 'Fuel Supply Port Generator',
+                        zeroText: 'Closed',
+                        zeroColor: 'danger',
+                        oneText: 'Opened',
+                        oneColor: 'success',
+                        transitionText: 'In Transit',
+                      findButton:false,
+                        writeMode: 1
+                      }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                      feedbackOpenSignalId: 44,
+                      feedbackCloseSignalId: 45,
+                      commandOpenSignalId: 103,
+                      commandCloseSignalId: 104,
+                      title: 'Fuel Supply Stbd Generator',
+                      zeroText: 'Closed',
+                      zeroColor: 'danger',
+                      oneText: 'Opened',
+                      oneColor: 'success',
+                      transitionText: 'In Transit',
+                      findButton:false,
+                      writeMode: 1
+                    }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                      feedbackOpenSignalId: 46,
+                      feedbackCloseSignalId: 47,
+                      commandOpenSignalId: 105,
+                      commandCloseSignalId: 106,
+                      title: 'Fuel Return Stbd Generator',
+                      zeroText: 'Closed',
+                      zeroColor: 'danger',
+                      oneText: 'Opened',
+                      oneColor: 'success',
+                      transitionText: 'In Transit',
+                      findButton:false,
+                      writeMode: 1
+                    }"></list-valve-controls-render>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</article>

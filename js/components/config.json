@@ -238,6 +238,30 @@
       }
     }
   },
+  
+  {
+    "name": "fuelSystemApp",
+    "component": [
+      {
+        "label": "bar-render",
+        "file": "bar"
+      },
+      {
+        "label": "load-render",
+        "file": "load"
+      },
+      {
+        "label": "list-valve-controls-render",
+        "file": "listValveControls"
+      }
+    ],
+    "mount": ".fuelSystemApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
   {
     "name": "oilTanksApp",
     "component": [
@@ -270,25 +294,6 @@
       }
     ],
     "mount": ".bilgeApp",
-    "config": {
-      "compilerOptions": {
-        "isCustomElement": "tag => tag.startsWith('font')"
-      }
-    }
-  },
-  {
-    "name": "temperatureApp",
-    "component": [
-      {
-        "label": "icon-text-value-analogue-line-render",
-        "file": "iconTextValueAnalogueLine"
-      },
-      {
-        "label": "analogue-value-render",
-        "file": "analogueValue"
-      }
-    ],
-    "mount": ".temperatureApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"
@@ -430,12 +435,16 @@
     "name": "fireApp",
     "component": [
       {
-        "label": "icon-two-options-digital-line-render",
-        "file": "iconTwoOptionsDigitalLine"
+        "label": "icon-text-value-digital-line-render",
+        "file": "iconTextValueDigitalLine"
       },
       {
         "label": "icon-layout-render",
         "file": "iconLayout"
+      },
+      {
+        "label": "load-render",
+        "file": "load"
       }
     ],
     "mount": ".fireApp",
