@@ -251,9 +251,7 @@
 	<g id="Bilge Tank"  onclick="tanks.tankHighlight('#oilTanks', 2, $(this))">
 		<path id="Forma 216" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m544.7 130.8v15h-17.4v-15z"/>
 	</g>
-	<g id="Sludge Tank"  onclick="tanks.tankHighlight('#oilTanks', 3, $(this))">
-		<path id="Forma 215" fill-rule="evenodd" style="fill: #2e485a;stroke: #6d92ab;stroke-width: .5" d="m526.2 130.3v15.9h-18.3v-15.9z"/>
-	</g>
+
 	<g id="Hydraulic Oil"  onclick="tanks.tankHighlight('#oilTanks', 4, $(this))">
 		<path id="Forma 218" fill-rule="evenodd" style="fill: none;stroke: #6d92ab;stroke-width: .5" d="m564 147v17h-37v-17z"/>
 	</g>
