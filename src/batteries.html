@@ -1,8 +1,9 @@
 <article>
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-phone batteryApp">
-        <div class="ui grid type1 cols-mini-1 col sm-1 gap-med pad-lg has-header">
+    <div class="ui grid type1 cols-mini-1 pad-sm gap-sm hidden-phone batteryApp">
+        <!--Battery Status-->
+        <div class="ui grid type1 cols-mini-1 col sm-1 gap-sm pad-sm has-header">
             <header class="ui col">
-                <font>DC System</font>
+                <font>Battery Status</font>
                 <span class="gradients">
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
@@ -10,15 +11,15 @@
                 
             </header>
 
-            <div class="ui grid type1 cols-mini-3 cols-xl-6 pad-no gap-med">
+            <div class="ui grid type1 cols-mini-5 pad-no gap-sm">
 
-                <div class="ui col mini-2 " style="height: 310px;">
+                <div class="ui col mini-1 " style="height: 270px;">
                   
                         <gauge-render v-bind="{
-                            title:'Bridge Service Battery Voltage',
+                            title:'Port Service Battery',
                             signalId: 169,
                             unit: 'Vdc',
-                            height: 'h-mini-280 pad-xl',
+                            height: 'h-mini-260 pad-xl',
                             textSize: 30,
                             unitTextSize: 20,
                             marginTopValue: 'mg-top-mini-50',
@@ -30,13 +31,13 @@
             
                 </div>
 
-                <div class="ui col mini-2 ">
+                <div class="ui col mini-1 ">
                    
                         <gauge-render v-bind="{
-                            title:'Engine Room Service Battery Voltage',
+                            title:'Stbd Service Battery',
                             signalId: 577,
                             unit: 'Vdc',
-                            height: 'h-mini-280 pad-xl',
+                            height: 'h-mini-260 pad-xl',
                             textSize: 30,
                             unitTextSize: 20,
                             marginTopValue: 'mg-top-mini-50',
@@ -48,13 +49,13 @@
                                   
                 </div>
 
-                 <div class="ui col mini-2 ">
+                 <div class="ui col mini-1 ">
                 
                         <gauge-render v-bind="{
-                            title:'GMDSS Battery Voltage',
+                            title:'Radio Battery',
                             signalId: 537,
                             unit: 'Vdc',
-                            height: 'h-mini-280 pad-xl',
+                            height: 'h-mini-260 pad-xl',
                             textSize: 30,
                             unitTextSize: 20,
                             marginTopValue: 'mg-top-mini-50',
@@ -67,13 +68,13 @@
                  
                 </div>
 
-               <div class="ui col mini-2 " style="height: 310px;">
+               <div class="ui col mini-1 " style="height: 270px;">
 
                         <gauge-render v-bind="{
-                            title:'Emergency Lighting Battery Voltage',
+                            title:'Port Genset Start Battery',
                             signalId: 578,
                             unit: 'Vdc',
-                            height: 'h-mini-280 pad-xl',
+                            height: 'h-mini-260 pad-xl',
                             textSize: 30,
                             unitTextSize: 20,
                             marginTopValue: 'mg-top-mini-50',
@@ -86,13 +87,13 @@
                       
                 </div>
 
-                <div class="ui col mini-2 ">
+                <div class="ui col mini-1 ">
             
                         <gauge-render v-bind="{
-                            title:'Emergency Generator Start Battery Voltage',
+                            title:'Stbd Genset Start Battery',
                             signalId: 201,
                             unit: 'Vdc',
-                            height: 'h-mini-280 pad-xl',
+                            height: 'h-mini-260 pad-xl',
                             textSize: 30,
                             unitTextSize: 20,
                             marginTopValue: 'mg-top-mini-50',
@@ -104,7 +105,221 @@
                         }"></gauge-render>
                   
                 </div>
+
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 1, title: 'Current', icon: 'shore', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: '%', valueMode: 'escalated', valueDecimals: 1, title: 'State of Charge', icon: 'batteries', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Temperature', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 1, title: 'Current', icon: 'shore', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: '%', valueMode: 'escalated', valueDecimals: 1, title: 'State of Charge', icon: 'batteries', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Temperature', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 1, title: 'Current', icon: 'shore', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: '%', valueMode: 'escalated', valueDecimals: 1, title: 'State of Charge', icon: 'batteries', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Temperature', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 1, title: 'Current', icon: 'shore', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: '%', valueMode: 'escalated', valueDecimals: 1, title: 'State of Charge', icon: 'batteries', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Temperature', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 1, title: 'Current', icon: 'shore', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: '%', valueMode: 'escalated', valueDecimals: 1, title: 'State of Charge', icon: 'batteries', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Temperature', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+
+
         </div>
+
+        <!--Chargers-->
+        <div class="ui grid type1 cols-mini-1 col sm-1 gap-sm pad-sm has-header" style="margin-top: 10px;">
+            <header class="ui col">
+                <font>Battery Charger Status</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+                
+            </header>
+
+            <div class="ui grid type1 cols-mini-5 pad-no gap-sm">
+
+                <div class="ui col mini-1 " style="height: 270px;">
+                  
+                        <gauge-render v-bind="{
+                            title:'Port Service Battery Charger',
+                            signalId: 169,
+                            unit: 'A',
+                            height: 'h-mini-260 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 20,
+                            marginTopValue: 'mg-top-mini-50',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,}"></gauge-render>
+            
+                </div>
+
+                <div class="ui col mini-1 ">
+                   
+                        <gauge-render v-bind="{
+                            title:'Stbd Service Battery Charger',
+                            signalId: 577,
+                            unit: 'A',
+                            height: 'h-mini-260 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 20,
+                            marginTopValue: 'mg-top-mini-50',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,}"></gauge-render>
+                                  
+                </div>
+
+                 <div class="ui col mini-1 ">
+                
+                        <gauge-render v-bind="{
+                            title:'Radio Battery Charger',
+                            signalId: 537,
+                            unit: 'A',
+                            height: 'h-mini-260 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 20,
+                            marginTopValue: 'mg-top-mini-50',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,
+                        }"></gauge-render>
+                 
+                </div>
+
+               <div class="ui col mini-1 " style="height: 270px;">
+
+                        <gauge-render v-bind="{
+                            title:'Port Genset Start Battery Charger',
+                            signalId: 578,
+                            unit: 'A',
+                            height: 'h-mini-260 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 20,
+                            marginTopValue: 'mg-top-mini-50',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 3000
+                        }"></gauge-render>
+                </div>
+
+                <div class="ui col mini-1 ">
+                        <gauge-render v-bind="{
+                            title:'Stbd Genset Start Battery Charger',
+                            signalId: 201,
+                            unit: 'A',
+                            height: 'h-mini-260 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 20,
+                            marginTopValue: 'mg-top-mini-50',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,
+                        }"></gauge-render>
+                </div>
+
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger State', icon: 'batteries', size: '20', zeroText: 'bulk', zeroColor: 'secondary', oneText: 'abs', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Failure', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Failure', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
+                    </div>  
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger State', icon: 'batteries', size: '20', zeroText: 'bulk', zeroColor: 'secondary', oneText: 'abs', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Failure', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Failure', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger State', icon: 'batteries', size: '20', zeroText: 'bulk', zeroColor: 'secondary', oneText: 'abs', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Failure', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Failure', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger State', icon: 'batteries', size: '20', zeroText: 'bulk', zeroColor: 'secondary', oneText: 'abs', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Failure', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Failure', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 radius shadow">
+                    <div class="col-content overflow" style="overflow:hidden!important;">
+                        <ul class="ui table size-mini resp">
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger State', icon: 'batteries', size: '20', zeroText: 'bulk', zeroColor: 'secondary', oneText: 'abs', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Charger Failure', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Failure', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
     </div>
 </article>

@@ -390,6 +390,22 @@
     }
   },
   {
+    "name": "intercoolingSystemApp",
+    "component": [
+      
+      {
+        "label": "icon-text-value-analogue-line-render",
+        "file": "iconTextValueAnalogueLine"
+      }
+    ],
+    "mount": ".intercoolingSystemApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
     "name": "hundestedApp",
     "component": [
       {
@@ -465,9 +481,37 @@
       {
         "label": "icon-text-value-digital-line-render",
         "file": "iconTextValueDigitalLine"
+      },
+      {
+        "label": "two-options-switch-button-render",
+        "file": "twoOptionsSwitchButton"
       }
     ],
     "mount": ".navLightApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
+    "name": "lightingApp",
+    "component": [
+      
+      {
+        "label": "icon-layout-render",
+        "file": "iconLayout"
+      },
+      {
+        "label": "icon-text-value-digital-line-render",
+        "file": "iconTextValueDigitalLine"
+      },
+      {
+        "label": "two-options-switch-button-render",
+        "file": "twoOptionsSwitchButton"
+      }
+    ],
+    "mount": ".lightingApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"

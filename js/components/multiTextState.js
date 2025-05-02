@@ -10,6 +10,7 @@ components.multiTextState = {
         'oneText',
         'twoText',
         'threeText',
+        'texts',
     ],
     template: /*html*/`
         <div class="ui col reset-w-align" :class="[colStyle]" ref="basicTextTitleDigitalElement">
@@ -36,6 +37,11 @@ components.multiTextState = {
     },
     methods: {
         evaluate(value) {
+            if (Array.isArray(this.texts)) {
+                this.valueText = this.texts[value] ?? 'N/A';
+                return;
+              }
+
             switch (value) {
                 case 0:
                     this.valueText = this.zeroText;

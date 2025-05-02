@@ -21,6 +21,7 @@ components.load = {
     "feedbackColorStart",
     "feedbackColorStop",
     "NFC",
+    "switchButton",
   ],
   template: /*html*/ `
     <div ref="loadElement">
@@ -32,10 +33,11 @@ components.load = {
                 <button class="ui btn" :class='[optionTwoActive, colorDownButton()]' v-on:click="write(2)" :style="'font-size:' + fontSize + 'px!important'"><span :class='[btnPulsed2]' v-if="btnPulsed2 != 'btnPulse2Load'">{{optionTwoText}}</span><div v-else :class='[btnPulsed2]'  ></div></button>
             </div>
 
-            <div class="ui btn-group collapse horizontal" style="margin-top:10px;">
-                <button class="ui btn med primary colored" style="width:90px!important">Remote</button>
-                <button class="ui btn med primary active" style="width:90px!important">Auto</button>
+            <div v-if="switchButton != false" class="ui btn-group collapse horizontal" style="margin-top:10px;">
+              <button class="ui btn med primary colored" style="width:90px!important">Manual</button>
+              <button class="ui btn med primary active" style="width:90px!important">Auto</button>
             </div>
+
         </div>
            
         <div v-if="tripped" class="ui btn-group switch-2 middle-center" :class='[size]' style="height:227px">
