@@ -136,6 +136,21 @@
     }
   },
   {
+    "name": "secondaryBilgeApp",
+    "component": [
+      {
+        "label": "load-render",
+        "file": "load"
+      }
+    ],
+    "mount": ".secondaryBilgeApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
     "name": "singleLineApp",
     "component": [
       {
@@ -238,7 +253,33 @@
       }
     }
   },
-  
+  {
+    "name": "waterSystemApp",
+    "component": [
+      {
+        "label": "bar-render",
+        "file": "bar"
+      },
+      {
+        "label": "bar-custom-render",
+        "file": "barCustom"
+      },
+      {
+        "label": "load-render",
+        "file": "load"
+      },
+      {
+        "label": "list-valve-controls-render",
+        "file": "listValveControls"
+      }
+    ],
+    "mount": ".waterSystemApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
   {
     "name": "fuelSystemApp",
     "component": [
@@ -253,6 +294,14 @@
       {
         "label": "list-valve-controls-render",
         "file": "listValveControls"
+      },
+      {
+        "label": "icon-text-value-digital-line-render",
+        "file": "iconTextValueDigitalLine"
+      },
+      {
+        "label": "icon-text-value-analogue-line-render",
+        "file": "iconTextValueAnalogueLine"
       }
     ],
     "mount": ".fuelSystemApp",
@@ -304,19 +353,23 @@
     "name": "bilgeListApp",
     "component": [
       {
-        "label": "icon-text-value-digital-line-render",
-        "file": "iconTextValueDigitalLine"
+        "label": "icon-layout-render",
+        "file": "iconLayout"
       },
       {
-        "label": "icon-two-options-digital-line-render",
-        "file": "iconTwoOptionsDigitalLine"
+        "label": "icon-layout-two-id-render",
+        "file": "iconLayoutTwoID"
       },
       {
-        "label": "icon-text-value-digital-two-id-line-render",
-        "file": "iconTextValueDigitalTwoIDLine"
+        "label": "list-valve-controls-render",
+        "file": "listValveControls"
+      },
+      {
+        "label": "load-render",
+        "file": "load"
       }
     ],
-    "mount": ".bilgeListApp",
+    "mount": "#bilgeListApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"

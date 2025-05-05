@@ -1,0 +1,176 @@
+<article>
+
+
+    <div class="ui grid type1 cols-mini-1 gap-med hidden-phone pad-lg waterSystemApp">
+
+        <div class="ui col mini-1 gap-sm pad-lg has-header
+                    grid type1 cols-mini-1">
+
+            <header class="ui col">
+                <font>Water System</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+            </header>
+
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5" style="height: 390px;">
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 154, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:22 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 155, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 156, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767,scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render
+                        v-bind="{ signalId: 129, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767, scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                </div>
+
+                <div class="ui col mini-1">
+                    <bar-custom-render
+                        v-bind="{ signalId: 154, signalId2: 155, signalId3: 156, signalId4: 129, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 7224, scaleStep: 722, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
+                </div>
+
+
+            </div>
+
+            <div class="ui col mini-1 grid cols-mini-2 bg-no pad-no gap-sm align-start">
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Fuel System Valves</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 385,
+                                feedbackCloseSignalId: 386,
+                                commandOpenSignalId: 413,
+                                commandCloseSignalId: 414,
+                                title: 'Water Tanks Aft Stbd IN',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 387,
+                                feedbackCloseSignalId: 388,
+                                commandOpenSignalId: 415,
+                                commandCloseSignalId: 416,
+                                title: 'Water Tanks Aft Stbd OUT',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 389,
+                                feedbackCloseSignalId: 390,
+                                commandOpenSignalId: 417,
+                                commandCloseSignalId: 418,
+                                title: 'Water Tanks Aft Port IN',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 391,
+                                feedbackCloseSignalId: 392,
+                                commandOpenSignalId: 419,
+                                commandCloseSignalId: 420,
+                                title: 'Water Tanks Aft Port OUT',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+              
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ui col mini-1 has-col-header-med radius shadow">
+                    <header class="col-header size-med">Fuel System Valves</header>
+                    <div class="col-content overflow">
+                        <ul class="ui table size-mini resp">
+
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 48,
+                                feedbackCloseSignalId: 49,
+                                commandOpenSignalId: 111,
+                                commandCloseSignalId: 112,
+                                title: 'Water Tanks Fwd Stbd IN',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 50,
+                                feedbackCloseSignalId: 51,
+                                commandOpenSignalId: 113,
+                                commandCloseSignalId: 114,
+                                title: 'Water Tanks Fwd Stbd OUT',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 52,
+                                feedbackCloseSignalId: 53,
+                                commandOpenSignalId: 107,
+                                commandCloseSignalId: 108,
+                                title: 'Water Tanks Fwd Port IN',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+                            <list-valve-controls-render v-bind="{
+                                feedbackOpenSignalId: 54,
+                                feedbackCloseSignalId: 55,
+                                commandOpenSignalId: 109,
+                                commandCloseSignalId: 110,
+                                title: 'Water Tanks Fwd Port OUT',
+                                zeroText: 'Closed',
+                                zeroColor: 'danger',
+                                oneText: 'Opened',
+                                oneColor: 'success',
+                                transitionText: 'In Transit',
+                                writeMode: 1
+                              }"></list-valve-controls-render>
+              
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</article>

@@ -15,7 +15,7 @@
                 </header>
 
                 <div class="ui col mini-1 gap-no pad-mini radius shadow
-                            grid type1 cols-mini-4" style="height: 390px;" id="wasteTank">
+                            grid type1 cols-mini-5" style="height: 390px;" id="wasteTank">
                     <div class="ui col mini-1">
                         <bar-render v-bind="{ signalId: 5117, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1380, scaleStep: 138, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
@@ -26,6 +26,10 @@
                     
                     <div class="ui col mini-1">
                         <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 638, scaleStep: 63, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    </div>
+                    
+                    <div class="ui col mini-1">
+                        <bar-render v-bind="{ signalId: 523, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 499, scaleStep: 49, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                  
                     <div class="ui col mini-1">

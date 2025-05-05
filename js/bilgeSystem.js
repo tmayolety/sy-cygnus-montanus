@@ -3,4 +3,4 @@ var screen = {
     }
 };
 
-$("#layout_3").load("src/ga/decks/mainDeckBilge.svg");
+$("#layout_3").load("src/ga/decks/lowerDeckBilge.svg");

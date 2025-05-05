@@ -14,8 +14,7 @@
                 </span>
             </header>
 
-            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-6" style="height: 390px;"
-                id="fuelTank">
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-6" style="height: 390px;">
                 <div class="ui col mini-1">
                     <bar-render
                         v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
@@ -160,8 +159,9 @@
                                   findButton:false,
                                   writeMode: 1
                                 }"></list-valve-controls-render>
-
-                        </ul>
+                                <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Port Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Stbd Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                       </ul>
                     </div>
                 </div>
 
@@ -169,8 +169,6 @@
                     <header class="col-header size-med">Fuel System Valves</header>
                     <div class="col-content overflow">
                         <ul class="ui table size-mini resp">
-
-
                             <list-valve-controls-render v-bind="{
                                 feedbackOpenSignalId: 31,
                                 feedbackCloseSignalId: 32,
@@ -182,7 +180,7 @@
                                 oneText: 'Opened',
                                 oneColor: 'success',
                                 transitionText: 'In Transit',
-                      findButton:false,
+                                findButton:false,
                                 writeMode: 1
                               }"></list-valve-controls-render>
                             <list-valve-controls-render v-bind="{
@@ -196,7 +194,7 @@
                               oneText: 'Opened',
                               oneColor: 'success',
                               transitionText: 'In Transit',
-                      findButton:false,
+                              findButton:false,
                               writeMode: 1
                             }"></list-valve-controls-render>
                             <list-valve-controls-render v-bind="{
@@ -210,7 +208,7 @@
                             oneText: 'Opened',
                             oneColor: 'success',
                             transitionText: 'In Transit',
-                      findButton:false,
+                            findButton:false,
                             writeMode: 1
                           }"></list-valve-controls-render>
                             <list-valve-controls-render v-bind="{
@@ -224,7 +222,7 @@
                           oneText: 'Opened',
                           oneColor: 'success',
                           transitionText: 'In Transit',
-                      findButton:false,
+                          findButton:false,
                           writeMode: 1
                         }"></list-valve-controls-render>
                             <list-valve-controls-render v-bind="{
@@ -238,7 +236,7 @@
                         oneText: 'Opened',
                         oneColor: 'success',
                         transitionText: 'In Transit',
-                      findButton:false,
+                        findButton:false,
                         writeMode: 1
                       }"></list-valve-controls-render>
                             <list-valve-controls-render v-bind="{
@@ -269,16 +267,14 @@
                       findButton:false,
                       writeMode: 1
                     }"></list-valve-controls-render>
+                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Scrubber', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        
+                   <icon-text-value-analogue-line-render v-bind="{ signalId: 7000, size: '20', unit: 'l/m', valueMode: 'escalated', valueDecimals: 0, title: 'Fuel Flow Rate', icon: 'tanks', timeDelay: 3000}"></icon-text-value-analogue-line-render>
                         </ul>
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
-
     </div>
 
 </article>
