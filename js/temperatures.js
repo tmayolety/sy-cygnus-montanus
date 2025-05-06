@@ -3,4 +3,4 @@ var screen = {
     }
 };
 
-$("#layout_temperature").load("src/ga/decks/mainDeck.svg");
+$("#layout_temperature").load("src/ga/temperatures/mainDeck.svg");
