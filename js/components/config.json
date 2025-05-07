@@ -140,21 +140,6 @@
     }
   },
   {
-    "name": "pumpApp",
-    "component": [
-      {
-        "label": "load-render",
-        "file": "load"
-      }
-    ],
-    "mount": ".pumpApp",
-    "config": {
-      "compilerOptions": {
-        "isCustomElement": "tag => tag.startsWith('font')"
-      }
-    }
-  },
-  {
     "name": "secondaryBilgeApp",
     "component": [
       {
@@ -420,25 +405,6 @@
     }
   },
   {
-    "name": "insulationSystemApp",
-    "component": [
-      {
-        "label": "icon-text-value-analogue-line-render",
-        "file": "iconTextValueAnalogueLine"
-      },
-      {
-        "label": "icon-text-value-digital-line-render",
-        "file": "iconTextValueDigitalLine"
-      }
-    ],
-    "mount": ".insulationSystemApp",
-    "config": {
-      "compilerOptions": {
-        "isCustomElement": "tag => tag.startsWith('font')"
-      }
-    }
-  },
-  {
     "name": "variousSystemsApp",
     "component": [
       {
@@ -452,6 +418,10 @@
       {
         "label": "icon-two-options-digital-line-render",
         "file": "iconTwoOptionsDigitalLine"
+      },
+      {
+        "label": "load-render",
+        "file": "load"
       }
     ],
     "mount": ".variousSystemsApp",
@@ -494,25 +464,6 @@
       }
     ],
     "mount": ".hundestedApp",
-    "config": {
-      "compilerOptions": {
-        "isCustomElement": "tag => tag.startsWith('font')"
-      }
-    }
-  },
-  {
-    "name": "fireDoorsLayoutApp",
-    "component": [
-      {
-        "label": "basic-text-with-digital-line-render",
-        "file": "basicTextWithTitleDigital"
-      },
-      {
-        "label": "door-render",
-        "file": "door"
-      }
-    ],
-    "mount": ".fireDoorsLayoutApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"
