@@ -168,7 +168,11 @@ if (WaterTotalRender == true) {
               dataset.data.push(oldData);
             });
           });
-          chart.update("quiet");
+          chart.options.scales.x.min = undefined;
+          chart.options.scales.x.max = undefined;
+          chart.update();
+
+          //chart.update("quiet");
         }
       })
       .fail((jqXHR, textStatus, errorThrown) => {
