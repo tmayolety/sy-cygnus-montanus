@@ -152,7 +152,7 @@
             $("#LightingNav").load("src/lighting.html");
            // $("#PumpsNav").load("src/loads.html");
             $("#HydraulicsNav").load("src/hydraulics.html");
-
+            $("#SoloLiftNav").load("src/soloLift.html");
             $("#HomeSystem").load("src/home.html", function () {
                 setTimeout(() => {
                     if (typeof homeMounted == 'undefined') {
@@ -258,6 +258,9 @@
 
        <!-- <section class="dev-sectionContent dev-menuNavigation-insulation" style="display:none;" id="InsulationNav">
         </section>-->
+        <section class="dev-sectionContent dev-menuNavigation-sololift" style="display:none; overflow: hidden;" id="SoloLiftNav">
+        </section>
+        
         <section class="dev-sectionContent dev-menuNavigation-waterSystem" style="display:none;" id="WaterSystemNav">
         </section>
         <section class="dev-sectionContent dev-menuNavigation-fuelSystem" style="display:none; overflow: hidden;" id="FuelSystemNav">

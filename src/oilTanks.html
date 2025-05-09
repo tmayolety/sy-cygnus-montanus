@@ -15,32 +15,39 @@
                 <div class="ui col mini-1 gap-no pad-mini radius shadow
                             grid type1 cols-mini-2" style="height: 390px;" id="oilTanks">
 
-                            <div class="ui col mini-1">
-                                <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Used Lub Oil Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 815, scaleStep: 81, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
-                            </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 518, orientation: 'vertical', size: 'regular', unit: 'L', title:'Clean Lub Oil Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 815, scaleStep: 81, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 296, orientation: 'vertical', size: 'regular', unit: 'L', title:'Waste Oil Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 815, scaleStep: 81, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <bar-render v-bind="{ signalId: 297, orientation: 'vertical', size: 'regular', unit: 'L', title:'Clean Lub Oil Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 815, scaleStep: 81, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
 
                 </div>
                 
             </div>
 
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
+
                 <header class="ui col">
-                    <font>Total Oil</font>
+                    <font>Total Clean Lub Oil</font>
                     <span class="gradients">
                         <span class="gradient-left"></span>
                         <span class="gradient-right"></span>
                     </span>
-                    
-                    
                 </header>
+    
                 <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 timelineBackground">
-                    <canvas id="totalOil" style="height: 270px!important;"></canvas>
+                    <canvas id="totalOil" style="height: 270px!important; margin-top: 29px!important;"></canvas>
                 </div>
-                
+    
+                <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn1OilTanks" style=" width: 50px;">12H</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn2OilTanks" style=" width: 50px;">24H</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks active" id="btn3OilTanks" style=" width: 50px;">2D</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn4OilTanks" style=" width: 50px;">3D</button>
+                </div>
+    
             </div>
 
             <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone

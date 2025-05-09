@@ -135,7 +135,7 @@ if (WaterTotalRender == true) {
 
   function getTimelineData(chart, time, rate) {
     var data = JSON.stringify({
-      SignalId: [154, 155, 156, 129],
+      SignalId: [442, 441, 300, 299],
       Time: time,
       Rate: rate,
     });

@@ -494,6 +494,21 @@
     }
   },
   {
+    "name": "soloLiftApp",
+    "component": [
+      {
+        "label": "icon-text-value-digital-line-render",
+        "file": "iconTextValueDigitalLine"
+      }
+    ],
+    "mount": ".soloLiftApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
     "name": "navLightApp",
     "component": [
       

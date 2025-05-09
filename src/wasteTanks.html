@@ -17,43 +17,50 @@
                 <div class="ui col mini-1 gap-no pad-mini radius shadow
                             grid type1 cols-mini-5" style="height: 390px;" id="wasteTank">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 5117, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1380, scaleStep: 138, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 301, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1380, scaleStep: 138, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
 
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 519, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1936, scaleStep: 193, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 302, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1936, scaleStep: 193, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                     
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 638, scaleStep: 63, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 304, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 638, scaleStep: 63, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                     
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 523, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 499, scaleStep: 49, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 499, scaleStep: 49, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
                     </div>
                  
                     <div class="ui col mini-1">
-                        <bar-custom-render v-bind="{ signalId: 90, signalId2: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 3316, scaleStep: 331, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
+                        <bar-custom-render v-bind="{ signalId: 301, signalId2: 302, signalId3: 304, signalId4:298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 3316, scaleStep: 331, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                     </div>
                     
                 </div>
             </div>
 
 
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
+
                 <header class="ui col">
-                    <font>Total Waste Water</font>
+                    <font>Total Waste</font>
                     <span class="gradients">
-                    <span class="gradient-left"></span>
-                    <span class="gradient-right"></span>
-                </span>
-                    
-                    
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
                 </header>
+    
                 <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 timelineBackground">
-                    <canvas id="totalWaste" style="height: 270px!important;"></canvas>
+                    <canvas id="totalWaste" style="height: 270px!important; margin-top: 29px!important;"></canvas>
                 </div>
+    
+                <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
+                    <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn1WasteTanks" style=" width: 50px;">12H</button>
+                    <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn2WasteTanks" style=" width: 50px;">24H</button>
+                    <button class="ui btn mini colored primary timeLineButtonWasteTanks active" id="btn3WasteTanks" style=" width: 50px;">2D</button>
+                    <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn4WasteTanks" style=" width: 50px;">3D</button>
+                </div>
+    
             </div>
 
             <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone

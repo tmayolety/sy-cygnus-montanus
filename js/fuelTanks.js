@@ -1,8 +1,7 @@
 $.getScript("js/tanks.js");
 
-$("#FuelTanks_layout").load("src/ga/tanks/fuelTanks.svg", function () {
-  initFuelChart(); // Solo se ejecuta una vez
-});
+$("#FuelTanks_layout").load("src/ga/tanks/fuelTanks.svg");
+
 
 var screen = {
   renderData: function (msg) {
@@ -11,98 +10,198 @@ var screen = {
   },
 };
 
-function initFuelChart() {
-  // Previene inicialización múltiple
-  if (window.fuelChartInitialized) return;
-  window.fuelChartInitialized = true;
+var FuelTotalRender = true;
+var FuelTotalRenderDiv = document.getElementById("totalFuel");
+if (!isNaN(parseInt(FuelTotalRenderDiv.getAttribute("width")))) {
+  var FuelTotalRender = false;
+}
+var FuelInterval;
 
-  // === CONFIGURACIÓN GENERAL ===
-  const chartElFuel = document.getElementById("totalFuel");
-  const LOCAL_STORAGE_KEY_FUEL = "totalFuelData";
-  const MAX_AGE_MS_FUEL = 3 * 24 * 60 * 60 * 1000; // 3 días
-
-  // === CREACIÓN DEL GRÁFICO ===
-  const totalFuelChart = new Chart(chartElFuel, {
-    type: "line",
-    data: {
-      datasets: [{
-        label: "Total Fuel",
+if (FuelTotalRender == true) {
+  const dataFuel = {
+    datasets: [
+      {
+        label: "",
         pointRadius: 0,
         borderWidth: 1.3,
         backgroundColor: "rgba(235,208,132,0.2)",
         borderColor: "rgba(235,208,132,1)",
         fill: true,
         data: [],
-      }],
-    },
+      },
+    ],
+  };
+
+  const totalFuel = new Chart(FuelTotalRenderDiv, {
+    type: "line",
+    data: dataFuel,
     options: {
-      plugins: { legend: { display: false } },
-      animation: { duration: 0 },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      animation: {
+        duration: 0,
+      },
       maintainAspectRatio: false,
       scales: {
         x: {
           type: "time",
           time: {
             unit: "hour",
+            stepSize: 1,
             tooltipFormat: "HH:mm",
+            displayFormats: {
+              second: "HH:mm:ss",
+              minute: "HH:mm",
+              hour: "HH:mm",
+            },
           },
-          ticks: { maxTicksLimit: 8 },
-          min: Date.now() - MAX_AGE_MS_FUEL,
-          max: Date.now(),
+          ticks: {
+            major: {
+              enabled: true,
+            },
+            maxTicksLimit: 8,
+          },
         },
         y: {
+          display: true,
           beginAtZero: true,
-          min: 0,
-          max: 85000,
+          min: 0, 
+          max: 29990,
         },
       },
     },
   });
 
-  // === SUMA DE SEÑALES DE COMBUSTIBLE ===
-  function getCurrentFuelSum() {
-    return (
-      (valueEscalated[455]?.value || 0) +
-      (valueEscalated[456]?.value || 0) +
-      (valueEscalated[491]?.value || 0)
+  getTimelineData(totalFuel, "-2d", "20m");
+  FuelInterval = setInterval(
+    () => getTimelineData(totalFuel, "-2d", "20m"),
+    300000
+  );
+
+  document.getElementById("btn1Fuel").addEventListener("click", function () {
+    clearInterval(FuelInterval);
+    updateButtonClass(this);
+    getTimelineData(totalFuel, "-12h", "5m");
+    FuelInterval = setInterval(
+      () => getTimelineData(totalFuel, "-12h", "5m"),
+      300000
     );
+  });
+
+  document.getElementById("btn2Fuel").addEventListener("click", function () {
+    clearInterval(FuelInterval);
+    updateButtonClass(this);
+    getTimelineData(totalFuel, "-24h", "10m");
+    FuelInterval = setInterval(
+      () => getTimelineData(totalFuel, "-24h", "10m"),
+      300000
+    );
+  });
+
+  document.getElementById("btn3Fuel").addEventListener("click", function () {
+    clearInterval(FuelInterval);
+    updateButtonClass(this);
+    getTimelineData(totalFuel, "-2d", "20m");
+    FuelInterval = setInterval(
+      () => getTimelineData(totalFuel, "-2d", "20m"),
+      600000
+    );
+  });
+
+  document.getElementById("btn4Fuel").addEventListener("click", function () {
+    clearInterval(FuelInterval);
+    updateButtonClass(this);
+    getTimelineData(totalFuel, "-3d", "30m");
+    FuelInterval = setInterval(
+      () => getTimelineData(totalFuel, "-3d", "30m"),
+      600000
+    );
+  });
+
+  function updateButtonClass(clickedButton) {
+    const isActive = clickedButton.classList.contains("active");
+    if (isActive) {
+      clickedButton.disabled = true;
+      return;
+    }
+    document.querySelectorAll(".timeLineButtonFuel").forEach(function (button) {
+      button.classList.remove("active");
+      button.disabled = false;
+    });
+    clickedButton.classList.add("active");
   }
 
-  // === GUARDAR EN LOCALSTORAGE ===
-  function saveFuelDataToLocalStorage(newDataPoint) {
-    let data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_FUEL)) || [];
-    data.push(newDataPoint);
-    const now = Date.now();
-    data = data.filter(item => now - item.timestamp < MAX_AGE_MS_FUEL);
-    localStorage.setItem(LOCAL_STORAGE_KEY_FUEL, JSON.stringify(data));
-  }
-
-  // === CARGAR DESDE LOCALSTORAGE ===
-  function loadFuelDataFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_FUEL)) || [];
-    totalFuelChart.data.datasets[0].data = data.map(item => ({
-      x: new Date(item.timestamp),
-      y: item.value,
-    }));
-    const now = Date.now();
-    totalFuelChart.options.scales.x.min = now - MAX_AGE_MS_FUEL;
-    totalFuelChart.options.scales.x.max = now;
-    totalFuelChart.update();
-  }
-
-  // === AÑADIR NUEVO PUNTO DE DATOS ===
-  function addCurrentFuelDataPoint() {
-    const sum = getCurrentFuelSum();
-    const now = Date.now();
-    const newPoint = {
-      timestamp: now,
-      value: Math.floor(sum),
+  function getTimelineData(chart, time, rate) {
+    var data = JSON.stringify({
+      SignalId: [290, 289, 293, 292, 291],
+      Time: time,
+      Rate: rate,
+    });
+    var settings = {
+      async: true,
+      crossDomain: true,
+      url: ACTIVE_SERVER + ":" + API.Port + "/totalsBySignalId",
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      processData: false,
+      data: data,
     };
-    saveFuelDataToLocalStorage(newPoint);
-    loadFuelDataFromLocalStorage();
+
+    $.ajax(settings)
+      .done((response) => {
+        chart.data.datasets.forEach((dataset) => {
+          dataset.data = [];
+        });
+
+        if (response.length === 0) {
+          drawNoData(chart);
+        } else {
+          response.forEach(function (entry, index) {
+            var isoDate = entry.Name;
+            var date = new Date(isoDate);
+
+            var oldData = { x: date, y: Math.floor(entry.Value) };
+
+            chart.data.datasets.forEach((dataset) => {
+              dataset.data.push(oldData);
+            });
+          });
+
+          chart.update("quiet");
+        }
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        drawNoData(chart);
+        console.error("Request failed: " + textStatus + ", " + errorThrown);
+        console.log("Response status: " + jqXHR.status);
+        console.log("Response text: " + jqXHR.responseText);
+      });
   }
 
-  // === INICIALIZACIÓN ===
-  loadFuelDataFromLocalStorage();
-  setInterval(addCurrentFuelDataPoint, 30 * 60 * 1000); // Cada 30 minutos
+  function drawNoData(chart) {
+    setTimeout(() => {
+      const ctx = chart.ctx;
+      const htmlElement = document.getElementById("schemeSelector");
+      const scheme = htmlElement.getAttribute("data-scheme");
+
+      if (scheme === "scheme1") {
+        ctx.fillStyle = "rgb(255, 255, 255)";
+      } else if (scheme === "scheme2") {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+      }
+
+      ctx.clearRect(0, 0, chart.width, chart.height);
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = "25px Lato, sans-serif";
+      ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
+      ctx.restore();
+    }, 100);
+  }
 }

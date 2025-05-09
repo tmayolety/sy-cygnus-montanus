@@ -1,104 +1,196 @@
 $.getScript("js/tanks.js");
 
-$("#OilTanks_layout").load("src/ga/tanks/oilTanks.svg", function () {
-  initOilChart(); // Se ejecuta solo una vez
-});
+$("#OilTanks_layout").load("src/ga/tanks/oilTanks.svg");
 
+//var totalOilId, WasteTotal
 var screen = {
-  renderData: function (msg) {
-    var json = JSONH.parse(msg);
-    json.forEach(function (item) {});
-  },
+    renderData: function (msg) {
+    }
 };
 
-function initOilChart() {
-  // Evita reinicialización si ya fue cargado
-  if (window.oilChartInitialized) return;
-  window.oilChartInitialized = true;
+var WasteTotalRender = true;
+var WasteTotalRenderDiv = document.getElementById('totalOil')
 
-  // === CONFIGURACIÓN ===
-  const chartElOil = document.getElementById("totalOil");
-  const LOCAL_STORAGE_KEY_OIL = "totalOilData";
-  const MAX_AGE_MS_OIL = 3 * 24 * 60 * 60 * 1000; // 3 días
+if (!isNaN(parseInt(WasteTotalRenderDiv.getAttribute('width')))){
+  var WasteTotalRender = false;
+}
 
-  // === CREAR GRÁFICO DE ACEITE ===
-  const totalOilChart = new Chart(chartElOil, {
-    type: "line",
-    data: {
-      datasets: [{
-        label: "Total Oil",
-        pointRadius: 0,
-        borderWidth: 1.3,
-        backgroundColor: "rgba(235,208,132,0.5)",
-        borderColor: "rgba(235,208,132,1)",
-        fill: true,
-        data: [],
-      }],
-    },
-    options: {
-      plugins: { legend: { display: false } },
-      animation: { duration: 0 },
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          type: "time",
-          time: { unit: "hour", tooltipFormat: "HH:mm" },
-          ticks: { maxTicksLimit: 8 },
-          min: Date.now() - MAX_AGE_MS_OIL,
-          max: Date.now(),
-        },
-        y: {
-          beginAtZero: true,
-          min: 0,
-          max: 85000,
-        },
-      },
-    },
-  });
+var WasteInterval
 
-  // === FUNCIÓN PARA OBTENER TOTAL DE ACEITE ===
-  function getCurrentOilSum() {
-    return (
-      (valueEscalated[453]?.value || 0) +
-      (valueEscalated[454]?.value || 0)
-    );
-  }
+if (WasteTotalRender == true) {
 
-  // === GUARDAR EN LOCALSTORAGE ===
-  function saveOilDataToLocalStorage(newDataPoint) {
-    let data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_OIL)) || [];
-    data.push(newDataPoint);
-    const now = Date.now();
-    data = data.filter(item => now - item.timestamp < MAX_AGE_MS_OIL);
-    localStorage.setItem(LOCAL_STORAGE_KEY_OIL, JSON.stringify(data));
-  }
-
-  // === CARGAR DESDE LOCALSTORAGE ===
-  function loadOilDataFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_OIL)) || [];
-    totalOilChart.data.datasets[0].data = data.map(item => ({
-      x: new Date(item.timestamp),
-      y: item.value,
-    }));
-    const now = Date.now();
-    totalOilChart.options.scales.x.min = now - MAX_AGE_MS_OIL;
-    totalOilChart.options.scales.x.max = now;
-    totalOilChart.update();
-  }
-
-  // === AÑADIR NUEVO PUNTO DE DATOS ===
-  function addCurrentOilDataPoint() {
-    const sum = getCurrentOilSum();
-    const now = Date.now();
-    const newPoint = {
-      timestamp: now,
-      value: Math.floor(sum),
+    const dataWaste = {
+          datasets: [
+              {
+                  label: 'Total Clean Lub Oil',
+                  pointRadius: 0,
+                  borderWidth: 1.3,
+                  backgroundColor: "rgba(235,208,132,0.5)",
+                  borderColor: "rgba(235,208,132,1)",
+                  fill: true,
+                  data: []
+              }
+          ]
     };
-    saveOilDataToLocalStorage(newPoint);
-    loadOilDataFromLocalStorage();
-  }
+  
+    const totalOil = new Chart(WasteTotalRenderDiv, {
+          type: 'line',
+          data: dataWaste,
+          options: {
+            plugins: {
+                legend: {
+                  display: false
+                }
+              },
+            animation:{
+                duration:0
+            },
+              maintainAspectRatio : false,
+              scales: {
+                  x: {
+                    type: "time",
+                    time: {
+                        unit: 'hour',
+                        stepSize: 1, 
+                        tooltipFormat: 'HH:mm',
+                        displayFormats: {
+                            second: 'HH:mm:ss',
+                            minute: 'HH:mm',
+                            hour: 'HH:mm'
+                        }
+                    },
+                    ticks: {
+                        major: {
+                           enabled: true,
+                        },
+                        maxTicksLimit: 8
+                    }
+                  },
+                  y: {
+                      display: true,
+                      beginAtZero: true,
+                      min: 0,
+                      max: 2800
+                  }
+              }
+          }
+         
+    });
 
-  // === INICIALIZACIÓN ===
-  loadOilDataFromLocalStorage();
-  setInterval(addCurrentOilDataPoint, 30 * 60 * 1000); // Cada 30 minutos
+    getTimelineData(totalOil, "-2d", "20m");
+    WasteInterval = setInterval(()=> getTimelineData(totalOil, "-2d", "20m"), 300000)
+     
+    document.getElementById('btn1OilTanks').addEventListener('click', function () {
+        clearInterval(WasteInterval)
+        updateButtonClass(this);
+        getTimelineData(totalOil, "-12h", "5m");
+        WasteInterval = setInterval(()=> getTimelineData(totalOil, "-12h", "5m"), 300000)
+    });
+
+    document.getElementById('btn2OilTanks').addEventListener('click', function () {
+        clearInterval(WasteInterval)
+        updateButtonClass(this);
+        getTimelineData(totalOil, "-24h", "10m");
+        WasteInterval = setInterval(()=> getTimelineData(totalOil, "-24h", "10m"), 300000)
+    });
+
+    document.getElementById('btn3OilTanks').addEventListener('click', function () {
+        clearInterval(WasteInterval)
+        updateButtonClass(this);
+        getTimelineData(totalOil, "-2d", "20m");
+        WasteInterval = setInterval(()=> getTimelineData(totalOil, "-2d", "20m"), 300000)
+    });
+
+    document.getElementById('btn4OilTanks').addEventListener('click', function () {
+        clearInterval(WasteInterval)
+        updateButtonClass(this);
+        getTimelineData(totalOil, "-3d", "30m");
+        WasteInterval = setInterval(()=> getTimelineData(totalOil, "-3d", "30m"), 600000)
+    });
+
+    function updateButtonClass(clickedButton) {
+
+          const isActive = clickedButton.classList.contains('active');
+          if (isActive) {
+              clickedButton.disabled = true;
+              return;
+          }
+          document.querySelectorAll('.timeLineButtonOilTanks').forEach(function (button) {
+              button.classList.remove('active');
+              button.disabled = false;
+          });
+          clickedButton.classList.add('active');
+      
+    }
+
+    function getTimelineData(chart, time, rate) {
+            
+        var data = JSON.stringify({
+            "SignalId": [297],
+            "Time": time,
+            "Rate": rate
+        });
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": ACTIVE_SERVER + ":" + API.Port +"/totalsBySignalId",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+            },
+            "processData": false,
+            "data": data
+        }
+        
+        $.ajax(settings).done((response) => {
+                chart.data.datasets.forEach((dataset) => {
+                    dataset.data = [];
+                });
+               if(response.length === 0){
+                drawNoData(chart);
+               }else{
+                response.forEach(function(entry, index) {
+                    var isoDate = entry.Name;
+                    var date = new Date(isoDate);
+                    
+                    var oldData = { x: date, y: Math.floor(entry.Value) };
+
+                    chart.data.datasets.forEach((dataset) => {
+                        dataset.data.push(oldData);
+                    });
+                });
+              
+                chart.update('quiet');
+               }
+
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            drawNoData(chart);
+            console.error("Request failed: " + textStatus + ", " + errorThrown);
+            console.log("Response status: " + jqXHR.status);
+            console.log("Response text: " + jqXHR.responseText);
+        })
+    }
+
+    function drawNoData(chart) {
+        setTimeout(() => {
+          const ctx = chart.ctx;
+          const htmlElement = document.getElementById('schemeSelector');
+          const scheme = htmlElement.getAttribute('data-scheme');
+      
+          if (scheme === 'scheme1') {
+            ctx.fillStyle = "rgb(255, 255, 255)";
+          } else if (scheme === 'scheme2') {
+            ctx.fillStyle = "rgb(0, 0, 0)";
+          }
+      
+          ctx.clearRect(0, 0, chart.width, chart.height);
+          ctx.save();
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.font = "25px Lato, sans-serif";
+          ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
+          ctx.restore();
+        }, 100);
+      }
+
 }
