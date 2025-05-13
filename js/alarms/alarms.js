@@ -111,10 +111,10 @@ var alarms = {
         }
 
         //UNNATENDED ACK CHECK
-        if (!helpers.ackCheck() && (status == 3 || status == 2 || status == 0)) {
-            helpers.ackPopUp();
-            sendRequest = false;
-        }
+        //if (!helpers.ackCheck() && (status == 3 || status == 2 || status == 0)) {
+        //    helpers.ackPopUp();
+        //    sendRequest = false;
+        //}
 
         if ($('#activeAlarm_'+alarmId).attr('data-status') != 3 && status == 0) {
             helpers.resetPopUp();
@@ -162,10 +162,10 @@ var alarms = {
         }
 
         //UNNATENDED ACK CHECK
-        if (!helpers.ackCheck()) {
-            helpers.ackPopUp();
-            sendRequest = false;
-        }
+        //if (!helpers.ackCheck()) {
+        //    helpers.ackPopUp();
+        //    sendRequest = false;
+        //}
 
         if ($('#activeAlarm_'+alarmId).attr('data-status') != 3) {
             helpers.resetPopUp();
