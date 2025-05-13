@@ -343,7 +343,7 @@ var alarms = {
         var query = {
             Section: "alarm2",
             Limit: 80,
-            Filter: 1
+            //Filter: 1
         }
 
         $.ajax({
@@ -367,7 +367,7 @@ var alarms = {
         var query = {
             Section: "alarm2",
             Limit: 20,
-            Filter: 1
+            //Filter: 1
         }
 
         $.ajax({
