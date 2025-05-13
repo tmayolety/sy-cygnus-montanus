@@ -389,7 +389,7 @@ const helpers = {
         let classActive = 'active';
 
         $.each(deviceData, function (key, value) {
-            if (key > 0 && typeof value != 'undefined') {
+            if (key > 0 && typeof value != 'undefined' && value.Name !== 'PLC_VIRTUAL') {
 
                 $('#devicesListMenu').append('<li data-alert="" data-section="settings' + value.Id + '" class="signalTab ' + classActive + '" onClick="signalList.deviceSelection(' + value.Id + ',this);"><a>' + value.Name + '</a></li>');
                 classActive = '';
