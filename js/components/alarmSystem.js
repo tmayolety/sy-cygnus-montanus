@@ -100,10 +100,10 @@ components.alarmSystem = {
                 }
 
                 //UNNATENDED ACK CHECK
-                if (!helpers.ackCheck() && (targetStatus == 3 || targetStatus == 2 || targetStatus == 0)) {
-                    helpers.ackPopUp();
-                    sendRequest = false;
-                }
+                //if (!helpers.ackCheck() && (targetStatus == 3 || targetStatus == 2 || targetStatus == 0)) {
+                //    helpers.ackPopUp();
+                //    sendRequest = false;
+                //}
 
                 if (actualStatus != 3 && targetStatus == 0) {
                     helpers.resetPopUp();
@@ -207,10 +207,10 @@ components.alarmSystem = {
             }
 
             //UNNATENDED ACK CHECK
-            if (!helpers.ackCheck()) {
-                helpers.ackPopUp();
-                sendRequest = false;
-            }
+            //if (!helpers.ackCheck()) {
+            //    helpers.ackPopUp();
+            //    sendRequest = false;
+            //}
 
             if (actualStatus != 3) {
                 helpers.resetPopUp();
