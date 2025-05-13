@@ -37,10 +37,10 @@ var alarms = {
             }
 
             //UNNATENDED ACK CHECK
-            if (!helpers.ackCheck()) {
-                helpers.ackPopUp();
-                sendRequest = false;
-            }
+            //if (!helpers.ackCheck()) {
+            //    helpers.ackPopUp();
+            //    sendRequest = false;
+            //}
 
             if (sendRequest) {
                 $.ajax({ url: ACTIVE_SERVER + ":" + API.Port + "/resetAllActiveAlarms/" + parseInt($('#ScreenLocationId').val())}).done(function() {
