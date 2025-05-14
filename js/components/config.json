@@ -306,7 +306,12 @@
       {
         "label": "icon-text-value-analogue-line-render",
         "file": "iconTextValueAnalogueLine"
+      },
+      {
+        "label": "icon-text-value-digital-two-id-line-render",
+        "file": "iconTextValueDigitalTwoIDLine"
       }
+      
     ],
     "mount": ".fuelSystemApp",
     "config": {
@@ -597,6 +602,10 @@
       {
         "label": "list-valve-controls-render",
         "file": "listValveControls"
+      },
+      {
+        "label": "icon-text-value-digital-two-id-line-render",
+        "file": "iconTextValueDigitalTwoIDLine"
       }
     ],
     "mount": ".valveFuelSystemApp",

@@ -17,27 +17,27 @@
             <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-6" style="height: 390px;">
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                        v-bind="{ signalId: 290, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
+                        v-bind="{ signalId: 289, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4528, scaleStep: 452, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                        v-bind="{ signalId: 293, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 92, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                        v-bind="{ signalId: 292, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Day Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 2010, scaleStep: 201, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Keel Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3745, scaleStep: 374, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                        v-bind="{ signalId: 291, orientation: 'vertical', size: 'regular', unit: 'L', title:'Keel Tank', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3745, scaleStep: 374, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-1" style="height: 390px;">
@@ -46,8 +46,7 @@
                             Transfer Pump</header>
                         <div class="ui grid type1 cols-mini-1 pad-med gap-med">
                             <div class="ui col mini-1 middle-center">
-                                <load-render
-                                    v-bind="{ signalId: 3,feedbackStopSignalId: 3,feedbackStartSignalId: 3, feedbackFailSignalId: 1, optionOneText: 'RUN', optionTwoText: 'STOP', NC: 1, size: 'lg',  optionOneSignalIdToWrite: 239, optionTwoSignalIdToWrite: 30861, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonUpColor:'color-bg-type-success',buttonDownColor:'color-bg-type-danger', feedbackColorStart:'color-bg-type-success',
+                                <load-render v-bind="{ signalId: 37,feedbackStopSignalId: 37,feedbackStartSignalId: 37, feedbackFailSignalId: 37, optionOneText: 'RUN', optionTwoText: 'STOP', NC: 1, size: 'lg',  optionOneSignalIdToWrite: 37, optionTwoSignalIdToWrite: 37, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonUpColor:'color-bg-type-success',buttonDownColor:'color-bg-type-danger', feedbackColorStart:'color-bg-type-success',
                                     feedbackColorStop:'color-bg-type-danger',
                                     switchButton:false, }"></load-render>
                             </div>
@@ -159,9 +158,11 @@
                                   findButton:false,
                                   writeMode: 1
                                 }"></list-valve-controls-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Port Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Stbd Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                       </ul>
+                            <icon-text-value-digital-line-render
+                                v-bind="{  signalId: 175, title: 'Water in Fuel Port Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            <icon-text-value-digital-line-render
+                                v-bind="{  signalId: 176, title: 'Water in Fuel Stbd Gen', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        </ul>
                     </div>
                 </div>
 
@@ -211,65 +212,26 @@
                             findButton:false,
                             writeMode: 1
                           }"></list-valve-controls-render>
-                            <list-valve-controls-render v-bind="{
-                          feedbackOpenSignalId: 40,
-                          feedbackCloseSignalId: 41,
-                          commandOpenSignalId: 99,
-                          commandCloseSignalId: 100,
-                          title: 'Fuel Supply Port Generator',
-                          zeroText: 'Closed',
-                          zeroColor: 'danger',
-                          oneText: 'Opened',
-                          oneColor: 'success',
-                          transitionText: 'In Transit',
-                          findButton:false,
-                          writeMode: 1
-                        }"></list-valve-controls-render>
-                            <list-valve-controls-render v-bind="{
-                        feedbackOpenSignalId: 42,
-                        feedbackCloseSignalId: 43,
-                        commandOpenSignalId: 101,
-                        commandCloseSignalId: 102,
-                        title: 'Fuel Return Port Generator',
-                        zeroText: 'Closed',
-                        zeroColor: 'danger',
-                        oneText: 'Opened',
-                        oneColor: 'success',
-                        transitionText: 'In Transit',
-                        findButton:false,
-                        writeMode: 1
-                      }"></list-valve-controls-render>
-                            <list-valve-controls-render v-bind="{
-                      feedbackOpenSignalId: 44,
-                      feedbackCloseSignalId: 45,
-                      commandOpenSignalId: 103,
-                      commandCloseSignalId: 104,
-                      title: 'Fuel Supply Stbd Generator',
-                      zeroText: 'Closed',
-                      zeroColor: 'danger',
-                      oneText: 'Opened',
-                      oneColor: 'success',
-                      transitionText: 'In Transit',
-                      findButton:false,
-                      writeMode: 1
-                    }"></list-valve-controls-render>
-                            <list-valve-controls-render v-bind="{
-                      feedbackOpenSignalId: 46,
-                      feedbackCloseSignalId: 47,
-                      commandOpenSignalId: 105,
-                      commandCloseSignalId: 106,
-                      title: 'Fuel Return Stbd Generator',
-                      zeroText: 'Closed',
-                      zeroColor: 'danger',
-                      oneText: 'Opened',
-                      oneColor: 'success',
-                      transitionText: 'In Transit',
-                      findButton:false,
-                      writeMode: 1
-                    }"></list-valve-controls-render>
-                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Scrubber', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                        
-                   <icon-text-value-analogue-line-render v-bind="{ signalId: 7000, size: '20', unit: 'l/m', valueMode: 'escalated', valueDecimals: 0, title: 'Fuel Flow Rate', icon: 'tanks', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+
+                            <icon-text-value-digital-two-id-line-render
+                                v-bind="{  signalId: 40, signalId2: 41, title: 'Fuel Supply Port Generator Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"></icon-text-value-digital-two-id-line-render>
+
+                            <icon-text-value-digital-two-id-line-render
+                                v-bind="{  signalId: 42, signalId2: 43, title: 'Fuel Return Port Generator Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"></icon-text-value-digital-two-id-line-render>
+
+                            <icon-text-value-digital-two-id-line-render
+                                v-bind="{  signalId: 44, signalId2: 45, title: 'Fuel Supply Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"></icon-text-value-digital-two-id-line-render>
+
+                            <icon-text-value-digital-two-id-line-render
+                                v-bind="{  signalId: 46, signalId2: 47, title: 'Fuel Return Stbd Generator Valve', icon: 'valve', size: '20', zeroText: 'Closed', zeroColor: 'success', oneText: 'Opened', oneColor: 'danger', sizeWidthTitle: 'med', transitionText: 'In Transit'}"></icon-text-value-digital-two-id-line-render>
+
+
+
+                            <icon-text-value-digital-line-render
+                                v-bind="{  signalId: 177, title: 'Water in Fuel Transfer Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                            <icon-text-value-analogue-line-render
+                                v-bind="{ signalId: 38, size: '20', unit: 'l/m', valueMode: 'escalated', valueDecimals: 0, title: 'Fuel Flow Rate', icon: 'tanks', timeDelay: 3000}"></icon-text-value-analogue-line-render>
                         </ul>
                     </div>
                 </div>

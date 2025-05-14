@@ -17,32 +17,31 @@
             <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5" style="height: 390px;">
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 154, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:22 }"></bar-render>
+                        v-bind="{ signalId: 442, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:22 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 155, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        v-bind="{ signalId: 441, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Aft Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1845, scaleStep: 184, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 156, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767,scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        v-bind="{ signalId: 300, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767,scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
                     <bar-render
-                        v-bind="{ signalId: 129, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767, scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        v-bind="{ signalId: 299, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fwd Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 1767, scaleStep: 176, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                 </div>
 
                 <div class="ui col mini-1">
                     <bar-custom-render
-                        v-bind="{ signalId: 154, signalId2: 155, signalId3: 156, signalId4: 129, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 7224, scaleStep: 722, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
+                        v-bind="{ signalId: 442, signalId2: 441, signalId3: 300, signalId4: 299, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 7224, scaleStep: 722, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                 </div>
-
 
             </div>
 
             <div class="ui col mini-1 grid cols-mini-2 bg-no pad-no gap-sm align-start">
                 <div class="ui col mini-1 has-col-header-med radius shadow">
-                    <header class="col-header size-med">Fuel System Valves</header>
+                    <header class="col-header size-med">Water System Valves</header>
                     <div class="col-content overflow">
                         <ul class="ui table size-mini resp">
                             <list-valve-controls-render v-bind="{
@@ -104,7 +103,7 @@
                 </div>
 
                 <div class="ui col mini-1 has-col-header-med radius shadow">
-                    <header class="col-header size-med">Fuel System Valves</header>
+                    <header class="col-header size-med">Water System Valves</header>
                     <div class="col-content overflow">
                         <ul class="ui table size-mini resp">
 
