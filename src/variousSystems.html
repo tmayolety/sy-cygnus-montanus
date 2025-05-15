@@ -8,59 +8,119 @@
                 <span class="gradient-left"></span>
                 <span class="gradient-right"></span>
                 </span>
-                    
-                    
                 </header>
 
                 <div class="ui grid cols-mini-3 cols-xl-3 bg-no pad-no gap-med">
-
-
                     <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Pumps</header>
+                            <header class="col-header size-med">Fire Pumps</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Fuel Transfer Pump Flow meter input', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Intercooler Coolant Flow Meter', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Anchor windless Status', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Alarm Port Generator', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Alarm Stbd Generator', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Water in Fuel Alarm Fuel Transfer Pump', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 179, title: 'Forepeak Fire Pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 327, title: 'Crew Cabins Fire Pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 395, title: 'Lazzarete fire pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 396, title: 'Port Guest Head Fire Pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 397, title: 'Port Aft Locker Fire Pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 398, title: 'Stbd Aft Locker Fire Pump', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
                                 </ul>
                             </div>
                         </div>
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Temperatures</header>
+                            <header class="col-header size-med">Hatches and Doors</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 145, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Engine room temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 146, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Pump room temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 147, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'SPS Port temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 148, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'SPS Stbd temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 149, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Battery room Port temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 150, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Battery room Stbd temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 151, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'A1 Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 152, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'A1 Screen Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 153, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'DAU 1_1 Temperature Level', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 369, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Underfloor freezer 1 temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 370, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 1, title: 'Underfloor freezer 2 temp', icon: 'temps', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 59, title: 'Pump Room Fwd watertight Door', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 60, title: 'Engine Room Aft watertight Door', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 61, title: 'Pump Room Outboard watertight Door', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 320, title: 'Foredeack Hatches', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 321, title: 'Port Side Deck Hatches', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 322, title: 'Forepeak Hatches', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 326, title: 'Stbd Side Deck Hatches', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 393, title: 'Aft Deck Hatches', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 399, title: 'Lazzarete Watertight Door', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 400, title: 'Lazzarete Hatch', icon: 'hatches', size: '20', zeroText: 'Opened', zeroColor: 'danger', oneText: 'Closed', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Gas System</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 170, title: 'Port battery Liion tamer Normal Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 171, title: 'Port battery Liion tamer Alarm Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                          
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 172, title: 'Port battery Liion tamer Fault Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 204, title: 'Stbd battery Liion tamer Normal Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 205, title: 'Stbd battery Liion tamer Alarm Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                          
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 206, title: 'Stbd battery Liion tamer Fault Mode', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                          
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">AC Cooling Pumps</header>
+                            <header class="col-header size-med">Air Con</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#1 Current Monitoring', icon: 'onOff', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#1 Temp Monitoring', icon: 'onOff', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#2 Current Monitoring', icon: 'onOff', timeDelay: 3000}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 113, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#2 Temp Monitoring', icon: 'onOff', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11000, title: 'AC general alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11001, title: 'AC system status', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11002, title: 'AC system mode', icon: 'temps', size: '20', zeroText: 'Heat', zeroColor: 'danger', oneText: 'Cool', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11003, title: 'AC pump status', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11004, title: 'AC pump alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11005, title: 'AC compressors status', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 11006, title: 'AC compressors alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 11007, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'System Pressure', icon: 'pressure', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 11008, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'System Temperature', icon: 'temps', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 280, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#1 Current', icon: 'shore', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 281, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#1 Temp', icon: 'temps', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+                                    
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 282, size: '20', unit: 'A', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#2 Current', icon: 'shore', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+
+                                    <icon-text-value-analogue-line-render
+                                     v-bind="{ signalId: 283, size: '20', unit: 'C', valueMode: 'escalated', valueDecimals: 0, title: 'AC Cooling Pump#2 Temp', icon: 'temps', timeDelay: 3000}">
+                                    </icon-text-value-analogue-line-render>
+
                                 </ul>
                             </div>
                         </div>
@@ -70,13 +130,12 @@
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 10000, title: 'Water Maker General Alarm NC', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger'}"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10001, title: 'Water Maker LP Pump Status', icon: 'tripping', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary'}"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10002, title: 'Water Maker HP Pump Status', icon: 'tripping', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10003, title: 'Water Maker System Status (Start PB)', icon: 'tripping', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10001, title: 'Water Maker LP Pump Status', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary'}"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10002, title: 'Water Maker HP Pump Status', icon: 'onOff', size: '20', zeroText: 'Stopped', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 10003, title: 'Water Maker System Status (Start PB)', icon: 'onOff', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary' }"></icon-text-value-digital-line-render>
                                 </ul>
                             </div>
                         </div>
-
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
                             <header class="col-header size-med">Steering System</header>
@@ -98,17 +157,33 @@
                     <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Various</header>
+                            <header class="col-header size-med">Miscellaneous</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Air Compressor Command', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Port Battery Room Exhaust Fan', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Stbd Battery Room Exhaust Fan', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Backup Service Battery Bank Insulation Command', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'A1 Panel Extraction Fan', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Crew Call Port Helm', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Crew Call Stbd Helm', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 162, title: 'Crew Call Navigation Station', icon: 'onOff', size: '20', zeroText: 'Remote', zeroColor: 'secondary', oneText: 'Local', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 194, title: 'Backup Service Battery Insulation', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    
+                                     <icon-text-value-digital-line-render v-bind="{  signalId: 200, title: 'Fridge 1 Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                     <icon-text-value-digital-line-render v-bind="{  signalId: 201, title: 'Freezer 1 Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                     <icon-text-value-digital-line-render v-bind="{  signalId: 202, title: 'Fridge 2 Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                     <icon-text-value-digital-line-render v-bind="{  signalId: 203, title: 'Freezer 2 Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Bluewave</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 56, title: 'Redundant Power Supply Fault', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 253, title: 'Bender 4 Backup Service Battery On OFF', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
                                 </ul>
                             </div>
                         </div>

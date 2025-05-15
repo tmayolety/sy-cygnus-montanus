@@ -12,9 +12,7 @@
       </header>
 
       <div class="ui grid cols-mini-3 cols-xl-3 bg-no pad-no gap-med">
-        <div
-          class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start"
-        >
+        <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
           <div class="ui col mini-1 has-col-header-med radius shadow">
             <header class="col-header size-med">Alarms</header>
             <div class="col-content overflow">
@@ -140,7 +138,6 @@
                 <icon-text-value-analogue-line-render v-bind="{ signalId: 8028, valueMode: 'escalated', title: 'Feedback dif. SB Azi', icon: 'shore', size: '20', unit: 'V', valueDecimals: 2 }"></icon-text-value-analogue-line-render>
                 <icon-text-value-analogue-line-render v-bind="{ signalId: 8035, valueMode: 'escalated', title: 'Feedback dif. PS Pitch', icon: 'shore', size: '20', unit: 'V', valueDecimals: 2 }"></icon-text-value-analogue-line-render>
                 <icon-text-value-analogue-line-render v-bind="{ signalId: 8036, valueMode: 'escalated', title: 'Feedback dif. PS Azi', icon: 'shore', size: '20', unit: 'V', valueDecimals: 2 }"></icon-text-value-analogue-line-render>
-
               </ul>
             </div>
           </div>
@@ -149,15 +146,16 @@
             <header class="col-header size-med">Clutch & Oil Alarms</header>
             <div class="col-content overflow">
               <ul class="ui table size-mini resp">
+
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8039, title: 'SB Clutch Pressure Low', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'LOW', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8042, title: 'SB Hyd Oil Filter Clogged', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'CLOGGED', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8043, title: 'SB Hyd Gravity Tank Low', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'LOW', oneColor: 'warning', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8045, title: 'SB Azi Over Pressure', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'OVER', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8046, title: 'PS Clutch Pressure Low', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'LOW', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8049, title: 'PS Hyd Oil Filter Clogged', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'CLOGGED', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8050, title: 'PS Hyd Gravity Tank Low', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'LOW', oneColor: 'warning', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                 <icon-text-value-digital-line-render v-bind="{ signalId: 8052, title: 'PS Azi Over Pressure', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'OVER', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
               </ul>
             </div>
           </div>
