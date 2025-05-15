@@ -108,6 +108,18 @@
             </div>
           </div>
 
+          <div class="ui col mini-1 has-col-header-med radius shadow">
+            <header class="col-header size-med">Alarms</header>
+            <div class="col-content overflow">
+              <ul class="ui table size-mini resp">
+                <icon-text-value-digital-line-render v-bind="{  signalId: 401, title: 'Hundested Port General Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render v-bind="{  signalId: 402, title: 'Hundested Port Power Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render v-bind="{  signalId: 403, title: 'Hundested STBD General Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                <icon-text-value-digital-line-render v-bind="{  signalId: 404, title: 'Hundested STBD Power Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+              </ul>
+            </div>
+          </div>
+
         </div>
 
         <div
