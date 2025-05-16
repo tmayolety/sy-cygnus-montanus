@@ -22,22 +22,51 @@ components.load = {
     "feedbackColorStop",
     "NFC",
     "switchButton",
+    "modeSignalId",
+    "modeFeedbackSignalId"
   ],
   template: /*html*/ `
     <div ref="loadElement">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <div v-if="!tripped" class="ui btn-group switch-2" :class='[size]' >
-                <button class="ui btn" :class='[optionOneActive, colorUpButton()]' v-on:click="write(1)" :style="'font-size:' + fontSize + 'px!important'"><span :class='[btnPulsed]' v-if="btnPulsed != 'btnPulseLoad'">{{optionOneText}}</span> <div v-else :class='[btnPulsed]'  ></div> </button>
+                <button 
+                  class="ui btn" 
+                  :class='[optionOneActive, colorUpButton()]' 
+                  v-on:click="write(1)" 
+                  :style="'font-size:' + fontSize + 'px!important'" 
+                  :disabled="isAutoMode"
+                >
+                  <span :class='[btnPulsed]' v-if="btnPulsed != 'btnPulseLoad'">{{optionOneText}}</span> 
+                  <div v-else :class='[btnPulsed]'  ></div> 
+                </button>
+
                 <div v-if="countingHoursSignalId"><span>{{countingHours}} </span> h</div>
-                 <div v-if="feedbackFailSignalId||feedbackStopSignalId||feedbackStartSignalId" :class='[feedbackColor]'><span>{{feedbackText}}</span></div>
-                <button class="ui btn" :class='[optionTwoActive, colorDownButton()]' v-on:click="write(2)" :style="'font-size:' + fontSize + 'px!important'"><span :class='[btnPulsed2]' v-if="btnPulsed2 != 'btnPulse2Load'">{{optionTwoText}}</span><div v-else :class='[btnPulsed2]'  ></div></button>
+                <div v-if="feedbackFailSignalId||feedbackStopSignalId||feedbackStartSignalId" :class='[feedbackColor]'><span>{{feedbackText}}</span></div>
+                
+                <button 
+                  class="ui btn" 
+                  :class='[optionTwoActive, colorDownButton()]' 
+                  v-on:click="write(2)" 
+                  :style="'font-size:' + fontSize + 'px!important'" 
+                  :disabled="isAutoMode"
+                >
+                  <span :class='[btnPulsed2]' v-if="btnPulsed2 != 'btnPulse2Load'">{{optionTwoText}}</span>
+                  <div v-else :class='[btnPulsed2]'  ></div>
+                </button>
             </div>
 
             <div v-if="switchButton != false" class="ui btn-group collapse horizontal" style="margin-top:10px;">
-              <button class="ui btn med primary colored" style="width:90px!important">Manual</button>
-              <button class="ui btn med primary active" style="width:90px!important">Auto</button>
+              <button 
+                class="ui btn med primary" 
+                style="width:90px!important" 
+                :class="{ active: !isAutoMode }" 
+                @click="setMode(0)">Manual</button>
+              <button 
+                class="ui btn med primary" 
+                style="width:90px!important" 
+                :class="{ active: isAutoMode }" 
+                @click="setMode(1)">Auto</button>
             </div>
-
         </div>
            
         <div v-if="tripped" class="ui btn-group switch-2 middle-center" :class='[size]' style="height:227px">
@@ -46,8 +75,7 @@ components.load = {
         </div>
            
         <span style="display: none;">{{value}}{{feedbackStart}}{{feedbackStop}}{{feedbackFail}}{{feedbackText}}</span> 
-
-    </div>    
+    </div>
 `,
   data() {
     return {
@@ -69,6 +97,7 @@ components.load = {
       fontSize: null,
       btnPulsed: "",
       btnPulsed2: "",
+      isAutoMode: false
     };
   },
   mounted() {
@@ -77,28 +106,19 @@ components.load = {
     }
     this.signalMode = 1;
 
-    if (!isNaN(this.value)) {
-      this.value = valueRaw[this.signalId];
-      this.countingHours = valueRaw[this.countingHoursSignalId];
-      this.feedbackStart = valueRaw[this.feedbackStartSignalId];
-      this.feedbackStop = valueRaw[this.feedbackStopSignalId];
-      this.feedbackFail = valueRaw[this.feedbackFailSignalId];
-
-      this.renderActiveButton(
-        this.value,
-        this.feedbackStart,
-        this.feedbackStop,
-        this.feedbackFail
-      );
-    }
+    this.updateSignals();
   },
   updated() {
-    if (!isNaN(this.value)) {
+    this.updateSignals();
+  },
+  methods: {
+    updateSignals() {
       this.value = valueRaw[this.signalId];
       this.countingHours = valueRaw[this.countingHoursSignalId];
       this.feedbackStart = valueRaw[this.feedbackStartSignalId];
       this.feedbackStop = valueRaw[this.feedbackStopSignalId];
       this.feedbackFail = valueRaw[this.feedbackFailSignalId];
+      this.isAutoMode = valueRaw[this.modeFeedbackSignalId] == 1;
 
       this.renderActiveButton(
         this.value,
@@ -106,28 +126,15 @@ components.load = {
         this.feedbackStop,
         this.feedbackFail
       );
-    }
-  },
-  methods: {
+    },
     renderActiveButton(value, feedbackStart, feedbackStop, feedbackFail) {
       if (this.signalMode == 1) {
-        // ONE SIGNAL MODE
         if (value == 1) {
-          if (this.NC == 1) {
-            this.buttonOneActive();
-            this.buttonOneActivePulse();
-          } else {
-            this.buttonTwoActive();
-            this.buttonTwoActivePulse();
-          }
+          this.NC == 1 ? this.buttonOneActive() : this.buttonTwoActive();
+          this.NC == 1 ? this.buttonOneActivePulse() : this.buttonTwoActivePulse();
         } else if (value == 0) {
-          if (this.NC == 1) {
-            this.buttonTwoActive();
-            this.buttonTwoActivePulse();
-          } else {
-            this.buttonOneActive();
-            this.buttonOneActivePulse();
-          }
+          this.NC == 1 ? this.buttonTwoActive() : this.buttonOneActive();
+          this.NC == 1 ? this.buttonTwoActivePulse() : this.buttonOneActivePulse();
         } else {
           this.disableButtons();
         }
@@ -142,113 +149,75 @@ components.load = {
         this.feedbackText = "STOPPED";
       }
 
-      if (this.NFC == 1) {
-        if (feedbackFail == 1) {
-          this.tripped = true;
-        } else {
-          this.tripped = false;
-        }
-      } else {
-        if (feedbackFail == 0) {
-          this.tripped = true;
-        } else {
-          this.tripped = false;
-        }
-      }
+      this.tripped = this.NFC == 1 ? feedbackFail == 1 : feedbackFail == 0;
     },
     buttonOneActive() {
       this.optionOneActive = "active";
       this.optionTwoActive = "";
-      this.optionTwoColor = "";
     },
     buttonTwoActive() {
       this.optionOneActive = "";
-      this.optionOneColor = "";
       this.optionTwoActive = "active";
     },
-
     buttonOneActivePulse() {
-      if ((this.optionOneActive = "active")) {
+      if (this.optionOneActive == "active") {
         this.btnPulsed = null;
       }
     },
-
     buttonTwoActivePulse() {
-      if ((this.optionTwoActive = "active")) {
+      if (this.optionTwoActive == "active") {
         this.btnPulsed2 = null;
       }
     },
-
     disableButtons() {
       this.optionOneActive = "";
-      this.optionOneColor = "";
       this.optionTwoActive = "";
-      this.optionTwoColor = "";
     },
     colorUpButton() {
-      if (this.optionOneActive == "active") {
-        return this.buttonUpColor;
-      } else {
-        return null;
-      }
+      return this.optionOneActive == "active" ? this.buttonUpColor : null;
     },
     colorDownButton() {
-      if (this.optionTwoActive == "active") {
-        return this.buttonDownColor;
-      } else {
-        return null;
-      }
+      return this.optionTwoActive == "active" ? this.buttonDownColor : null;
     },
     write(button) {
       if (typeof this.writeMode !== "undefined") {
+        let writeSignalId = null;
+        let valueToWrite = null;
+
         if (button == 1) {
           writeSignalId = this.optionOneSignalIdToWrite;
           valueToWrite = this.optionOneValueToWrite;
-
-          if (helpers.profileCheck()) {
-            if (this.optionOneActive != "active") {
-              this.btnPulsed = "btnPulseLoad";
-              setTimeout(() => {
-                this.btnPulsed = null;
-              }, 4000);
-            }
+          if (helpers.profileCheck() && this.optionOneActive != "active") {
+            this.btnPulsed = "btnPulseLoad";
+            setTimeout(() => { this.btnPulsed = null; }, 4000);
           }
         }
 
         if (button == 2) {
           writeSignalId = this.optionTwoSignalIdToWrite;
           valueToWrite = this.optionTwoValueToWrite;
-
-          if (helpers.profileCheck()) {
-            if (this.optionTwoActive != "active") {
-              this.btnPulsed2 = "btnPulse2Load";
-              setTimeout(() => {
-                this.btnPulsed2 = null;
-              }, 4000);
-            }
+          if (helpers.profileCheck() && this.optionTwoActive != "active") {
+            this.btnPulsed2 = "btnPulse2Load";
+            setTimeout(() => { this.btnPulsed2 = null; }, 4000);
           }
         }
 
-        var data = JSON.stringify({
+        const data = JSON.stringify({
           SignalId: parseInt(writeSignalId),
           Value: parseInt(valueToWrite),
           Mode: parseInt(this.writeMode),
         });
-        console.log(data);
+
         if (helpers.profileCheck()) {
-          var settings = {
+          $.ajax({
             async: true,
             crossDomain: true,
             url: ACTIVE_SERVER + ":" + API.Port + "/writeRedundancyBySignalId",
             method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
+            headers: { "content-type": "application/json" },
             processData: false,
             data: data,
-          };
-
-          $.ajax(settings).done(function (response) {
+          }).done((response) => {
             console.log(response);
           });
         } else {
@@ -258,5 +227,33 @@ components.load = {
         console.log("writeMode not defined. Write cancelled!");
       }
     },
+    setMode(mode) {
+      if (typeof this.modeSignalId == "undefined") {
+        console.warn("No se ha definido 'modeSignalId'. No se puede escribir modo.");
+        return;
+      }
+
+      const data = JSON.stringify({
+        SignalId: parseInt(this.modeSignalId),
+        Value: mode,
+        Mode: parseInt(this.writeMode),
+      });
+
+      if (helpers.profileCheck()) {
+        $.ajax({
+          async: true,
+          crossDomain: true,
+          url: ACTIVE_SERVER + ":" + API.Port + "/writeRedundancyBySignalId",
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          processData: false,
+          data: data,
+        }).done((response) => {
+          console.log(response);
+        });
+      } else {
+        helpers.privilegesPopUp();
+      }
+    }
   },
 };
