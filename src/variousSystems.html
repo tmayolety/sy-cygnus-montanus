@@ -175,15 +175,23 @@
                             </div>
                         </div>
 
+                        
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Electrics</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 180, title: 'Bender 4 Backup Service Battery Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                        
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 181, title: 'Earth Connected to Neutral Status', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="ui col mini-1 has-col-header-med radius shadow">
                             <header class="col-header size-med">Bluewave</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 56, title: 'Redundant Power Supply Fault', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 253, title: 'Bender 4 Backup Service Battery On OFF', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-
                                 </ul>
                             </div>
                         </div>
