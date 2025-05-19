@@ -51,23 +51,11 @@ components.iconTextValueAnalogueLine = {
       HH: null,
       hasLimits: true,
       titleDisplay: false,
-      flipClass: "event-click",
-      raw: valueRaw[this.signalId],
-      rawToShow: null,
-      signalData: signalsData[this.signalId],
-      deviceName: null,
+ 
     };
   },
 
   mounted() {
-    let rawData;
-    if (Vue.isProxy(this.signalData)) {
-      rawData = Vue.toRaw(this.signalData);
-    }
-
-    if (typeof rawData !== "undefined") {
-      this.deviceName = deviceData[rawData.Device].Name;
-    }
 
     switch (this.valueMode) {
       case "filtered":
@@ -129,7 +117,6 @@ components.iconTextValueAnalogueLine = {
     if (!isNaN(this.value)) {
       this.getLimitColors(this.value);
       this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
-      this.rawToShow = this.raw;
     } 
   },
   methods: {
@@ -174,21 +161,6 @@ components.iconTextValueAnalogueLine = {
         this.valueCellColor = null;
       }
     },
-    callTimeline(signal, title, delay) {
-      window.signalGlobalTimelineVariable = signal;
-      window.globalTimelineTitle = title;
-      window.globalTimelineDelay = delay;
 
-      eventBus.emit("timeline-variable-updated", signal);
-      eventBus.emit("timeline-variable-updated-title", title);
-      eventBus.emit("timeline-variable-update-delay", delay);
-    },
-    flipComponent() {
-      this.flipClass = "";
-      setTimeout(this.unFlipComponent, 3000);
-    },
-    unFlipComponent() {
-      this.flipClass = "event-click";
-    },
   },
 };
