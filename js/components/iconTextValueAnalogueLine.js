@@ -16,25 +16,15 @@ components.iconTextValueAnalogueLine = {
                 </div>
                 <div v-if="titleDisplay" class="col-100-min">
 
-                    <div class="flip-col go-bt " :class="[flipClass]">
+      
+                   
 
-                        <div class="flip-col--container">
-
-                           <div class="ui col" style="font-size:11px; text-align:left;">  
-                           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                                Id: {{signalId}} {{deviceName}} RAW: {{rawToShow}}     
-                            </div>
-                           </div>                     
-
-                           <div class="ui col" style="min-width: 25em; text-align: left;" v-on:click="flipComponent()">
+                           <div class="ui col" style="min-width: 25em; text-align: left;">
                                <span>{{title}}</span>
                                <span style="display: none;">{{value}}</span>
                            </div>
 
-                        </div>
-
-                    </div>
-                
+           
                 </div>
                 <div class="col-150 align-middle-right" :class= '[valueTextColor, valueCellColor]'><span class="font-bold ">{{valueToShow}}</span>&nbsp;<small class="font-regular color-text-type-secondary-dark"> {{ unit }}</small></div>
                 </li>
