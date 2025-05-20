@@ -14,14 +14,15 @@
 
             <div class="ui col mini-2 pad-mini">
                 <basic-text-with-digital-line-render
-                    v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
+                    v-bind="{ signalId: 5005,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
             </div>
 
             <div class="ui col mini-2 h-mini-310 pad-no">
                 <multi-gauge-render v-bind="{
-                       signalIdCenter: 10156,
-                       signalIdLeft: 11151,
-                       signalIdRight: 11153,
+
+                       signalIdCenter: 5014,
+                       signalIdLeft: 5008,
+                       signalIdRight: 5009,
 
                        gaugeCenterSize: 'w-mini-340 h-mini-340 mg-top-mini-25-neg',
                        gaugeCenterinfo: 'mg-top-mini-50 visible',
@@ -53,7 +54,7 @@
                        centerTitle: '',
                        leftTitle: 'Coolant Temp.',
                        rightTitle: 'Oil Press.',
-                       valueMode: 'filtered',
+                       valueMode: 'escalated',
                        centerScaleInterval: 100,
                        rightScaleInterval: 10,
                        leftScaleInterval: 10,
@@ -69,7 +70,7 @@
                         </div>
                         <div class="col mini-1">
                             <bar-render v-bind="{
-                            signalId: 42,
+                            signalId: 5007,
                             orientation: 'horizontal',
                             size: 'small',
                             unit: 'rpm',
@@ -90,7 +91,7 @@
                             icon: '',
                             iconSize: 30,
                             iconMarginLeft: 0,
-                            valueMode: 'filtered' }"></bar-render>
+                            valueMode: 'escalated' }"></bar-render>
                         </div>
                     </div>
                 </div>
@@ -99,7 +100,7 @@
             <div class="ui col mini-1 h-mini-310">
                 <gauge-render v-bind="{
                 title: 'Gen Battery Voltage',
-                signalId: 31,
+                signalId: 5015,
                 unit: 'V',
                 icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
@@ -123,7 +124,7 @@
             <div class="ui col mini-1 h-mini-310">
                 <gauge-render v-bind="{
                 title: 'Gen Power to DC BUS',
-                signalId: 32,
+                signalId: 5010,
                 unit: 'KW',
                 icon: 'shore',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
@@ -148,7 +149,7 @@
                 <div class="col-content overflow">
                     <ul class="ui table size-xl resp">
                         <icon-text-value-analogue-line-render
-                            v-bind="{ signalId: 113, size: '30', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            v-bind="{ signalId: 5012, size: '30', unit: 'H',valueMode: 'escalated',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
                     </ul>
                 </div>
             </div>
@@ -169,14 +170,14 @@
 
             <div class="ui col mini-2 pad-mini">
                 <basic-text-with-digital-line-render
-                    v-bind="{ signalId: 90,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
+                    v-bind="{ signalId: 5016,  zeroColor: 'secondary', oneColor: 'white', zeroText: 'STOPPED', oneText: 'RUNNING',  valueStyle: 'txt-align-center ui h3 font-semibold'}"></basic-text-with-digital-line-render>
             </div>
 
             <div class="ui col mini-2 h-mini-310 pad-no">
                 <multi-gauge-render v-bind="{
-                       signalIdCenter: 10156,
-                       signalIdLeft: 11151,
-                       signalIdRight: 11153,
+                       signalIdCenter: 5025,
+                       signalIdLeft: 5019,
+                       signalIdRight: 5020,
 
                        gaugeCenterSize: 'w-mini-340 h-mini-340 mg-top-mini-25-neg',
                        gaugeCenterinfo: 'mg-top-mini-50 visible',
@@ -208,7 +209,7 @@
                        centerTitle: '',
                        leftTitle: 'Coolant Temp.',
                        rightTitle: 'Oil Press.',
-                       valueMode: 'filtered',
+                       valueMode: 'escalated',
                        centerScaleInterval: 100,
                        rightScaleInterval: 10,
                        leftScaleInterval: 10,
@@ -224,7 +225,7 @@
                         </div>
                         <div class="col mini-1">
                             <bar-render v-bind="{
-                            signalId: 42,
+                            signalId: 5018,
                             orientation: 'horizontal',
                             size: 'small',
                             unit: 'rpm',
@@ -245,7 +246,7 @@
                             icon: '',
                             iconSize: 30,
                             iconMarginLeft: 0,
-                            valueMode: 'filtered' }"></bar-render>
+                            valueMode: 'escalated' }"></bar-render>
                         </div>
                     </div>
                 </div>
@@ -254,7 +255,7 @@
             <div class="ui col mini-1 h-mini-310">
                 <gauge-render v-bind="{
                 title: 'Gen Battery Voltage',
-                signalId: 31,
+                signalId: 5026,
                 unit: 'V',
                 icon: 'batteries',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
@@ -278,7 +279,7 @@
             <div class="ui col mini-1 h-mini-310">
                 <gauge-render v-bind="{
                 title: 'Gen Power to DC BUS',
-                signalId: 32,
+                signalId: 5021,
                 unit: 'KW',
                 icon: 'shore',
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
@@ -303,7 +304,7 @@
                 <div class="col-content overflow">
                     <ul class="ui table size-xl resp">
                         <icon-text-value-analogue-line-render
-                            v-bind="{ signalId: 113, size: '30', unit: 'H',valueMode: 'filtered',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
+                            v-bind="{ signalId: 5023, size: '30', unit: 'H',valueMode: 'escalated',valueDecimals: 0, title: '  Generator Operating Hours', icon: 'generators', timeDelay: 3000}"></icon-text-value-analogue-line-render>
                     </ul>
                 </div>
             </div>

@@ -17,23 +17,23 @@
                 <div class="ui col mini-1 gap-no pad-mini radius shadow
                             grid type1 cols-mini-5" style="height: 390px;" id="wasteTank">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 301, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1380, scaleStep: 138, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 301, orientation: 'vertical', size: 'regular', unit: 'L', title:'Aft Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1380, scaleStep: 138, scaleSegments: 10, showLimits: true, valueMode: 'escalated' }"></bar-render>
                     </div>
 
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 302, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1936, scaleStep: 193, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 302, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fwd Black Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1936, scaleStep: 193, scaleSegments: 10, showLimits: true, valueMode: 'escalated' }"></bar-render>
                     </div>
                     
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 304, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 638, scaleStep: 63, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 304, orientation: 'vertical', size: 'regular', unit: 'L', title:'Sludge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 638, scaleStep: 63, scaleSegments: 10,  showLimits: true, valueMode: 'escalated' }"></bar-render>
                     </div>
                     
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 499, scaleStep: 49, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                        <bar-render v-bind="{ signalId: 298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge Tank', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 499, scaleStep: 49, scaleSegments: 10,  showLimits: true, valueMode: 'escalated' }"></bar-render>
                     </div>
                  
                     <div class="ui col mini-1">
-                        <bar-custom-render v-bind="{ signalId: 301, signalId2: 302, signalId3: 304, signalId4:298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 3316, scaleStep: 331, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
+                        <bar-custom-render v-bind="{ signalId: 301, signalId2: 302, signalId3: 304, signalId4:298, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Black Water', displayScale: true, displayCapacity: true, color: 'color-fl-gray', scaleBottom: 0, scaleTop: 3316, scaleStep: 331, scaleSegments: 10, showLimits: true, valueMode: 'escalated', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                     </div>
                     
                 </div>
