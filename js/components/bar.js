@@ -39,25 +39,6 @@ components.bar = {
               </button>
           </div>
   
-          <div class="flip-col go-bt" :class="[flipClass]">
-          <div class="flip-col--container">
-              <div class="ui col align-middle-center"
-               :style="{ fontSize: '12px', display: 'flex', justifyContent: 'center', textAlign: 'left', height: orientation === 'horizontal' ? '3.5em' : '' }">
-                  <template v-if="orientation === 'horizontal'">
-                  <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                  Id: {{signalId}}
-                   {{deviceName}}
-                  RAW: {{rawToShow}}
-              </div>
-                  </template>
-                  <template v-else>
-                  <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                  Id: {{signalId}}<br/><br/>
-                   {{deviceName}}<br/><br/>
-                  RAW: {{rawToShow}}
-              </div>
-                  </template>
-              </div>
               <div class="ui col tankClass" v-on:click="flipComponent()" ref="tankElement" style="overflow:hidden!important;">
                   <div class="ui grid type2 gap-lg pad-no" :class="[smContainer, pbarGrid]">
                       <div :class="[pbarTitle]" v-if="orientation == 'horizontal' || icon !== 'undefined'">
@@ -101,8 +82,7 @@ components.bar = {
                       </div>
                   </div>
               </div>
-          </div>
-      </div>
+       
       
       <div v-bind:id="rndIDEdit" class="ui modal size-xl">
           <div class="modal-container">
