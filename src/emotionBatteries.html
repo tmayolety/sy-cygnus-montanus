@@ -2,7 +2,7 @@
 
     <div class="ui grid type1 cols-mini-2 gap-sm pad-sm emotionBatteriesApp">
 
-        <div class="ui col mini-1 gap-no pad-no has-header grid type1 cols-mini-6">
+        <div class="ui col mini-1 gap-sm pad-no has-header grid type1 cols-mini-6">
 
             <header class="ui col">
                 <font>e-Motion Battery 1</font>
@@ -12,103 +12,7 @@
                 </span>
             </header>
 
-            <div class="ui col mini-3 h-mini-410">
-                <gauge-render v-bind="{
-                title: 'Voltage',
-                signalId: 5046,
-                unit: 'V',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-360',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-3 h-mini-410">
-                <gauge-render v-bind="{
-                title: 'Current',
-                signalId: 5047,
-                unit: 'A',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-360',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
-                <gauge-render v-bind="{
-                title: 'Power Flowing in',
-                signalId: 5048,
-                unit: 'W',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
-                <gauge-render v-bind="{
-                title: 'Power Flowing out',
-                signalId: 5049,
-                unit: 'W',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
+                        <div class="ui col mini-6 h-mini-330">
                 <gauge-render v-bind="{
                 title: 'State of Charge',
                 signalId: 5045,
@@ -117,7 +21,7 @@
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
+                height: 'h-mini-290',
                 width: 0,
                 scaleVisible: true,
                 type: 1,
@@ -132,9 +36,73 @@
             }"></gauge-render>
             </div>
 
+            <div class="ui col mini-3 h-mini-370">
+                <gauge-render v-bind="{
+                title: 'Voltage',
+                signalId: 5046,
+                unit: 'V',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-330',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'escalated',
+                textSize: 20,
+                unitTextSize: 15,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-3 h-mini-370">
+                <gauge-render v-bind="{
+                title: 'Current',
+                signalId: 5047,
+                unit: 'A',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-330',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'escalated',
+                textSize: 20,
+                unitTextSize: 15,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+
+
+            <div class="ui col mini-6  radius shadow">
+                <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5048, title: 'Battery Power Flowing IN', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary'}"></icon-text-value-digital-line-render>
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5049, title: 'Battery Power Flowing OUT', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary'}"></icon-text-value-digital-line-render>
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5055, title: 'Battery State', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Fault', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-        <div class="ui col mini-1 gap-no pad-no has-header grid type1 cols-mini-6">
+        <div class="ui col mini-1 gap-sm pad-no has-header grid type1 cols-mini-6">
 
             <header class="ui col">
                 <font>e-Motion Battery 2</font>
@@ -144,103 +112,8 @@
                 </span>
             </header>
 
-            <div class="ui col mini-3 h-mini-410">
-                <gauge-render v-bind="{
-                title: 'Voltage',
-                signalId: 5051,
-                unit: 'V',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-360',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-3 h-mini-410">
-                <gauge-render v-bind="{
-                title: 'Current',
-                signalId: 5052,
-                unit: 'A',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-360',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
-                <gauge-render v-bind="{
-                title: 'Power Flowing in',
-                signalId: 5053,
-                unit: 'W',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
-                <gauge-render v-bind="{
-                title: 'Power Flowing out',
-                signalId: 5054,
-                unit: 'W',
-                icon: 'batteries',
-                iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
-                text1: 'text-size-8 color-text-type-secondary-dark',
-                text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
-                width: 0,
-                scaleVisible: true,
-                type: 1,
-                scaleInterval: 40,
-                valueMode: 'escalated',
-                textSize: 20,
-                unitTextSize: 15,
-                marginTopValue: 'mg-top-mini-25',
-                valueDecimals: 0,
-                limitsEditable: 1,
-                timeDelay: 3000,
-            }"></gauge-render>
-            </div>
-
-            <div class="ui col mini-2 h-mini-360">
+            
+            <div class="ui col mini-6 h-mini-330">
                 <gauge-render v-bind="{
                 title: 'State of Charge',
                 signalId: 5050,
@@ -249,7 +122,7 @@
                 iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
                 text1: 'text-size-8 color-text-type-secondary-dark',
                 text2: 'text-size-14 font-bold',
-                height: 'h-mini-310',
+                height: 'h-mini-290',
                 width: 0,
                 scaleVisible: true,
                 type: 1,
@@ -264,6 +137,68 @@
             }"></gauge-render>
             </div>
 
+            <div class="ui col mini-3 h-mini-370">
+                <gauge-render v-bind="{
+                title: 'Voltage',
+                signalId: 5051,
+                unit: 'V',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-330',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'escalated',
+                textSize: 20,
+                unitTextSize: 15,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+            <div class="ui col mini-3 h-mini-370">
+                <gauge-render v-bind="{
+                title: 'Current',
+                signalId: 5052,
+                unit: 'A',
+                icon: 'batteries',
+                iconClass: 'icon-size-mini-50 mg-bottom-mini-8',
+                text1: 'text-size-8 color-text-type-secondary-dark',
+                text2: 'text-size-14 font-bold',
+                height: 'h-mini-330',
+                width: 0,
+                scaleVisible: true,
+                type: 1,
+                scaleInterval: 40,
+                valueMode: 'escalated',
+                textSize: 20,
+                unitTextSize: 15,
+                marginTopValue: 'mg-top-mini-25',
+                valueDecimals: 0,
+                limitsEditable: 1,
+                timeDelay: 3000,
+            }"></gauge-render>
+            </div>
+
+
+            <div class="ui col mini-6  radius shadow">
+                <div class="col-content overflow">
+                    <ul class="ui table size-mini resp">
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5053, title: 'Battery Power Flowing IN', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary'}"></icon-text-value-digital-line-render>
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5054, title: 'Battery Power Flowing OUT', icon: 'batteries', size: '20', zeroText: 'OFF', zeroColor: 'secondary', oneText: 'ON', oneColor: 'primary'}"></icon-text-value-digital-line-render>
+                        <icon-text-value-digital-line-render
+                            v-bind="{  signalId: 5050, title: 'Battery State', icon: 'batteries', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Fault', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </div>
