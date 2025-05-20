@@ -1,8 +1,8 @@
 var notifications = {
     pupUpNotification(item) {
         if (FLOATING_NOTIFICATIONS && (
-            (item.alarmTriggered === 1 && item.Status === 9) ||
-            (item.alarmTriggered === 1 && item.Status === 2 && alarmData[parseInt(item.alarmId)].alarmType === 1)
+            (item.alarmTriggered == 1 && item.Status == 9) ||
+            (item.alarmTriggered == 1 && item.Status == 2 && alarmData[parseInt(item.alarmId)].alarmType == 1)
         )) {
 
             const alarm = alarmData[parseInt(item.alarmId)];
@@ -13,7 +13,7 @@ var notifications = {
             let notificationGroup = "alarms";
             let notificationMessage = "New Pre-Alarm";
 
-            if (alarm.alarmType === 0) {
+            if (alarm.alarmType == 0) {
                 notificationColor = "red";
                 notificationIcon = "warning";
                 notificationGroup = "pre-alarms";
