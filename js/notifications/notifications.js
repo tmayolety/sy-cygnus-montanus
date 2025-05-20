@@ -1,25 +1,37 @@
 var notifications = {
     pupUpNotification(item) {
+        if (FLOATING_NOTIFICATIONS && (
+            (item.alarmTriggered === 1 && item.Status === 9) ||
+            (item.alarmTriggered === 1 && item.Status === 2 && alarmData[parseInt(item.alarmId)].alarmType === 1)
+        )) {
 
-        //NOTIFICATION ONLY IF TRIGGERED AND ACTIVE
-        if (FLOATING_NOTIFICATIONS && ((item.alarmTriggered == 1 && item.Status == 9) || (item.alarmTriggered == 1 && item.Status == 2 && alarmData[parseInt(item.alarmId)].alarmType == 1))) {
+            const alarm = alarmData[parseInt(item.alarmId)];
+            const alarmName = alarm.alarmDescription;
 
-            var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
+            let notificationColor = "orange";
+            let notificationIcon = "error";
+            let notificationGroup = "alarms";
+            let notificationMessage = "New Pre-Alarm";
 
-            if (alarmData[parseInt(item.alarmId)].alarmType == 0) {
-                var notificationType = "alarm" ;
-                var notificationColor = "red";
-                var notificationIcon = "warning";
-                var notificationGroup= "pre-alarms";
-                var notificationMessage= "New Alarm";
+            if (alarm.alarmType === 0) {
+                notificationColor = "red";
+                notificationIcon = "warning";
+                notificationGroup = "pre-alarms";
+                notificationMessage = "New Alarm";
+            }
+
+            if (typeof Quasar !== 'undefined' && Quasar.Notify) {
+                Quasar.Notify.create({
+                    color: notificationColor,
+                    message: `${notificationMessage}: ${alarmName}`,
+                    icon: notificationIcon,
+                    position: 'top',
+                    timeout: 3000,
+                    group: notificationGroup
+                });
             } else {
-                var notificationType = "warning" ;
-                var notificationColor = "orange";
-                var notificationIcon = "error";
-                var notificationGroup= "alarms";
-                var notificationMessage= "New Pre-Alarm";
+                console.warn("Quasar.Notify no está disponible");
             }
         }
-
     }
 };
