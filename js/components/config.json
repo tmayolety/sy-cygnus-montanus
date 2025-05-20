@@ -96,10 +96,6 @@
       {
         "label": "alarm-system-header-render",
         "file": "alarmSystemHeader"
-      },
-      {
-        "label": "event-system-header-render",
-        "file": "eventSystemHeader"
       }
     ],
     "mount": "#alarmSystemheaderApp",
