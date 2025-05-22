@@ -319,7 +319,7 @@ var alarms = {
           //NEW ACTIVE ALARM
           if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
             ActiveAlarmList[item.alarmId] = item;
-            var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
+            //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
 
             //STATUS CHANGED
           } else if (
@@ -334,6 +334,22 @@ var alarms = {
         inhibits.inhibitUpdateTriggered(item);
       }
     });
+
+      // REORDER ACTIVE ALARMS
+  const sortedEntries = Object.entries(ActiveAlarmList)
+    .filter(([, alarm]) => !!alarm.alarmTime) // Evitar alarmas sin tiempo válido
+    .sort(([, a], [, b]) => new Date(b.alarmTime) - new Date(a.alarmTime));
+
+  // Limpiar manteniendo reactividad
+  for (const key in ActiveAlarmList) {
+    delete ActiveAlarmList[key];
+  }
+
+  // Reinsertar ordenadamente
+  for (const [key, value] of sortedEntries) {
+    ActiveAlarmList[key] = value;
+  }
+
   },
   plcAlarm(item) {
     switch (item.alarmTriggered) {
