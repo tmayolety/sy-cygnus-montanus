@@ -20,7 +20,7 @@ components.alarmSystem = {
             <div class="col-110 align-middle-center hidden-phone">
             <span >Muted</span>
             </div></li>
-            <li v-for="(alarm, index) in orderedAlarms" :key="index">
+            <li v-for="(alarm, index) in alarms" :key="index">
             <div class="col-60 align-middle-center  glow pad-no hidden-phone">
             <button class="ui btn sm info radius-no resp" v-on:click="resetAlarm(index, alarm.Status)">Reset</button></div>
             <div class="col-50 glow align-middle-center" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{alarm.alarmId}}</span></div>
@@ -59,14 +59,6 @@ components.alarmSystem = {
             }
         }
     },
-    computed: {
-  orderedAlarms() {
-    return Object.values(this.alarms).sort((a, b) => {
-      return new Date(b.alarmTime) - new Date(a.alarmTime);
-    });
-  }
-},
-
     updated () {
         clearTimeout(refreshAlarmLogTimeout);
         refreshAlarmLogTimeout = setTimeout(function () {
