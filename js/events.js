@@ -54,3 +54,6 @@ $(document).ready(() => {
     events.refreshEvents();
     setInterval(events.refreshEvents, 5000); // refrescar cada 5 segundos
 });
+
+
+

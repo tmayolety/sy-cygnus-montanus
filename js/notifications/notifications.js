@@ -35,7 +35,7 @@ var notifications = {
           group: notificationGroup,
         });
       } else {
-        console.warn("Quasar.Notify no está disponible");
+        console.warn("Quasar.Notify is not defined. Cannot create notification.");
       }
     }
   },
