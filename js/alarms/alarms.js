@@ -337,7 +337,6 @@ var alarms = {
 // },
 
 activeAlarmRegister(json) {
-  console.log("⏳ Procesando nuevas alarmas:", json.length);
 
   json.forEach((item) => {
     if (item.alarmId == 0) {
