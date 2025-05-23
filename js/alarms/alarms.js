@@ -335,70 +335,74 @@ var alarms = {
  //     }
  //   });
  // },
+
+
  activeAlarmRegister(json) {
-  const tempAlarmMap = {};
-  console.log("🔄 Procesando nuevas alarmas:", json.length);
+  console.log("⚙️ Procesando nuevas alarmas:", json.length);
 
   json.forEach(function (item) {
     if (item.alarmId == 0) {
-      console.log("⚠️ PLC Alarm recibida");
       alarms.plcAlarm(item);
-      return;
     }
 
     const alarmId = parseInt(item.alarmId);
-    const cache = alarmActiveCache[alarmId];
+    const prev = alarmActiveCache[alarmId];
 
-    const isNewOrChanged =
-      typeof cache === "undefined" ||
-      cache.Status !== item.Status ||
-      cache.alarmTriggered !== item.alarmTriggered;
-
-    if (isNewOrChanged) {
-      console.log(`➡️ Procesando cambio en alarma ID ${alarmId}`, item);
-
+    if (
+      typeof prev === "undefined" ||
+      prev.Status != item.Status ||
+      prev.alarmTriggered != item.alarmTriggered
+    ) {
       alarmActiveCache[alarmId] = item;
 
       if (
-        item.Status === 1 ||
-        item.Status === 0 ||
-        (parseInt(item.alarmTriggered) === 0 && parseInt(item.Status) === 2)
+        item.Status == 1 ||
+        item.Status == 0 ||
+        (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
       ) {
-        console.log(`❌ Eliminando de ActiveAlarmList → ID ${alarmId}`);
         delete ActiveAlarmList[item.alarmId];
       } else {
         item.Group = parseInt(alarmData[alarmId].Group) - 1;
-        tempAlarmMap[item.alarmId] = item;
 
-        console.log(`✅ Añadiendo a lista temporal ordenada: ID ${alarmId}`);
-        inhibits.inhibitStatusChange(item.alarmId, item.Status);
-        notifications.pupUpNotification(item);
-        inhibits.inhibitUpdateTriggered(item);
+        if (
+          typeof ActiveAlarmList[alarmId] === "undefined" ||
+          item.Status != ActiveAlarmList[alarmId].Status ||
+          item.alarmTriggered != ActiveAlarmList[alarmId].alarmTriggered
+        ) {
+          ActiveAlarmList[alarmId] = item;
+        }
       }
+
+      inhibits.inhibitStatusChange(item.alarmId, item.Status);
+      notifications.pupUpNotification(item);
+      inhibits.inhibitUpdateTriggered(item);
     }
   });
 
-  const sortedEntries = Object.entries(tempAlarmMap)
-    .filter(([, alarm]) => alarm.alarmTime && alarm.alarmTime !== "0" && alarm.alarmTime !== "0000-00-00 00:00:00")
+  // 🔁 Reordenar ActiveAlarmList sin romper reactividad
+  const ordered = Object.entries(ActiveAlarmList)
+    .filter(([_, alarm]) => !!alarm.alarmTime)
     .sort(([, a], [, b]) => new Date(b.alarmTime) - new Date(a.alarmTime));
 
-  console.log("📊 Resultado ordenado por alarmTime DESC:");
-  sortedEntries.forEach(([id, alarm]) => {
-    console.log(`   🔸 ID ${id} → ${alarm.alarmTime}`);
-  });
+  console.log("⏳ Resultado ordenado por alarmTime DESC:", ordered.map(([id]) => id));
 
-  // Limpiar manteniendo reactividad
+  // 💡 Inserción ordenada sin borrar todo el objeto
+  const newList = {};
+  for (const [id, value] of ordered) {
+    newList[id] = value;
+  }
+
   for (const key in ActiveAlarmList) {
     delete ActiveAlarmList[key];
   }
 
-  // Reinsertar ordenadamente
-  for (const [key, value] of sortedEntries) {
-    ActiveAlarmList[key] = value;
+  for (const key in newList) {
+    ActiveAlarmList[key] = newList[key];
   }
 
   console.log("✅ ActiveAlarmList actualizado y reordenado.");
 },
+
 
   plcAlarm(item) {
     switch (item.alarmTriggered) {
