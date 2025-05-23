@@ -293,51 +293,8 @@ var alarms = {
       helpers.activeEventPulse();
     });
   },
-// activeAlarmRegister(json) {
-//   json.forEach(function (item) {
-//     if (item.alarmId == 0) {
-//       alarms.plcAlarm(item);
-//     }
-//
-//     if (
-//       typeof alarmActiveCache[parseInt(item.alarmId)] == "undefined" ||
-//       alarmActiveCache[parseInt(item.alarmId)].Status != item.Status ||
-//       alarmActiveCache[parseInt(item.alarmId)].alarmTriggered !=
-//         item.alarmTriggered
-//     ) {
-//       alarmActiveCache[parseInt(item.alarmId)] = item;
-//
-//       if (
-//         item.Status == 1 ||
-//         item.Status == 0 ||
-//         (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
-//       ) {
-//         delete ActiveAlarmList[item.alarmId];
-//       } else {
-//         item.Group = parseInt(alarmData[parseInt(item.alarmId)].Group) - 1;
-//
-//         //NEW ACTIVE ALARM
-//         if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
-//           ActiveAlarmList[item.alarmId] = item;
-//           //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
-//
-//           //STATUS CHANGED
-//         } else if (
-//           item.Status != ActiveAlarmList[item.alarmId].Status ||
-//           item.alarmTriggered != ActiveAlarmList[item.alarmId].alarmTriggered
-//         ) {
-//           ActiveAlarmList[item.alarmId] = item;
-//         }
-//       }
-//       inhibits.inhibitStatusChange(item.alarmId, item.Status);
-//       notifications.pupUpNotification(item);
-//       inhibits.inhibitUpdateTriggered(item);
-//     }
-//   });
-// },
 
 activeAlarmRegister(json) {
-  console.log("⏳ Procesando nuevas alarmas:", json.length);
 
   json.forEach((item) => {
     if (item.alarmId == 0) {
@@ -362,7 +319,6 @@ activeAlarmRegister(json) {
       item.Status == 0 ||
       (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2);
 
-    // Siempre actualizar inhibiciones, aunque se borre
     inhibits.inhibitStatusChange(id, item.Status);
     inhibits.inhibitUpdateTriggered(item);
     notifications.pupUpNotification(item);
@@ -370,30 +326,23 @@ activeAlarmRegister(json) {
     if (shouldRemove) {
       if (idx !== -1) {
         ActiveAlarmList.splice(idx, 1);
-        console.log(`❌ Eliminada alarma ${id}`);
       }
     } else {
       item.Group = parseInt(alarmData[id]?.Group || 0) - 1;
 
       if (idx === -1) {
         ActiveAlarmList.push(item);
-        console.log(`➕ Añadida nueva alarma ${id}`);
       } else {
         ActiveAlarmList.splice(idx, 1, item);
-        console.log(`🔁 Actualizada alarma ${id}`);
       }
     }
   });
 
-  // Reordenar lista por alarmTime
+  // Reorder by alarmTime
   ActiveAlarmList.sort((a, b) => {
     return new Date(b.alarmTime).getTime() - new Date(a.alarmTime).getTime();
   });
 
-  console.log(
-    "📋 ActiveAlarmList actualizado y ordenado por alarmTime DESC:",
-    ActiveAlarmList.map((a) => a.alarmId)
-  );
 },
 
 
