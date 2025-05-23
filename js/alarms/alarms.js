@@ -293,48 +293,113 @@ var alarms = {
       helpers.activeEventPulse();
     });
   },
-  activeAlarmRegister(json) {
-    json.forEach(function (item) {
-      if (item.alarmId == 0) {
-        alarms.plcAlarm(item);
-      }
+ // activeAlarmRegister(json) {
+ //   json.forEach(function (item) {
+ //     if (item.alarmId == 0) {
+ //       alarms.plcAlarm(item);
+ //     }
+//
+ //     if (
+ //       typeof alarmActiveCache[parseInt(item.alarmId)] == "undefined" ||
+ //       alarmActiveCache[parseInt(item.alarmId)].Status != item.Status ||
+ //       alarmActiveCache[parseInt(item.alarmId)].alarmTriggered !=
+ //         item.alarmTriggered
+ //     ) {
+ //       alarmActiveCache[parseInt(item.alarmId)] = item;
+//
+ //       if (
+ //         item.Status == 1 ||
+ //         item.Status == 0 ||
+ //         (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
+ //       ) {
+ //         delete ActiveAlarmList[item.alarmId];
+ //       } else {
+ //         item.Group = parseInt(alarmData[parseInt(item.alarmId)].Group) - 1;
+//
+ //         //NEW ACTIVE ALARM
+ //         if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
+ //           ActiveAlarmList[item.alarmId] = item;
+ //           //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
+//
+ //           //STATUS CHANGED
+ //         } else if (
+ //           item.Status != ActiveAlarmList[item.alarmId].Status ||
+ //           item.alarmTriggered != ActiveAlarmList[item.alarmId].alarmTriggered
+ //         ) {
+ //           ActiveAlarmList[item.alarmId] = item;
+ //         }
+ //       }
+ //       inhibits.inhibitStatusChange(item.alarmId, item.Status);
+ //       notifications.pupUpNotification(item);
+ //       inhibits.inhibitUpdateTriggered(item);
+ //     }
+ //   });
+ // },
+ activeAlarmRegister(json) {
+  const tempAlarmMap = {};
+  console.log("🔄 Procesando nuevas alarmas:", json.length);
+
+  json.forEach(function (item) {
+    if (item.alarmId == 0) {
+      console.log("⚠️ PLC Alarm recibida");
+      alarms.plcAlarm(item);
+      return;
+    }
+
+    const alarmId = parseInt(item.alarmId);
+    const cache = alarmActiveCache[alarmId];
+
+    const isNewOrChanged =
+      typeof cache === "undefined" ||
+      cache.Status !== item.Status ||
+      cache.alarmTriggered !== item.alarmTriggered;
+
+    if (isNewOrChanged) {
+      console.log(`➡️ Procesando cambio en alarma ID ${alarmId}`, item);
+
+      alarmActiveCache[alarmId] = item;
 
       if (
-        typeof alarmActiveCache[parseInt(item.alarmId)] == "undefined" ||
-        alarmActiveCache[parseInt(item.alarmId)].Status != item.Status ||
-        alarmActiveCache[parseInt(item.alarmId)].alarmTriggered !=
-          item.alarmTriggered
+        item.Status === 1 ||
+        item.Status === 0 ||
+        (parseInt(item.alarmTriggered) === 0 && parseInt(item.Status) === 2)
       ) {
-        alarmActiveCache[parseInt(item.alarmId)] = item;
+        console.log(`❌ Eliminando de ActiveAlarmList → ID ${alarmId}`);
+        delete ActiveAlarmList[item.alarmId];
+      } else {
+        item.Group = parseInt(alarmData[alarmId].Group) - 1;
+        tempAlarmMap[item.alarmId] = item;
 
-        if (
-          item.Status == 1 ||
-          item.Status == 0 ||
-          (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
-        ) {
-          delete ActiveAlarmList[item.alarmId];
-        } else {
-          item.Group = parseInt(alarmData[parseInt(item.alarmId)].Group) - 1;
-
-          //NEW ACTIVE ALARM
-          if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
-            ActiveAlarmList[item.alarmId] = item;
-            //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
-
-            //STATUS CHANGED
-          } else if (
-            item.Status != ActiveAlarmList[item.alarmId].Status ||
-            item.alarmTriggered != ActiveAlarmList[item.alarmId].alarmTriggered
-          ) {
-            ActiveAlarmList[item.alarmId] = item;
-          }
-        }
+        console.log(`✅ Añadiendo a lista temporal ordenada: ID ${alarmId}`);
         inhibits.inhibitStatusChange(item.alarmId, item.Status);
         notifications.pupUpNotification(item);
         inhibits.inhibitUpdateTriggered(item);
       }
-    });
-  },
+    }
+  });
+
+  const sortedEntries = Object.entries(tempAlarmMap)
+    .filter(([, alarm]) => alarm.alarmTime && alarm.alarmTime !== "0" && alarm.alarmTime !== "0000-00-00 00:00:00")
+    .sort(([, a], [, b]) => new Date(b.alarmTime) - new Date(a.alarmTime));
+
+  console.log("📊 Resultado ordenado por alarmTime DESC:");
+  sortedEntries.forEach(([id, alarm]) => {
+    console.log(`   🔸 ID ${id} → ${alarm.alarmTime}`);
+  });
+
+  // Limpiar manteniendo reactividad
+  for (const key in ActiveAlarmList) {
+    delete ActiveAlarmList[key];
+  }
+
+  // Reinsertar ordenadamente
+  for (const [key, value] of sortedEntries) {
+    ActiveAlarmList[key] = value;
+  }
+
+  console.log("✅ ActiveAlarmList actualizado y reordenado.");
+},
+
   plcAlarm(item) {
     switch (item.alarmTriggered) {
       case 1:
