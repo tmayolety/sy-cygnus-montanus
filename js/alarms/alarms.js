@@ -337,6 +337,7 @@ var alarms = {
 // },
 
 activeAlarmRegister(json) {
+  console.log("⏳ Procesando nuevas alarmas:", json.length);
 
   json.forEach((item) => {
     if (item.alarmId == 0) {
@@ -355,19 +356,23 @@ activeAlarmRegister(json) {
 
     alarmActiveCache[id] = item;
 
+    const idx = ActiveAlarmList.findIndex((a) => a.alarmId == id);
     const shouldRemove =
       item.Status == 1 ||
       item.Status == 0 ||
       (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2);
 
-    const idx = ActiveAlarmList.findIndex((a) => a.alarmId == id);
+    // Siempre actualizar inhibiciones, aunque se borre
+    inhibits.inhibitStatusChange(id, item.Status);
+    inhibits.inhibitUpdateTriggered(item);
+    notifications.pupUpNotification(item);
 
-    if (shouldRemove && idx !== -1) {
-      ActiveAlarmList.splice(idx, 1);
-      console.log(`❌ Eliminada alarma ${id}`);
-    }
-
-    if (!shouldRemove) {
+    if (shouldRemove) {
+      if (idx !== -1) {
+        ActiveAlarmList.splice(idx, 1);
+        console.log(`❌ Eliminada alarma ${id}`);
+      }
+    } else {
       item.Group = parseInt(alarmData[id]?.Group || 0) - 1;
 
       if (idx === -1) {
@@ -377,14 +382,10 @@ activeAlarmRegister(json) {
         ActiveAlarmList.splice(idx, 1, item);
         console.log(`🔁 Actualizada alarma ${id}`);
       }
-
-      inhibits.inhibitStatusChange(id, item.Status);
-      notifications.pupUpNotification(item);
-      inhibits.inhibitUpdateTriggered(item);
     }
   });
 
-  // Ordenar al final (si hay cambios)
+  // Reordenar lista por alarmTime
   ActiveAlarmList.sort((a, b) => {
     return new Date(b.alarmTime).getTime() - new Date(a.alarmTime).getTime();
   });
@@ -394,6 +395,7 @@ activeAlarmRegister(json) {
     ActiveAlarmList.map((a) => a.alarmId)
   );
 },
+
 
 
   plcAlarm(item) {
