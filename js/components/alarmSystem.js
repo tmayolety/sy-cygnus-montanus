@@ -75,17 +75,17 @@ components.alarmSystem = {
       }
     },
     colorAck(status) {
-      return status === 3 ? this.statusAck.statusAct : this.statusAck.statusNoAct;
+      return status == 3 ? this.statusAck.statusAct : this.statusAck.statusNoAct;
     },
     colorMute(status) {
-      return (status === 2 || status === 3) ? this.statusMute.statusOnMute : this.statusMute.statusNoMute;
+      return (status == 2 || status == 3) ? this.statusMute.statusOnMute : this.statusMute.statusNoMute;
     },
     statusWarning(alarm) {
-      return alarm.alarmType === 1 ? this.warningMute.warningOn : this.warningMute.warningOff;
+      return alarm.alarmType == 1 ? this.warningMute.warningOn : this.warningMute.warningOff;
     },
     getAlarmName(id) {
       if (alarmData[parseInt(id)]) return alarmData[parseInt(id)].alarmDescription;
-      return parseInt(id) === 0 ? "ALL" : "NOT DEFINED IN DATABASE";
+      return parseInt(id) == 0 ? "ALL" : "NOT DEFINED IN DATABASE";
     },
     getGroupName(id) {
       return groupList[parseInt(id)] ? groupList[parseInt(id)].Name : "NOT DEFINED IN DATABASE";
@@ -93,13 +93,13 @@ components.alarmSystem = {
     statusModify(alarmId, actualStatus, targetStatus) {
       let sendRequest = true;
 
-      if (targetStatus === 2 && (actualStatus === 2 || actualStatus === 3)) sendRequest = false;
-      if (targetStatus === 3 && (actualStatus !== 2 || actualStatus === 3)) sendRequest = false;
+      if (targetStatus == 2 && (actualStatus == 2 || actualStatus == 3)) sendRequest = false;
+      if (targetStatus == 3 && (actualStatus !== 2 || actualStatus == 3)) sendRequest = false;
       if (!helpers.profileCheck()) { helpers.privilegesPopUp(); sendRequest = false; }
-      if (actualStatus !== 3 && targetStatus === 0) { helpers.resetPopUp(); sendRequest = false; }
+      if (actualStatus !== 3 && targetStatus == 0) { helpers.resetPopUp(); sendRequest = false; }
 
       if (sendRequest) {
-        const element = document.getElementById((targetStatus === 2 ? 'mute_' : 'ack_') + alarmId);
+        const element = document.getElementById((targetStatus == 2 ? 'mute_' : 'ack_') + alarmId);
         if (element) {
           element.classList.add('active-provisional');
           setTimeout(() => element.classList.remove('active-provisional'), 2000);
