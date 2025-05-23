@@ -1,7 +1,7 @@
 var refreshAlarmLogTimeout;
 var refreshEventLogTimeout;
 var alarmActiveCache = [];
-var ActiveAlarmList = Vue.reactive({});
+var ActiveAlarmList = Vue.reactive([]);
 var screen = {
     renderData: function (msg) {
 
@@ -60,7 +60,7 @@ var alarms = {
       }
     }
 
-    if (status === 2 && !button.hasClass("innactive")) {
+    if (status == 2 && !button.hasClass("innactive")) {
       if (helpers.profileCheck()) {
         sendRequest = true;
       } else {
@@ -293,113 +293,103 @@ var alarms = {
       helpers.activeEventPulse();
     });
   },
- // activeAlarmRegister(json) {
- //   json.forEach(function (item) {
- //     if (item.alarmId == 0) {
- //       alarms.plcAlarm(item);
- //     }
+// activeAlarmRegister(json) {
+//   json.forEach(function (item) {
+//     if (item.alarmId == 0) {
+//       alarms.plcAlarm(item);
+//     }
 //
- //     if (
- //       typeof alarmActiveCache[parseInt(item.alarmId)] == "undefined" ||
- //       alarmActiveCache[parseInt(item.alarmId)].Status != item.Status ||
- //       alarmActiveCache[parseInt(item.alarmId)].alarmTriggered !=
- //         item.alarmTriggered
- //     ) {
- //       alarmActiveCache[parseInt(item.alarmId)] = item;
+//     if (
+//       typeof alarmActiveCache[parseInt(item.alarmId)] == "undefined" ||
+//       alarmActiveCache[parseInt(item.alarmId)].Status != item.Status ||
+//       alarmActiveCache[parseInt(item.alarmId)].alarmTriggered !=
+//         item.alarmTriggered
+//     ) {
+//       alarmActiveCache[parseInt(item.alarmId)] = item;
 //
- //       if (
- //         item.Status == 1 ||
- //         item.Status == 0 ||
- //         (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
- //       ) {
- //         delete ActiveAlarmList[item.alarmId];
- //       } else {
- //         item.Group = parseInt(alarmData[parseInt(item.alarmId)].Group) - 1;
+//       if (
+//         item.Status == 1 ||
+//         item.Status == 0 ||
+//         (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
+//       ) {
+//         delete ActiveAlarmList[item.alarmId];
+//       } else {
+//         item.Group = parseInt(alarmData[parseInt(item.alarmId)].Group) - 1;
 //
- //         //NEW ACTIVE ALARM
- //         if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
- //           ActiveAlarmList[item.alarmId] = item;
- //           //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
+//         //NEW ACTIVE ALARM
+//         if (typeof ActiveAlarmList[parseInt(item.alarmId)] == "undefined") {
+//           ActiveAlarmList[item.alarmId] = item;
+//           //var alarmName = alarmData[parseInt(item.alarmId)].alarmDescription;
 //
- //           //STATUS CHANGED
- //         } else if (
- //           item.Status != ActiveAlarmList[item.alarmId].Status ||
- //           item.alarmTriggered != ActiveAlarmList[item.alarmId].alarmTriggered
- //         ) {
- //           ActiveAlarmList[item.alarmId] = item;
- //         }
- //       }
- //       inhibits.inhibitStatusChange(item.alarmId, item.Status);
- //       notifications.pupUpNotification(item);
- //       inhibits.inhibitUpdateTriggered(item);
- //     }
- //   });
- // },
+//           //STATUS CHANGED
+//         } else if (
+//           item.Status != ActiveAlarmList[item.alarmId].Status ||
+//           item.alarmTriggered != ActiveAlarmList[item.alarmId].alarmTriggered
+//         ) {
+//           ActiveAlarmList[item.alarmId] = item;
+//         }
+//       }
+//       inhibits.inhibitStatusChange(item.alarmId, item.Status);
+//       notifications.pupUpNotification(item);
+//       inhibits.inhibitUpdateTriggered(item);
+//     }
+//   });
+// },
 
+activeAlarmRegister(json) {
+  console.log("⏳ Procesando nuevas alarmas:", json.length);
 
- activeAlarmRegister(json) {
-  console.log("⚙️ Procesando nuevas alarmas:", json.length);
+  let updatedList = [];
 
   json.forEach(function (item) {
     if (item.alarmId == 0) {
       alarms.plcAlarm(item);
+      return;
     }
 
-    const alarmId = parseInt(item.alarmId);
-    const prev = alarmActiveCache[alarmId];
+    const id = parseInt(item.alarmId);
+    const previous = alarmActiveCache[id];
 
+    const statusChanged =
+      !previous ||
+      previous.Status !== item.Status ||
+      previous.alarmTriggered !== item.alarmTriggered;
+
+    if (!statusChanged) return;
+
+    alarmActiveCache[id] = item;
+
+    // Decide if it should be active or removed
     if (
-      typeof prev === "undefined" ||
-      prev.Status != item.Status ||
-      prev.alarmTriggered != item.alarmTriggered
+      item.Status == 1 ||
+      item.Status == 0 ||
+      (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
     ) {
-      alarmActiveCache[alarmId] = item;
-
-      if (
-        item.Status == 1 ||
-        item.Status == 0 ||
-        (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
-      ) {
-        delete ActiveAlarmList[item.alarmId];
-      } else {
-        item.Group = parseInt(alarmData[alarmId].Group) - 1;
-
-        if (
-          typeof ActiveAlarmList[alarmId] === "undefined" ||
-          item.Status != ActiveAlarmList[alarmId].Status ||
-          item.alarmTriggered != ActiveAlarmList[alarmId].alarmTriggered
-        ) {
-          ActiveAlarmList[alarmId] = item;
-        }
-      }
-
-      inhibits.inhibitStatusChange(item.alarmId, item.Status);
-      notifications.pupUpNotification(item);
-      inhibits.inhibitUpdateTriggered(item);
+      // Skip from updated list if it's not active
+      return;
     }
+
+    // Assign Group from alarmData
+    item.Group = parseInt(alarmData[id]?.Group || 0) - 1;
+
+    updatedList.push(item);
+
+    inhibits.inhibitStatusChange(id, item.Status);
+    notifications.pupUpNotification(item);
+    inhibits.inhibitUpdateTriggered(item);
   });
 
-  // 🔁 Reordenar ActiveAlarmList sin romper reactividad
-  const ordered = Object.entries(ActiveAlarmList)
-    .filter(([_, alarm]) => !!alarm.alarmTime)
-    .sort(([, a], [, b]) => new Date(b.alarmTime) - new Date(a.alarmTime));
+  // Sort the updated list by alarmTime DESC
+  updatedList.sort((a, b) => {
+    const timeA = new Date(a.alarmTime).getTime();
+    const timeB = new Date(b.alarmTime).getTime();
+    return timeB - timeA;
+  });
 
-  console.log("⏳ Resultado ordenado por alarmTime DESC:", ordered.map(([id]) => id));
+  // Clear and replace the reactive array
+  ActiveAlarmList.splice(0, ActiveAlarmList.length, ...updatedList);
 
-  // 💡 Inserción ordenada sin borrar todo el objeto
-  const newList = {};
-  for (const [id, value] of ordered) {
-    newList[id] = value;
-  }
-
-  for (const key in ActiveAlarmList) {
-    delete ActiveAlarmList[key];
-  }
-
-  for (const key in newList) {
-    ActiveAlarmList[key] = newList[key];
-  }
-
+  console.log("📋 Resultado ordenado por alarmTime DESC:", updatedList.map(i => i.alarmId));
   console.log("✅ ActiveAlarmList actualizado y reordenado.");
 },
 
@@ -471,7 +461,7 @@ var alarms = {
       let alarmOrigin;
       if (typeof locationsData[parseInt(item.Origin)] !== "undefined") {
         alarmOrigin = locationsData[parseInt(item.Origin)].Name;
-      } else if (parseInt(item.Origin) === 0) {
+      } else if (parseInt(item.Origin) == 0) {
         alarmOrigin = "BLUEWAVE SYSTEM";
       } else {
         alarmOrigin = "NOT DECLARED";
