@@ -339,9 +339,7 @@ var alarms = {
 activeAlarmRegister(json) {
   console.log("⏳ Procesando nuevas alarmas:", json.length);
 
-  let updatedList = [];
-
-  json.forEach(function (item) {
+  json.forEach((item) => {
     if (item.alarmId == 0) {
       alarms.plcAlarm(item);
       return;
@@ -349,7 +347,6 @@ activeAlarmRegister(json) {
 
     const id = parseInt(item.alarmId);
     const previous = alarmActiveCache[id];
-
     const statusChanged =
       !previous ||
       previous.Status !== item.Status ||
@@ -359,38 +356,44 @@ activeAlarmRegister(json) {
 
     alarmActiveCache[id] = item;
 
-    // Decide if it should be active or removed
-    if (
+    const shouldRemove =
       item.Status == 1 ||
       item.Status == 0 ||
-      (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2)
-    ) {
-      // Skip from updated list if it's not active
-      return;
+      (parseInt(item.alarmTriggered) == 0 && parseInt(item.Status) == 2);
+
+    const idx = ActiveAlarmList.findIndex((a) => a.alarmId == id);
+
+    if (shouldRemove && idx !== -1) {
+      ActiveAlarmList.splice(idx, 1);
+      console.log(`❌ Eliminada alarma ${id}`);
     }
 
-    // Assign Group from alarmData
-    item.Group = parseInt(alarmData[id]?.Group || 0) - 1;
+    if (!shouldRemove) {
+      item.Group = parseInt(alarmData[id]?.Group || 0) - 1;
 
-    updatedList.push(item);
+      if (idx === -1) {
+        ActiveAlarmList.push(item);
+        console.log(`➕ Añadida nueva alarma ${id}`);
+      } else {
+        ActiveAlarmList.splice(idx, 1, item);
+        console.log(`🔁 Actualizada alarma ${id}`);
+      }
 
-    inhibits.inhibitStatusChange(id, item.Status);
-    notifications.pupUpNotification(item);
-    inhibits.inhibitUpdateTriggered(item);
+      inhibits.inhibitStatusChange(id, item.Status);
+      notifications.pupUpNotification(item);
+      inhibits.inhibitUpdateTriggered(item);
+    }
   });
 
-  // Sort the updated list by alarmTime DESC
-  updatedList.sort((a, b) => {
-    const timeA = new Date(a.alarmTime).getTime();
-    const timeB = new Date(b.alarmTime).getTime();
-    return timeB - timeA;
+  // Ordenar al final (si hay cambios)
+  ActiveAlarmList.sort((a, b) => {
+    return new Date(b.alarmTime).getTime() - new Date(a.alarmTime).getTime();
   });
 
-  // Clear and replace the reactive array
-  ActiveAlarmList.splice(0, ActiveAlarmList.length, ...updatedList);
-
-  console.log("📋 Resultado ordenado por alarmTime DESC:", updatedList.map(i => i.alarmId));
-  console.log("✅ ActiveAlarmList actualizado y reordenado.");
+  console.log(
+    "📋 ActiveAlarmList actualizado y ordenado por alarmTime DESC:",
+    ActiveAlarmList.map((a) => a.alarmId)
+  );
 },
 
 
