@@ -585,7 +585,7 @@
     }
   },
   {
-    "name": "valveFireBilgeSystemApp",
+    "name": "valveFuelSystemApp",
     "component": [
       {
         "label": "icon-layout-render",
@@ -598,9 +598,13 @@
       {
         "label": "list-valve-controls-render",
         "file": "listValveControls"
+      },
+      {
+        "label": "icon-text-value-digital-two-id-line-render",
+        "file": "iconTextValueDigitalTwoIDLine"
       }
     ],
-    "mount": "#valveFireBilgeSystemApp",
+    "mount": ".valveFuelSystemApp",
     "config": {
       "compilerOptions": {
         "isCustomElement": "tag => tag.startsWith('font')"
