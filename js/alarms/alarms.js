@@ -311,14 +311,14 @@ activeAlarmRegister(json) {
     }
 
     const id = parseInt(item.alarmId);
+    const previous = alarmActiveCache[id];
 
-        console.log("🟡 Comparando:", {
+      console.log("🟡 Comparando:", {
   id,
   previousTime: previous?.alarmTime,
   newTime: item.alarmTime
 });
 
-    const previous = alarmActiveCache[id];
     const statusChanged =
       !previous ||
       previous.Status !== item.Status ||
