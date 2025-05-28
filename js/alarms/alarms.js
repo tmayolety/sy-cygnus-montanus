@@ -307,7 +307,8 @@ activeAlarmRegister(json) {
     const statusChanged =
       !previous ||
       previous.Status !== item.Status ||
-      previous.alarmTriggered !== item.alarmTriggered;
+      previous.alarmTriggered !== item.alarmTriggered ||
+      previous.alarmTime !== item.alarmTime;
 
     if (!statusChanged) return;
 
