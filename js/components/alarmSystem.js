@@ -121,7 +121,6 @@ components.alarmSystem = {
           data: data
         }).done((response) => {
           console.log(response);
-          alarms.activeAlarmShow();
         });
       }
     },
@@ -147,7 +146,6 @@ components.alarmSystem = {
           data: data
         }).done((response) => {
           console.log(response);
-          alarms.activeAlarmShow();
         });
       }
     }

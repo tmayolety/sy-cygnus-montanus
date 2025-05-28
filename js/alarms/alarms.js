@@ -296,14 +296,6 @@ var alarms = {
 
 activeAlarmRegister(json) {
 
-  console.log("🔁 Recibido desde WebSocket/API:", json.map(a => ({
-  id: a.alarmId,
-  status: a.Status,
-  triggered: a.alarmTriggered,
-  time: a.alarmTime
-})));
-
-
   json.forEach((item) => {
     if (item.alarmId == 0) {
       alarms.plcAlarm(item);
@@ -315,9 +307,9 @@ activeAlarmRegister(json) {
 
     const statusChanged =
       !previous ||
-      previous.Status !== item.Status ||
-      previous.alarmTriggered !== item.alarmTriggered ||
-      previous.alarmTime !== item.alarmTime;
+      previous.Status != item.Status ||
+      previous.alarmTriggered != item.alarmTriggered ||
+      previous.alarmTime != item.alarmTime;
 
     if (!statusChanged) return;
 
