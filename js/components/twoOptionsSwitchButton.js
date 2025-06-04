@@ -256,7 +256,7 @@ components.twoOptionsSwitchButton = {
                 var data = JSON.stringify({
                     "SignalId": parseInt(writeSignalId),
                     "Value": parseInt(valueToWrite),
-                    "Mode": 3
+                    "Mode": parseInt(this.writeMode),
                 });
                 if (helpers.profileCheck()) {
                     var settings = {
